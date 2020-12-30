@@ -1,15 +1,19 @@
 <doctype html>
 <html lang="en">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Walter+Turncoat">
     <!-- Bootstrap -->
- 
+    
+    <title>SamiDB - A very cozy discord bot</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://samidb.xyz/">
+    <meta property="og:title" content="SamiDB - A very cozy discord bot">
+    <meta property="og:description" content="Sami has tons of features including portals, a multi-server chat!">
+    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1313460367079755779/T0TPo1Sg_400x400.jpg">
+	<meta property="og:image:width" content="400">
+	<meta property="og:image:height" content="400">
+	<meta name="theme-color" content="#80cee1">
     <head>
-
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://samidb.xyz/">
-        <meta property="og:title" content="A very cozy discord bot">
-        <meta property="og:description" content="Sami has tons of features including portals, a multi-server chat!">
-        <meta property="og:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg">
         <link rel="icon" href="https://raw.githubusercontent.com/JayRizuri/jayrizuri.github.io/master/RizuriMinimal1.jpeg">
 
             <!-- load icons -->
@@ -18,7 +22,9 @@
 
             <style>
                 /* set styles for icons */
-                
+                .title {
+                    color: #fff;
+                }
                 .slide-left{animation:slide-in-left 0.6s cubic-bezier(.25,.46,.45,.94)}
                 @keyframes slide-in-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
                .slide-left1{-webkit-animation:slide-in-left 0.6s cubic-bezier(.25,.46,.45,.94) .1s;animation:slide-in-left 1s cubic-bezier(.25,.46,.45,.94) .1s}
@@ -42,7 +48,38 @@
                     --btn-border-color: #000000;
                     font-family:Montserrat,sans-serif;
                 }
-                
+            .footer {
+               position: relative !important;
+               left: 0 !important;
+               bottom: 0 !important;
+               width: 100% !important;
+               background-color: #242424 !important;
+               color: white !important;
+               font-weight: 350 !important;
+               text-align: center;
+            }
+			.main-button {
+                padding: 8px;
+                height: 4rem;
+                font-family: 'Fredoka One';
+                max-width: 7rem;
+                width: 4rem;
+                height: 3rem;
+                border-radius: 12.5% !important;
+                visibility: visible;
+                animation: bounce-in-fwd 1.1s cubic-bezier(.645,.045,.355,1.000) 1.6s both;
+                flex-direction: column !important;
+                align-items: center !important;
+                margin-left: 1rem !important;
+                margin-right: 1rem !important;
+                background: #80cee1 !important;
+                color: #FFFFFF !important;
+                box-shadow: 0px 0px 0px 5px white !important;
+                border-style: dashed !important;
+                border-color: #FFFFFF !important;
+                border-width: 0.3rem !important;
+                position: relative !important;
+			}
                 .icon{
                     color:00FEF3; 
                 }
@@ -69,6 +106,7 @@
               --main-body-element-color: #252525;
             }
             body {
+                text-align: -webkit-center;
                 background-color: #343434;
                 color: white;
                 line-height: 1.8;
@@ -104,55 +142,84 @@
         </style>
     </head>
     <div style=";background-color: #252525;" class="header header-fixed unselectable header-animated">
-    <div class="header-brand">
-        <div class="nav-item no-hover">
-            <a><h6 class="title">Sami </h6></a>
+        <div class="header-brand">
+            <div class="nav-item no-hover">
+                <a href="https://samidb.xyz"><h6 class="title">Sami</h6></a>
+            </div>
+            <div class="nav-item no-hover">
+                <a><h6 class="title">/ </h6></a>
+            </div>
+            <div class="nav-item">
+                <a href="https://github.com/JayRizuri">
+                <a><h6 class="title">Commands</h6></a>
+                </a>
+            </div>
+            <div class="nav-item no-hover">
+                <a><h6 class="title">/ </h6></a>
+            </div>
+            <div class="nav-item">
+                <a href="https://github.com/JayRizuri">
+                <a><h6 class="title">Devs</h6></a>
+                </a>
+            </div>
+            <div class="nav-item no-hover">
+                <a><h6 class="title">/ </h6></a>
+            </div>
+            <div class="nav-item">
+                <a href="https://top.gg/bot/754724667323056138/vote"><h6 class="title">Vote</h6></a>
+            </div>
+            <div class="nav-item nav-btn" id="header-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <div class="nav-item no-hover">
-            <a><h6 class="title">/ </h6></a>
-        </div>
-        <div class="nav-item">
-            <a href="https://github.com/JayRizuri">
-            <a><h6 class="title">Commands</h6></a>
-            </a>
-        </div>
-        <div class="nav-item no-hover">
-            <a><h6 class="title">/ </h6></a>
-        </div>
-        <div class="nav-item">
-            <a href="https://github.com/JayRizuri">
-            <a><h6 class="title">Devs</h6></a>
-            </a>
-        </div>
-        <div class="nav-item nav-btn" id="header-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    <div class="header-nav" style="background-color: #252525;" id="header-menu">
+        <div class="header-nav" style="background-color: #252525;" id="header-menu">
         <!-- Other nav categories, controls, nav-items, etc. This is hidden on touch enabled devices -->
-    </div>
-</div>
-        <br>
-    <body style="bottom:10px;position: relative"></body>
-    <div style="height: 20rem; background: url(https://raw.githubusercontent.com/JayRizuri/jayrizuri.github.io/master/C761CF81-8205-4B7A-B2A9-E18D5EDD0406.jpeg);" id="splash-img" class="hero fullscreen hero-img parallax-img">
-    <div class="hero-body">
-        <div style="top:30px;position:relative" class="content u-text-center">
-                    <img class="u-hide-mobile " style="border-radius: 50%;max-width: 165%;height: 100%;position: relative;left:0px;"style="u-circle"src="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
-                   <img class="u-hide-desktop u-hide-tablet" style="border-radius: 50%;max-width: 110rem;height:10rem;position: relative;left:0px;"style="u-circle"src="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
-            <br>
-            <h5 class="stroke slide-left1 uppercase sub-title ">A very cozy discord bot</h5>
         </div>
     </div>
-</div>
+        <br>
+    <body style="bottom:10px;position: relative">
+    <div style="height: 20rem; background: url(https://raw.githubusercontent.com/JayRizuri/jayrizuri.github.io/master/C761CF81-8205-4B7A-B2A9-E18D5EDD0406.jpeg);" id="splash-img" class="hero fullscreen hero-img parallax-img">
+        <div class="hero-body">
+            <div style="top:30px;position:relative" class="content u-text-center">
+                <img class="u-hide-mobile " style="border-radius: 50%;max-width: 165%;height: 100%;position: relative;left:0px;"style="u-circle"src="https://pbs.twimg.com/profile_images/1313460367079755779/T0TPo1Sg_400x400.jpg" />
+                <img class="u-hide-desktop u-hide-tablet" style="border-radius: 50%;max-width: 110rem;height:10rem;position: relative;left:0px;"style="u-circle"src="https://pbs.twimg.com/profile_images/1313460367079755779/T0TPo1Sg_400x400.jpg" />
+                <br>
+                <h5 class="stroke slide-left1 uppercase sub-title ">A very cozy discord bot</h5>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="width: -webkit-fill-available;max-width: 477px;height: 2.5rem;border-radius: 50px !important;" class="main-button btn-animated sbutton u-text-center u-center animated fadeIns"> 
+        <a href="https://top.gg/bot/754724667323056138">
+            <img src="https://top.gg/api/widget/status/754724667323056138.svg?noavatar=true">
+        </a>
+        <a href="https://top.gg/bot/754724667323056138">
+            <img src="https://top.gg/api/widget/servers/754724667323056138.svg?noavatar=true" alt="Sam𝔦" />
+        </a>
+        <a href="https://top.gg/bot/754724667323056138">
+            <img src="https://top.gg/api/widget/upvotes/754724667323056138.svg?noavatar=true" alt="Sam𝔦" />
+        </a>
+    </div>
     <br>
      <div style="max-width:60%;"class="btn-group u-center">
-           <button style="color:#000;max-width:60%;" class="btn-animated sbutton">Invite to server</button>
-           <button style="color:#000;max-width:60%;" class="sbutton btn-animated">Join Support Server</button>
+           <button class="main-button btn-animated sbutton" onclick="location.href='https://discord.com/oauth2/authorize?client_id=754724667323056138&scope=bot&permissions=8'">Invite</button>
+           <button class="main-button sbutton btn-animated" onclick="location.href='https://discord.gg/MAchG4q'">Support Server</button>
+           <button class="main-button sbutton btn-animated" onclick="location.href='https://www.paypal.com/donate?token=nL-RVypBRk7WvefgeyldnFJN30qV365NWX_wn3kmbJLLdObvcsGyYaUqo-5y8mUz4A-QGJ8tgl6wAYOJ'">Donate</button>
     </div>
-    <h4 class="u-text-center u-center animated fadeIns"></h4>
-    <div class="u-text-center u-center animated fadeIns"> 
-    </div>
-    
+    <br>
+    <br> 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <h4 class="u-text-center u-center animated fadeIns"></h4>
+        <div class="footer" style="text-align:left;">
+            <a style="margin-bottom:5;"></a>
+            <img style="border-radius: 50%;max-width: 2rem;height:2rem;position: relative;left:0px;" src="https://pbs.twimg.com/profile_images/1313460367079755779/T0TPo1Sg_400x400.jpg"><span style="font-weight:600;margin-bottom:0;color:#80cee1;">Sami</span><span style="font-weight:600;margin-bottom:0;">DB</span>
+            <a style="font-weight:399;">© 2020 Jay Rizuri</a>
+        </div>
+    </body>
 </html>
