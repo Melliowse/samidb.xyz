@@ -1,0 +1,107 @@
+<html style="--randomX: 1; --randomY: 1;">
+    <head>
+        <link rel="preload" as="image" href="http://cdn.samidb.xyz/Ayume.png" imagesrcset="Ayume.png" >
+    </head>
+    <script>
+        setInterval(function() {
+            try {
+                document.getElementById("bgm").play()
+            } catch {}
+            document.getElementsByClassName("r")[0].style.setProperty("left", `${Math.ceil(Math.random() * 10) * (Math.round(Math.random()) ? 1 : -1)}`);
+            document.getElementsByClassName("b")[0].style.setProperty("left", `${Math.ceil(Math.random() * 10) * (Math.round(Math.random()) ? 1 : -1)}`);
+        }, 50);
+    </script>
+
+    <link
+        rel="stylesheet" 
+        href="stylesheets/animations.css">
+
+    <style>
+        .parent {
+            max-width: 33rem;
+            position: relative;
+            top: 0;
+            left: 25.5%;
+        }
+        body {
+            overflow-y: hidden;
+            background:url(http://cdn.samidb.xyz/static.gif);
+            text-align: center;
+        }
+        .demoness {
+            margin-left: 2rem;
+            max-width: 30rem;
+            max-height: 35rem;
+        }
+        body:after {
+                content: '';
+                position: absolute;
+                top:0px;
+                left:0px;
+                right:0px;
+                bottom:0px;
+                z-index:1000;
+                background: repeating-linear-gradient(0deg, #111 0px, #111 1px, transparent 2px, transparent 5px);
+                background-size:100% 5px;
+                animation: lines 1s ease-out infinite;
+                opacity:0.3;
+                mix-blend-mode: color-burn;
+                pointer-events: none;
+        }
+        .text, .text >* {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+       .text {
+            font-size:80px;
+            animation: giggle 4s ease infinite;
+            mix-blend-mode: difference;
+        }
+        .r {
+            opacity: 50%;
+            z-index: -1;
+            filter: hue-rotate(-160deg)  saturate(100000000000%);
+            color:#f00;
+        }
+        .g {
+            z-index: 1;
+            filter: hue-rotate(20deg);
+            color:#0f0;
+            animation-delay:-0.67s;
+            position: absolute;
+            right:5%;
+        }
+        .b {
+            opacity: 50%;
+            z-index: -1;
+            color:#00f;
+            animation-delay:-0.33s;
+        }
+        .overlay {
+            object-fit: fill;
+            width: 10000%;
+            height: 10000%;
+            bottom: 0%;
+            position: fixed;
+            filter: opacity(0.4);
+            left: 0;
+            top: 0%;
+        }
+    </style>
+    <body style="">
+        <audio autoplay="true" preload="metadata" id="bgm">
+            <source src="./audio/music/deppart.mp3" type="audio/mpeg">
+        </audio>
+        <img src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-black-solid-color-background.jpg"  class="overlay">
+        <div class="parent">
+            <img src="http://cdn.samidb.xyz/Ayume" class="g demoness" style="-webkit-filter: drop-shadow(0px 0px 3px rgba(255,255,255,260.5)) !important;">
+            <img src="http://cdn.samidb.xyz/AyumeFlat.png" class="r demoness" style="position: absolute; left: 0rem">
+        </div>
+        <div class="parent" style="right:1%">
+            <img src="http://cdn.samidb.xyz/Ayume" class="g demoness">
+            <img src="http://cdn.samidb.xyz/AyumeFlat.png" class="b demoness" style="position: absolute; left: 0rem">
+        </div>
+    </body>
+</html>
