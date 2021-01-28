@@ -1,292 +1,147 @@
 <!DOCTYPE html>
 <html lang="en" style="overflow-x:hidden;" onkeydown="keypress(event)">
     <head>
-        <script type="text/javascript" src="javascript/index.js">
-        </script>
-        <link rel="stylesheet" href="./stylesheets/1.css" />
-        <link rel="stylesheet" href="./stylesheets/animations.css" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-        </script>
-        <title>
-            SamiDB - A very cozy discord bot
-        </title>
-        <link rel="shortcut icon" href="favicon.ico">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFMSHPV1ER"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+	<script type="text/javascript" src="javascript/index.js">
+	</script>
+	<link rel="stylesheet" href="./stylesheets/1.css" />
+	<link rel="stylesheet" href="./stylesheets/animations.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+	</script>
+	<title>
+	    SamiDB - A very cozy discord bot
+	</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFMSHPV1ER"></script>
+	<script>
+	    window.dataLayer = window.dataLayer || [];
+	    function gtag(){dataLayer.push(arguments);}
+	    gtag('js', new Date());
 
-            gtag('config', 'G-PFMSHPV1ER');
-        </script>
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://samidb.xyz/">
-        <meta property="og:title"content="SamiDB - A very cozy discord bot">
-        <meta property="og:description" content="Sami has tons of features including portals, a multi-server chat!">
-        <meta property="og:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg">
-        <meta property="og:image:width" content="400">
-        <meta property="og:image:height" content="400">
-        <meta name="theme-color" content="#80cee1">
-            <!-- load icons -->
+	    gtag('config', 'G-PFMSHPV1ER');
+	</script>
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://samidb.xyz/">
+	<meta property="og:title"content="SamiDB - A very cozy discord bot">
+	<meta property="og:description" content="Sami has tons of features including portals, a multi-server chat!">
+	<meta property="og:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg">
+	<meta property="og:image:width" content="400">
+	<meta property="og:image:height" content="400">
+	<meta name="theme-color" content="#80cee1">
+	    <!-- load icons -->
     
-            <script src="https://kit.fontawesome.com/29f9977088.js" crossorigin="anonymous"></script>
+	    <script src="https://kit.fontawesome.com/29f9977088.js" crossorigin="anonymous"></script>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
 
-            <style>
-                .badge-stats .stats-right {
-                    display: inline-block;
-                    padding: .35em .65em;
-                    font-size: .75em;
-                    font-weight: 700;
-                    line-height: 1;
-                    color: #fff;
-                    text-align: center;
-                    white-space: nowrap;
-                    vertical-align: baseline;
-                    border-radius: .25rem 0rem 0rem .25rem;
-                }
-
-                .badge-stats .stats-left {
-                    display: inline-block;
-                    padding: .35em .65em;
-                    font-size: .75em;
-                    font-weight: 700;
-                    line-height: 1;
-                    color: #fff;
-                    text-align: center;
-                    white-space: nowrap;
-                    vertical-align: baseline;
-                    border-radius: 0rem .25rem .25rem 0rem;
-                }
-
-                .btn .badge-stats {
-                    position: relative;
-                    top: -1px;
-                }
-                /* set styles for icons */
-                .title {
-                    color: #fff;
-                }
-                .slide-left{
-                    animation: slide-in-left 0.6s cubic-bezier(.25,.46,.45,.94);
-                }
-                .slide-left1{
-                    -webkit-animation: slide-in-left 0.6s cubic-bezier(.25,.46,.45,.94) .1s;
-                    animation: slide-in-left 1s cubic-bezier(.25,.46,.45,.94) .1s;
-                }
-                .fade-in-left{
-                    -webkit-animation: fade-in-left .6s cubic-bezier(.39,.575,.565,1.000) both;
-                    animation: fade-in-left .6s cubic-bezier(.39,.575,.565,1.000) both;
-                }
-
-                .iconA {
-                    width: 50px
-                    height 50px
-                }
-                .avtr:not(:hover) {
-                    animation: unspin .6s cubic-bezier(.68,-.55,.265,1.55) 1 reverse both;
-                }
-                .avtr:hover {
-                    animation: spin .6s linear infinite;
-                }
-                .avtr {
-                    border: 5px #FFFFFF dashed !important;
-                }
-                .stroke {
-                  color: black;
-                  text-shadow: -2px -2px 0 #00FEF3, 2px -2px 0 #00FEF3, -2px 2px 0 #00FEF3, 2px 2px 0 #00FEF3;
-                }
-                .sbutton {
-                    font-weight: 700;
-                    max-width: 50%;
-                    color:#000;
-                    --btn-fg:#00fef3;
-                    --btn-color:#00fef3;
-                    --btn-border-color: #000000;
-                    font-family:Montserrat,sans-serif;
-                }
-                .footer {
-                    position: relative !important;
-                    left: 0 !important;
-                    bottom: 0 !important;
-                    width: 100% !important;
-                    background-color: #242424 !important;
-                    color: white !important;
-                    font-weight: 350 !important;
-                    text-align: center;
-                }
-                .icon{
-                    color:00FEF3; 
-                }
-            </style>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
-
-        <!-- Load Bootstrap -->
-        
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>        
-        <link rel="stylesheet" href="https://unpkg.com/cirrus-ui@0.5.5/dist/cirrus.min.css">
-        
-        
-        <style>
-            .selector-for-some-widget {
-              box-sizing: content-box;
-            }
-            :root {
-              --main-bg-color: #34343434;
-              --main-body-element-color: #252525;
-            }
-            body {
-                text-align: -webkit-center;
-                background-color: #343434;
-                color: white;
-                line-height: 1.8;
-                font-size: 1rem;
-                font-weight: 400;
-
-            }
-            nunito {
-            font-family: "Nunito Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-                letter-spacing: .01rem;
-                text-shadow: 1px 1px 1px rgba(0,0,0,.004);
-            }
-            .head {
-                background-color: #343434;
-            }
-            .avatar.avatar--xlarge {
-                position: relative;
-                top: 4px;
-                font-size: 10rem;
-                height: 10rem;
-                width: 10rem;
-            }
-            .avatar.avatar--xlarge1 {
-                position: relative;
-                top: 15px;
-                font-size: 10.5rem;
-                height: 10.5rem;
-                width: 10.5rem;
-            }
-            .nav-item a {
-                animation: slide-in-left 0.6s cubic-bezier(.25,.46,.45,.94);
-                padding: .05rem 0.1rem;
-            }
-            @media screen and (min-width:769px) { 
-                    .content {
-                        grid-column: 1 / 4;
-                    }
-                } 
-            @media screen and (min-width:769px) { 
-                    .content {
-                        grid-column: 1 / 4;
-                    }
-                } 
-            @media screen and (max-width:400px) { 
-                    .content {
-                        grid-column: 1 / 4;
-                    }
-                } 
-        </style>
+	<!-- Load Bootstrap -->
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>	
+	<link rel="stylesheet" href="https://unpkg.com/cirrus-ui@0.5.5/dist/cirrus.min.css">
+	
+	
     </head>
-    <div style=";background-color: #252525;" class="header header-fixed unselectable header-animated">
-        <div class="header-brand">
-            <div class="nav-item no-hover">
-                <a href="http://samidb.xyz"><h6 class="title">Sami</h6></a>
-            </div>
-            <div class="nav-item no-hover">
-                <a>
-                    <h6 class="title">
-                        / 
-                    </h6>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="http://samidb.xyz/commands">
-                    <h6 class="title">
-                        Commands
-                    </h6>
-                </a>
-            </div>
-            <div class="nav-item no-hover">
-                <a><h6 class="title">/ </h6></a>
-            </div>
-            <div class="nav-item">
-                <a href="https://github.com/JayRizuri">
-                <a><h6 class="title">Devs</h6></a>
-                </a>
-            </div>
-            <div class="nav-item no-hover">
-                <a><h6 class="title">/ </h6></a>
-            </div>
-            <div class="nav-item"> 
-                <a href="https://top.gg/bot/754724667323056138/vote"><h6 class="title">Vote</h6></a>
-            </div>
-            <div class="nav-item nav-btn" id="header-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <div class="header-nav" style="background-color: #252525;" id="header-menu">
-        <!-- Other nav categories, controls, nav-items, etc. This is hidden on touch enabled devices -->
-        </div>
-    </div>
-        <br>
-    <body style="bottom:10px;position: relative">
-    <div style="height: 20rem; background: url(https://raw.githubusercontent.com/JayRizuri/jayrizuri.github.io/master/C761CF81-8205-4B7A-B2A9-E18D5EDD0406.jpeg);" id="splash-img" class="hero fullscreen hero-img parallax-img">
-        <div class="hero-body">
-            <div style="top:30px;position:relative" class="content u-text-center">
-                <img class="avtr" style="border-radius: 50%;max-width: 15rem;position: relative;left:0px;"style="u-circle"src="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
-                <br>
-                <h5 class="stroke slide-left1 uppercase sub-title ">A very cozy discord bot</h5>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div style="width: -webkit-fill-available;max-width: 477px;height: 2.5rem;border-radius: 50px !important;" class="main-button btn-animated nohover sbutton u-text-center u-center animated fadeIns"> 
-        <a>
-            <img src="https://top.gg/api/widget/status/754724667323056138.svg?noavatar=true&leftcolor=80cee1&lefttextcolor=FFFFFF&rightcolor=50aec1&righttextcolor=FFFFFF">
-        </a>
-        <a>
-            <img src="https://top.gg/api/widget/servers/754724667323056138.svg?noavatar=true&leftcolor=80cee1&lefttextcolor=FFFFFF&rightcolor=50aec1&righttextcolor=FFFFFF" alt="Sam𝔦" />
-        </a>
-        <a>
-            <img src="https://top.gg/api/widget/upvotes/754724667323056138.svg?noavatar=true&leftcolor=80cee1&lefttextcolor=FFFFFF&rightcolor=50aec1&righttextcolor=FFFFFF" alt="Sam𝔦" />
-        </a>
-        </div>
-        <br>
-        <div style="max-width:60%;"class="btn-group u-center">
-           <button class="main-button btn-3 btn-animated sbutton" onclick="location.href='https://discord.com/oauth2/authorize?client_id=754724667323056138&scope=bot&permissions=8'">Invite</button>
-           <a href="https://splatoonwiki.org/wiki/Toni_Kensa" class="toniKensa" style="display:none;">
-            <img src="https://cdn.wikimg.net/en/splatoonwiki/images/c/c1/S2_Brand_Toni_Kensa.png">
-           </a>
-           <button class="main-button btn-3 sbutton btn-animated ntk" oncontextmenu="return toniKensa();" onclick="location.href='https://discord.gg/MAchG4q'">Support Server</button>
-           <button class="main-button btn-3 sbutton btn-animated" onclick="location.href='https://www.paypal.com/donate?token=nL-RVypBRk7WvefgeyldnFJN30qV365NWX_wn3kmbJLLdObvcsGyYaUqo-5y8mUz4A-QGJ8tgl6wAYOJ'">Donate</button>
-        </div>
-        <br>
-        <br> 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br> 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h4 class="u-text-center u-center animated fadeIns"></h4>
-        <div class="footer" style="text-align:left;">
-            <a style="margin-bottom:5;"></a>
-            <img style="border-radius: 50%;max-width: 2rem;height:2rem;position: relative;left:0px;" src="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg"><span style="font-weight:600;margin-bottom:0;color:#80cee1;">Sami</span><span style="font-weight:600;margin-bottom:0;">DB</span>
-            <a style="font-weight:399;">&#169;2020 Jay Rizuri</a>
-        </div>
+	<body>
+		<div style=";background-color: #252525;" class="header header-fixed unselectable header-animated">
+		<div class="header-brand">
+			<div class="nav-item no-hover">
+			<a href="http://samidb.xyz"><h6 class="title">Sami</h6></a>
+			</div>
+			<div class="nav-item no-hover">
+			<a>
+				<h6 class="title">
+				/ 
+				</h6>
+			</a>
+			</div>
+			<div class="nav-item">
+			<a href="http://samidb.xyz/commands">
+				<h6 class="title">
+				Commands
+				</h6>
+			</a>
+			</div>
+			<div class="nav-item no-hover">
+			<a><h6 class="title">/ </h6></a>
+			</div>
+			<div class="nav-item">
+			<a href="https://github.com/JayRizuri">
+			<a><h6 class="title">Devs</h6></a>
+			</a>
+			</div>
+			<div class="nav-item no-hover">
+			<a><h6 class="title">/ </h6></a>
+			</div>
+			<div class="nav-item"> 
+			<a href="https://top.gg/bot/754724667323056138/vote"><h6 class="title">Vote</h6></a>
+			</div>
+			<div class="nav-item nav-btn" id="header-btn">
+			<span></span>
+			<span></span>
+			<span></span>
+			</div>
+		</div>
+		<div class="header-nav" style="background-color: #252525;" id="header-menu">
+		<!-- Other nav categories, controls, nav-items, etc. This is hidden on touch enabled devices -->
+		</div>
+		</div>
+		<br>
+		<div style="bottom:10px;position: relative">
+			<div style="height: 20rem; background: url(https://raw.githubusercontent.com/JayRizuri/jayrizuri.github.io/master/C761CF81-8205-4B7A-B2A9-E18D5EDD0406.jpeg);" id="splash-img" class="hero fullscreen hero-img parallax-img">
+			<div class="hero-body">
+				<div style="top:30px;position:relative" class="content u-text-center">
+				<img class="avtr" style="border-radius: 50%;max-width: 15rem;position: relative;left:0px;"style="u-circle"src="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
+				<br>
+				<h5 class="stroke slide-left1 uppercase sub-title ">A very cozy discord bot</h5>
+				</div>
+			</div>
+			</div>
+			<br>
+			<div style="width: -webkit-fill-available;max-width: 477px;height: 2.5rem;border-radius: 50px !important;" class="main-button btn-animated nohover sbutton u-text-center u-center animated fadeIns"> 
+			<a>
+				<img src="https://top.gg/api/widget/status/754724667323056138.svg?noavatar=true&leftcolor=80cee1&lefttextcolor=FFFFFF&rightcolor=50aec1&righttextcolor=FFFFFF">
+			</a>
+			<a>
+				<img src="https://top.gg/api/widget/servers/754724667323056138.svg?noavatar=true&leftcolor=80cee1&lefttextcolor=FFFFFF&rightcolor=50aec1&righttextcolor=FFFFFF" alt="Sam𝔦" />
+			</a>
+			<a>
+				<img src="https://top.gg/api/widget/upvotes/754724667323056138.svg?noavatar=true&leftcolor=80cee1&lefttextcolor=FFFFFF&rightcolor=50aec1&righttextcolor=FFFFFF" alt="Sam𝔦" />
+			</a>
+			</div>
+			<br>
+			<div style="max-width:60%;"class="btn-group u-center">
+			   <button class="main-button btn-3 btn-animated sbutton" onclick="location.href='https://discord.com/oauth2/authorize?client_id=754724667323056138&scope=bot&permissions=8'">Invite</button>
+			   <a href="https://splatoonwiki.org/wiki/Toni_Kensa" class="toniKensa" style="display:none;">
+				<img src="https://cdn.wikimg.net/en/splatoonwiki/images/c/c1/S2_Brand_Toni_Kensa.png">
+			   </a>
+			   <button class="main-button btn-3 sbutton btn-animated ntk" oncontextmenu="return toniKensa();" onclick="location.href='https://discord.gg/MAchG4q'">Support Server</button>
+			   <button class="main-button btn-3 sbutton btn-animated" onclick="location.href='https://www.paypal.com/donate?token=nL-RVypBRk7WvefgeyldnFJN30qV365NWX_wn3kmbJLLdObvcsGyYaUqo-5y8mUz4A-QGJ8tgl6wAYOJ'">Donate</button>
+			</div>
+			<br>
+			<br> 
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br> 
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<h4 class="u-text-center u-center animated fadeIns"></h4>
+			<div class="footer" style="text-align:left;">
+				<a style="margin-bottom:5;"></a>
+				<img style="border-radius: 50%;max-width: 2rem;height:2rem;position: relative;left:0px;" src="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg"><span style="font-weight:600;margin-bottom:0;color:#80cee1;">Sami</span><span style="font-weight:600;margin-bottom:0;">DB</span>
+				<a style="font-weight:399;">&#169;2020 Jay Rizuri</a>
+			</div>
+		</div>
     </body>
 </html>
