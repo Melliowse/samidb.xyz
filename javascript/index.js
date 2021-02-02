@@ -26,7 +26,6 @@ window
                         e.preventDefault();
                         return false;
                 });
-    resizeFunction()
 });
 function clearPage() {
     while (document.firstChild) {
@@ -51,8 +50,3 @@ function toniKensa() {
         .getElementsByClassName("toniKensa")[0].style
         .setProperty("display", "block");
 }
-window.addEventListener("resize", resizeFunction);
-function resizeFunction() {
-    if (screen.width <= 425)
-        window.location = `http://mobile.samidb.xyz${window.location.pathname}`;
-};
