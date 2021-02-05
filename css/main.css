@@ -7,10 +7,3 @@
 body {
 	background-color: var(--sami-bg) !important;
 }
-
-.nav-divider {
-	display: var(--js-header-shown);
-}
-.nav-divider a {
-    animation: none;
-}
