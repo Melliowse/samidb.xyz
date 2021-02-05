@@ -3,6 +3,7 @@
 	width: var(--js-screen-width);
 }
 .navbar-bg {
+	margin: 0 0 2rem 0;
 	background: url(https://raw.githubusercontent.com/JayRizuri/jayrizuri.github.io/master/C761CF81-8205-4B7A-B2A9-E18D5EDD0406.jpeg);
 }
 .nav-divider {
