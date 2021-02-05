@@ -1,4 +1,5 @@
 @import "navbar.css";
+@import "components.css";
 :root {
 	--sami-bg: #343434;
 	--sami-header: #252525;
