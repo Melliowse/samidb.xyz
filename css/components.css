@@ -1,10 +1,8 @@
 @import "fonts.css";
 
 .stat-box {
-	height: 4rem;
-	width: 15rem;
-	max-width: fit-content;
-	padding: 8px;
+	height: auto;
+	width: auto;
 }
 .stat-box a img {
 	width: 9rem;
@@ -14,5 +12,5 @@
 	margin: 0 1rem 0 1rem;
 }
 .btn-group {
-    display: contents;
+	display: contents;
 }
