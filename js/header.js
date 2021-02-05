@@ -1,4 +1,3 @@
-getComputedStyle(element).getPropertyValue('--color-font-general');
 function setHeaderShownVar() {
 	document
 		.documentElement
