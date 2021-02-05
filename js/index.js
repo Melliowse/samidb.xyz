@@ -27,7 +27,7 @@ window
                         return false;
                 });
             require("js/header.js");
-            setHeaderShownVar()
+            window.setHeaderShownVar()
 });
 function clearPage() {
     while (document.firstChild) {
