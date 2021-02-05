@@ -55,10 +55,6 @@ nunito {
 	height: 10.5rem;
 	width: 10.5rem;
 }
-.nav-item a {
-	animation: slide-in-left 0.6s cubic-bezier(.25,.46,.45,.94);
-	padding: .05rem 0.1rem;	
-}
 
 @media screen and (min-width:769px) { 
 	.content {
