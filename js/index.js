@@ -27,7 +27,6 @@ window
                         return false;
                 });
             require("js/header.js");
-            window.setHeaderShownVar()
 });
 function clearPage() {
     while (document.firstChild) {
