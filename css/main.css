@@ -13,7 +13,10 @@ body {
 	background-color: var(--sami-header) !important;
 }
 @media screen and (min-width: 992px) {
-	.navbar-nav:not(:last-child):after {
+	.nav-link:not(.last-nav-link)::after {
+		content: "/";
+	}
+	.nav-link:not(.last-nav-link):after {
 		content: "/";
 	}
 }
