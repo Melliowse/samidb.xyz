@@ -1,0 +1,13 @@
+@import "animations.css";
+.nav-divider {
+	display: var(--js-header-shown);
+}
+.nav-divider a {
+    animation: none;
+}
+.navbar-nav {
+	animation: slide-in-left 0.6s cubic-bezier(.25,.46,.45,.94);
+}
+.nav-item a {
+	padding: .05rem 0.1rem;	
+}
