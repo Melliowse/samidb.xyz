@@ -14,7 +14,9 @@
 .nav-item a {
 	padding: .05rem 0.1rem;	
 }
-
+.header-pre {
+	display: block !important;
+}
 .header-pre img {
 	border-radius: 50%;
 	max-width: 15rem;
