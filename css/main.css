@@ -15,10 +15,10 @@ body {
 	background-color: var(--sami-header) !important;
 }
 
-:root and (@media screen and (min-width: 991px)) {
+:root and (@media screen and (min-width: 992px)) {
 	--js-header-shown: true;
 }
 
-:root and (@media screen and (max-width: 992px)) {
+:root and (@media screen and (max-width: 991px)) {
 	--js-header-shown: false;
 }
