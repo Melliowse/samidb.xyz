@@ -1,4 +1,7 @@
 @import "animations.css";
+.navbar {
+	width: var(--js-screen-width);
+}
 .navbar-bg {
 	background: url(https://raw.githubusercontent.com/JayRizuri/jayrizuri.github.io/master/C761CF81-8205-4B7A-B2A9-E18D5EDD0406.jpeg);
 }
