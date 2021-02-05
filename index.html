@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" style="overflow-x:hidden;" onkeydown="keypress(event)">
-
 	<head>
-		<script type="text/javascript" src="javascript/index.js">
-		</script>
-		<link rel="stylesheet" href="./css/1.css" />
-		<link rel="stylesheet" href="./css/animations.css" />
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-		</script>
-		<title> SamiDB - A very cozy discord bot </title>
-		<link rel="shortcut icon" href="favicon.ico">
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFMSHPV1ER"></script>
-		<script>
+		<!--
+		--- JS
+		-->
+		
+		<script type="text/javascript" src="javascript/index.js"></script>
+		
+		<script 
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" 
+			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" 
+			crossorigin="anonymous"
+		></script>
+		
+		<script src="https://kit.fontawesome.com/29f9977088.js" crossorigin="anonymous"></script>
+		
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-PFMSHPV1ER"
+		>
 			window.dataLayer = window.dataLayer || [];
 
 			function gtag() {
@@ -22,25 +27,53 @@
 			gtag('js', new Date());
 			gtag('config', 'G-PFMSHPV1ER');
 		</script>
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://samidb.xyz/">
-		<meta property="og:title" content="SamiDB - A very cozy discord bot">
-		<meta property="og:description" content="Sami has tons of features including portals, a multi-server chat!">
-		<meta property="og:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg">
-		<meta property="og:image:width" content="400">
-		<meta property="og:image:height" content="400">
-		<meta name="theme-color" content="#80cee1">
-		<!-- load icons -->
-		<script src="https://kit.fontawesome.com/29f9977088.js" crossorigin="anonymous"></script>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Load Bootstrap -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://unpkg.com/cirrus-ui@0.5.5/dist/cirrus.min.css">
+		
+		<!--
+		--- CSS
+		-->
+		
+		<link href="favicon.ico" rel="shortcut icon" />
+		<link href="./css/1.css" rel="stylesheet" />
+		<link href="./css/animations.css" rel="stylesheet" />
+		
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous"
+		/>
+		
+		<!--
+		--- Meta Tags
+		-->
+		
+		<meta property="og:type" content="website" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>SamiDB - A very cozy discord bot!</title>
+		
+		<meta name="title" content="SamiDB" />
+		<meta name="description" content="Sami has tons of features including portals, a multi-server chat!" />
+		<meta name="theme-color" content="#80cee1" />
+		
+		<meta property="og:title" content="SamiDB" />
+		<meta property="og:description" content="Sami has tons of features including portals, a multi-server chat!" />
+		<meta property="og:url" content="https://samidb.xyz/" />
+		<meta property="og:site_name" value="A Very Cozy Discord Bot!" />
+		
+		<meta property="og:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
+		<meta property="og:image:width" content="400" />
+		<meta property="og:image:height" content="400" />
+		
+		<meta property="twitter:title" content="SamiDB" />
+		<meta property="twitter:description" content="Sami has tons of features including portals, a multi-server chat!" />
+		<meta property="twitter:url" content="https://samidb.xyz/" />
+		<meta property="twitter:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
+		<meta property="twitter:card" content="summary" />
+		
+		<meta name="twitter:site" content="@SamiRizuriDB" />
+		<meta name="twitter:creator" content="@JayRizuri" />
 	</head>
 
 	<body style="background-color: #343434;">
