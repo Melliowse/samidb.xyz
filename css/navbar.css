@@ -15,14 +15,14 @@
 	padding: .05rem 0.1rem;	
 }
 
-.navbar-pre img {
+.header-pre img {
 	border-radius: 50%;
 	max-width: 15rem;
 	border: 5px #FFFFFF dashed !important;
 }
-.navbar-pre img:not(:hover) {
+.header-pre img:not(:hover) {
 	animation: unspin .6s cubic-bezier(.68,-.55,.265,1.55) 1 reverse both;
 }
-.navbar-pre img:hover {
+.header-pre img:hover {
 	animation: spin .6s linear infinite;
 }
