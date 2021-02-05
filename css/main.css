@@ -7,3 +7,4 @@
 body {
 	background-color: var(--sami-bg) !important;
 }
+@import "navbar.css"
