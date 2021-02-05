@@ -3,6 +3,8 @@
 	--sami-header: #252525;
 	
 	--sami-accent: #80cee1;
+	
+	--js-header-shown: false;
 }
 
 body {
@@ -12,11 +14,16 @@ body {
 .navbar.navbar-expand-lg.navbar-dark {
 	background-color: var(--sami-header) !important;
 }
+
+
 @media screen and (min-width: 992px) {
-	.nav-link:not(.last-nav-link)::after {
-		content: "/";
+	:root {
+		--js-header-shown: false;
 	}
-	.nav-link:not(.last-nav-link):after {
-		content: "/";
+}
+
+@media screen and (max-width: 991px) {
+	:root {
+		--js-header-shown: true;
 	}
 }
