@@ -16,9 +16,9 @@ body {
 }
 
 :root and (@media screen and (min-width: 992px)) {
-	--js-header-shown: false;
+	--js-header-shown: true;
 }
 
-:root and (@media screen and (max-width: 991px)) {
-	--js-header-shown: true;
+:root and (@media screen and (max-width: 992px)) {
+	--js-header-shown: false;
 }
