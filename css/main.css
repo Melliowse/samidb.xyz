@@ -1,0 +1,8 @@
+body {
+	background-color: var(--sami-bg) !important;
+}
+
+
+:root {
+	--sami-bg: #343434;
+}
