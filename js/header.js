@@ -5,8 +5,8 @@ function setHeaderShownVar() {
 		.setProperty(
 			'--js-header-shown',
 			window.innerWidth > 991 ?
-				true :
-				false
+				"flex" :
+				"none"
 		);
 }
 window.addEventListener("resize", () => {
