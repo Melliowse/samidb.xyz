@@ -1,4 +1,6 @@
 function setHeaderShownVar() {
+	document.documentElement.style.setProperty('--js-screen-width', window.innerWidth);
+	document.documentElement.style.setProperty('--js-screen-height', window.innerHeight);
 	document
 		.documentElement
 		.style
