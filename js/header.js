@@ -10,5 +10,9 @@ function setHeaderShownVar() {
 		);
 }
 window.addEventListener("resize", () => {
-	setHeaderShownVar()
+	setHeaderShownVar();
+});
+
+window.addEventListener("load", () => {
+	setHeaderShownVar();
 });
