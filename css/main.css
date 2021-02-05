@@ -1,3 +1,4 @@
+@import "navbar.css";
 :root {
 	--sami-bg: #343434;
 	--sami-header: #252525;
@@ -7,4 +8,3 @@
 body {
 	background-color: var(--sami-bg) !important;
 }
-@import "navbar.css";
