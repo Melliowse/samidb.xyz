@@ -157,7 +157,11 @@ nunito {
 }
 .stroke {
 	color: black;
-	text-shadow: -2px -2px 0 #00FEF3, 2px -2px 0 #00FEF3, -2px 2px 0 #00FEF3, 2px 2px 0 #00FEF3;
+	text-shadow: -2px -2px 0 #80cee1, 2px -2px 0 #80cee1, -2px 2px 0 #80cee1, 2px 2px 0 #80cee1;
+}
+.text-outline {
+	color: black;
+	text-shadow: -2px -2px 0 #80cee1, 2px -2px 0 #80cee1, -2px 2px 0 #80cee1, 2px 2px 0 #80cee1;
 }
 .sbutton {
 	font-weight: 700;
