@@ -9,10 +9,7 @@ function setHeaderShownVar() {
 				"none"
 		);
 }
+setHeaderShownVar();
 window.addEventListener("resize", () => {
-	setHeaderShownVar();
-});
-
-window.addEventListener("load", () => {
 	setHeaderShownVar();
 });
