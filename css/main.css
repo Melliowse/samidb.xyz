@@ -6,4 +6,6 @@ body {
 :root {
 	--sami-bg: #343434;
 	--sami-header: #252525;
+	
+	--sami-accent: #80cee1;
 }
