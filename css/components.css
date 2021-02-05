@@ -1,6 +1,7 @@
 .stat-box {
 	height: auto;
 	width: auto;
+	max-width: min-content;
 }
 .stat-box a img {
 	width: 9rem;
