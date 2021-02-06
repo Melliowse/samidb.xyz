@@ -165,12 +165,8 @@ nunito {
 }
 .sbutton {
 	font-weight: 700;
-	max-width: 50%;
-	color:#000;
-	--btn-fg:#00fef3;
-	--btn-color:#00fef3;
-	--btn-border-color: #000000;
-	font-family:Montserrat,sans-serif;
+	width: inherit;
+	max-width: 101%;
 }
 .footer {
 	position: relative !important;
