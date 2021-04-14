@@ -1,14 +1,7 @@
 <html>
     <script>
-        let counter = 0;
-        let delay = 0;
-        let invert = false;
         window.setInterval(function() {
             h.innerHTML = h.innerHTML + 'h';
-            invert = !invert
-            h.style.color = ((1 << 24) * Math.random() | 0).toString(16)
-            h.style["background-color"] = ((1 << 24) * Math.random() | 0).toString(16)
-            document.body.style["background-color"] = ((1 << 24) * Math.random() | 0).toString(16)
         }, -1)
     </script>
     <span id="h" style="overflow-wrap: break-word">h</span>
