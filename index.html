@@ -46,6 +46,7 @@
 		<link href="./css/animations.css" rel="stylesheet" />
 		<link href="./css/main.css" rel="stylesheet" />
 		
+		
 		<!--
 		--- Meta Tags
 		-->
@@ -80,94 +81,106 @@
 	</head>
 
 	<body>
-		<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">SamiDB</a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarNav"
-					aria-controls="navbarNav"
-					aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="https://samidb.xyz/commands">
+		<!--div id="loader"></div-->
+		<nav id="main-navbuttons" class="navbar navbuttons">
+			<div class="container-fluid navbuttons-buttons">
+				<div class="navbuttons-btns">
+					<div class="navbutton-avatar">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					<a class="navbutton navbutton-discord" href="https://discord.gg/MAchG4q">
+						<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAeCAYAAAHGGAd1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvFJREFUeNpi/P//PwM2wAKl0WUZmZA5UAwCCgxAoxz+o4INQPwAIIAYsdnBgsVsBiYkc+E0E5pLwDRAAIEsg+EP/7EDkLgASA3MAdh9isV/DkgCC4H4IpT9EYgLkeQOwJwgALUyAclZyOKgcGEACCAGNEkHHGycYc+ALy7wApDCBUSo+w8Kqv9oMfwfif0BiPnBHAIK/6PHKQg0onkKxH4INwFqIMwKRnS3wdQBBBC29NQAxPVAPBGIN0BjEDkWL0DFE4A4HogPoskzIEdMw3/KwAeYWejJgFIwAdlQbKAAKrcBTfwCVDwAhz68WYQRSySgi8PTBXJss2AEMnaDiBGHAQeY9xdg8cYGqBwoGA4gYVCEGkDFsUYWQAChZ030PKyAQ84Alz4WNGcLAPEDKNsAiAOgQSOApGYDuERBhKUjlI8zfV4gIek8QE+byLnoPwNlQBDkalhGD2CgHBxALhD+M1AHEF9cEgkUmKCxyYAj1whiEVeEyn3EIjeBAZrJ0QFy+kNOxAvQ0h0GALkwn6qexpPGYDkFHTjgKbEwahyKAbZYnogjwBlwqEWNSTzp0BGaXwPQiroN4NiE1Dv6aHoM8dU1DAQwcp4/ABMHCNCMFR0hCMPQwgK6gSvUDRhBN8ANGMER3ECcQJ3AsoFuABvABKiYeiEXQ6rnwbvLF00b2ublpUbhaFAJyJFqujKy5ZMliEi8bybQY8+k7FsBPbZoO0vYPgNbuIfvQ3Z52AL8CjgKC3P5MTmhXlYG4AJQt+NhS2PiBFCJ/nosbLDKpMedTyBAA9fI0tT2d/BopoOqa6rITu4CJmggAUJww4pcgeeJZjhx0hApy1gpaGqOZtIA/fMO0imdJB5UZSoy7ZqJpO9bQfRSyioFH063ZiGUFHWRvsh2qihiZZL8E0Pzz2OQuwdh0AyVsyUQ7fnL4BtYaw3qpWI6Nzo+5e5KreiCbYAwoXZS3EOHWSEaEJL+TcBC8XfwbvArLOJlB6XYoX6vhzs4RR0VStNqNgAAAABJRU5ErkJggg==" alt="discordLogo">
+					</a>
+					<a class="navbutton navbutton-twitter" href="https://twitter.com/samirizuridb">
+						<i class="bi bi-twitter"></i>
+					</a>
+						<a class="navbutton desktop-buttons" href="https://samidb.xyz/commands">
+							<i class="bi bi-list-nested"></i>
+							<span>
 								Commands
-							</a>
-						</li>
-						<li class="nav-item nav-divider">
-							<a>
-								/
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-								Devs
-							</a>
-						</li>
-						<li class="nav-item nav-divider">
-							<a>
-								/
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link last-nav-link" href="https://vote.samidb.xyz/">
-								Vote
-							</a>
-						</li>
-					</ul>
+							</span>
+						</a>
+						<a class="navbutton desktop-buttons" href="https://samidb.xyz/devs">
+							<i class="bi bi-code-slash"></i>
+							<span>
+								devs
+							</span>
+						</a>
+				</div>
+				<div id="mobile-expand-toggle">
+					<a class="navbutton" onclick="toggleMobileNav()">
+						<i class="bi bi-list"></i>
+					</a>
 				</div>
 			</div>
 		</nav>
-		<nav class="navbar navbar-expand-lg navbar-bg">
-			<div class="container-fluid header-pre">
-				<img src="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
-				<br>
-				<h2 class="text-outline slide-left1 uppercase sub-title ">A very cozy discord bot</h2>
+		<nav id="mobile-navbuttons" expanded="false" class="navbar navbuttons">
+			<div class="container-fluid navbuttons-buttons">
+				<div class="navbuttons-btns">
+					<a class="navbutton" href="https://samidb.xyz/commands">
+						<i class="bi bi-list-nested"></i>
+						<span>
+							Commands
+						</span>
+					</a>
+					<a class="navbutton" href="https://samidb.xyz/devs">
+						<i class="bi bi-code-slash"></i>
+						<span>
+							devs
+						</span>
+					</a>
+				</div>
 			</div>
 		</nav>
-		<div style="max-width:72%;" class="btn-group u-center">
-			<button
-				class="main-button btn-3 mb1 btn-animated sbutton"
-				onclick="location.href='https://discord.com/oauth2/authorize?client_id=754724667323056138&scope=bot&permissions=8'">
-				Invite
-			</button>
-			<a href="https://splatoonwiki.org/wiki/Toni_Kensa"
-			   class="toniKensa" style="display:none;">
-				<img src="https://cdn.wikimg.net/en/splatoonwiki/images/c/c1/S2_Brand_Toni_Kensa.png">
-			</a>
-			<button class="main-button btn-3 sbutton btn-animated ntk"
-				oncontextmenu="return toniKensa();" onclick="location.href='https://discord.gg/MAchG4q'">
-				Support Server
-			</button>
-			<button class="main-button btn-3 mb1 sbutton btn-animated"
-				onclick="location.href='https://www.paypal.com/donate?token=nL-RVypBRk7WvefgeyldnFJN30qV365NWX_wn3kmbJLLdObvcsGyYaUqo-5y8mUz4A-QGJ8tgl6wAYOJ'">
-				Donate
-			</button>
-		</div>
-		<br>
-		<div class="stat-box main-button btn-animated nohover sbutton u-text-center u-center animated fadeIns">
-			<a>
-				<img src="https://top.gg/api/widget/status/754724667323056138.svg?noavatar=true&leftcolor=80cee1&lefttextcolor=FFFFFF&rightcolor=50aec1&righttextcolor=FFFFFF" />
-			</a>
-			<a>
-				<img src="https://top.gg/api/widget/servers/754724667323056138.svg?noavatar=true&leftcolor=80cee1&lefttextcolor=FFFFFF&rightcolor=50aec1&righttextcolor=FFFFFFF" alt="Sam𝔦" />
-			</a>
-			<a>
-				<img src="https://top.gg/api/widget/upvotes/754724667323056138.svg?noavatar=true&leftcolor=80cee1&lefttextcolor=FFFFFF&rightcolor=50aec1&righttextcolor=FFFFFF" alt="Sam𝔦" />
-			</a>
+		<nav class="navbar navbar-header">
+			<img src="http://cdn.samidb.xyz/avatar.jpg" class="large-circle"/>
+			<span id="tagline">
+				A very cozy discord bot.
+			</span>
+		</nav>
+		<div class="infobox">
+			<span id="splash">
+				Loading...
+			</span>
 		</div>
 		
-		<br><br><br><br><br><br><br><br><br><br><br><br><br>
-		
-		<h4 class="u-text-center u-center animated fadeIns"></h4>
-		<div class="footer" style="text-align:left;">
-			<a style="margin-bottom:5;"></a> <img style="border-radius: 50%;max-width: 2rem;height:2rem;position: relative;left:0px;" src="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg"><span style="font-weight:600;margin-bottom:0;color:#80cee1;">Sami</span><span style="font-weight:600;margin-bottom:0;">DB</span> <a style="font-weight:399;">&#169;2020 Jay Rizuri</a>
+		<div class="description">
+			<div style="display: flex">
+				<a class="invite-button">
+					<i class="bi bi-plus-square"></i>&nbsp;&nbsp;Invite
+				</a><a class="invite-button">
+					<i class="bi bi-house"></i>&nbsp;&nbsp;Support
+				</a>
+			</div>
+			<span class="descheader-1">
+				A True Multi-Purpose Bot.
+			</span>
+			<div id="longdesc">
+				SamiDB is a stylish bot with many commands and features that are sure to make your server special.<br>
+				With commands that to talk between different servers, emote commands, logging features, and more, you can make your server unique to you<br>
+			</div>
 		</div>
+		
+		<script>
+			function toggleMobileNav() {
+				let toggle = document.getElementById("mobile-navbuttons"),
+					toggled = toggle.getAttribute("expanded")
+				toggle.setAttribute("expanded", toggled === "true" ? "false" : "true")
+				document.getElementById("mobile-expand-toggle").firstElementChild.setAttribute("expanded", toggled === "true" ? "false" : "true")
+				document.getElementById("main-navbuttons").setAttribute("expanded", toggled === "true" ? "false" : "true")
+			}
+			
+			let splashes = [
+				"H",
+				"Discord Bots Go Brrr",
+				"Modern Aesthetic",
+			], splash = splashes[Math.floor(Math.random() * splashes.length)]
+			document.getElementById("splash").innerHTML = splash;
+			if (splash === "H") {
+				document.getElementById("splash").parentElement.addEventListener("click", () => {
+					window.location = "https://samidb.xyz/h"
+				})
+			}
+		</script>
 	</body>
 </html>
