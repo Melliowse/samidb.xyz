@@ -1,4 +1,4 @@
-const urlParams = new URLSearchParams(window.location.search);
+/*const urlParams = new URLSearchParams(window.location.search);
 let typed = "",
     options = {
         "noValue": []
@@ -51,3 +51,4 @@ function toniKensa() {
         .getElementsByClassName("toniKensa")[0].style
         .setProperty("display", "block");
 }
+*/
