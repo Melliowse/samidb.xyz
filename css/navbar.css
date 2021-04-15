@@ -1,34 +1,296 @@
 @import "animations.css";
+
 .navbar {
 	width: var(--js-screen-width);
 }
-.navbar-bg {
+
+.navbar-brand {
+	font-family: "Noto Sans KR";
+}
+
+/*
+	Navbar Background colors.
+*/
+
+.navbar-dark, .navbar-light {
+	margin: 0 0 0rem 0;
+	border-bottom: var(--sami-accent-2) solid 5px;
+}
+
+.navbar-dark {
+	background: var(--sami-header);
+}
+
+.navbar-header {
 	margin: 0 0 2rem 0;
+	border-bottom: var(--sami-accent-2) solid 5px;
 	background: url('../images/header.PNG');
 }
-.nav-divider {
-	display: var(--js-header-shown);
+
+.navbar-header span {
+	font-family: "Titillium Web";
+	font-size: 3rem;
+	text-shadow: 0.2rem 0.2rem 0px var(--sami-accent),
+		0.3rem 0.3rem 0px var(--sami-accent),
+		-1px -1px 0px var(--sami-accent),
+		1px -1px 0px var(--sami-accent);
+  /*text-shadow: -5px -4px 0 var(--sami-accent),
+	  5px -4px 0 var(--sami-accent),
+	  -5px 4px 0 var(--sami-accent),
+	  5px 4px 0 var(--sami-accent);*/
 }
-.nav-divider a {
-    animation: none;
+
+.navbar-header {
+	display: flex;
+	justify-content: center;
 }
-.navbar-nav {
-	animation: slide-in-left 0.6s cubic-bezier(.25,.46,.45,.94);
+
+.navbar-header img {
+	position: relative;
+	margin-left: 20px;
+	right: 2rem;
+	border: var(--sami-accent) solid 0.50rem;
 }
-.nav-item a {
-	padding: .05rem 0.1rem;	
+
+#tagline {
+	padding: 0 25px 0 10px;
 }
-.header-pre {
-	display: block !important;
+
+/*
+	Navbar Icon Stuff
+*/
+
+.navbar-dark .navbar-toggler,
+.navbar-light .navbar-toggler {
+    border-color: transparent;
 }
-.header-pre img {
-	border-radius: 50%;
-	max-width: 15rem;
-	border: 5px #FFFFFF dashed !important;
+
+.navbar-dark .navbar-toggler:focus,
+.navbar-light .navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none !important;
 }
-.header-pre img:not(:hover) {
-	animation: unspin .6s cubic-bezier(.68,-.55,.265,1.55) 1 reverse both;
+
+.navbar-dark .bi,
+.navbar-light .bi {
+    font-size: 1.5rem;
 }
-.header-pre img:hover {
-	animation: spin .6s linear infinite;
+
+
+/*
+	Icon visibility
+*/
+
+.navbar-toggler[aria-expanded="false"] .bi-caret-down-square-fill,
+.navbar-toggler[aria-expanded="true"] .bi-caret-down{
+	display: none;
+}
+
+.navbar-toggler[aria-expanded="false"] .bi-caret-down,
+.navbar-toggler[aria-expanded="true"] .bi-caret-down-square-fill {
+	display: inline-block;
+}
+
+/*
+	Navbuttons
+*/
+
+.navbutton {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+	background: var(--sami-header-2);
+    padding: 9px 15px 10px 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.navbutton:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-color: var(--sami-header-2) transparent transparent;
+    border-style: solid;
+    border-width: 58px 15px 0 0;
+    padding-left: 1px;
+    position: absolute;
+    right: -15px;
+    top: 0;
+    z-index: 1;
+}
+
+.navbutton:hover:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-color: var(--sami-header-2-hover) transparent transparent;
+    border-style: solid;
+    border-width: 58px 15px 0 0;
+    padding-left: 1px;
+    position: absolute;
+    right: -15px;
+    top: 0;
+    z-index: 1;
+}
+
+/*
+	Custom
+*/
+.navbutton-discord, .navbutton-discord span, .navbutton-discord img, .navbutton-discord i {
+	background: var(--discord-header) !important;
+}
+.navbutton-discord:hover, .navbutton-discord:hover span, .navbutton-discord:hover img, .navbutton-discord:hover i {
+	background: var(--discord-header-hover) !important;
+}
+.navbutton-discord:after, .navbutton-avatar:after {
+    border-color: var(--discord-header) transparent transparent;
+}
+.navbutton-discord:hover:after, .navbutton-avatar:hover:after {
+    border-color: var(--discord-header-hover) transparent transparent;
+}
+.navbutton-discord, .navbutton-discord:hover {
+    padding: 9px 15px 10px 15px !important;
+}
+
+.navbutton-discord:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-color: transparent transparent var(--discord-header);
+    border-style: solid;
+	border-width: 0 0 58px 15px;
+    padding-left: 1px;
+    position: absolute;
+    left: -15px;
+    top: 1px !important;
+    z-index: 1;
+}
+
+.navbutton-discord:hover:before {
+    border-color: transparent transparent var(--discord-header-hover);
+}
+
+.navbutton-twitter, .navbutton-twitter span, .navbutton-twitter img, .navbutton-twitter i {
+	background: var(--twitter-header) !important;
+}
+.navbutton-twitter:hover, .navbutton-twitter:hover span, .navbutton-twitter:hover img, .navbutton-twitter:hover i {
+	background: var(--twitter-header-hover) !important;
+}
+.navbutton-twitter:after {
+    border-color: var(--twitter-header) transparent transparent;
+}
+.navbutton-twitter:hover:after {
+    border-color: var(--twitter-header-hover) transparent transparent;
+}
+
+.navbutton-avatar, .navbutton-avatar span, .navbutton-avatar img, .navbutton-avatar i {
+	background-image: url(http://cdn.samidb.xyz/avatar.jpg) !important;
+	background-position: center;
+	background-size: 150px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#mobile-expand-toggle .navbutton:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-color: transparent transparent var(--sami-header-2);
+    border-style: solid;
+	border-width: 0 0 58px 15px;
+    padding-left: 1px;
+    position: absolute;
+    left: -15px;
+    top: 1px !important;
+    z-index: 1;
+}
+
+#mobile-expand-toggle .navbutton:hover:before {
+    border-color: transparent transparent var(--sami-header-2-hover) !important;
+}
+
+.navbutton[expanded="true"]:before {
+    border-color: transparent transparent var(--sami-header-2-hover) !important;
+}
+.navbutton[expanded="true"], .navbutton[expanded="true"] i {
+    background-color: var(--sami-header-2-hover) !important;
+}
+.navbuttons-buttons li {
+	list-style-type: none !important;
+	font-family: 'Francois One';
+}
+
+.navbuttons-btns {
+    text-decoration: none;
+    display: flex;
+}
+
+#main-navbuttons, #mobile-navbuttons, #main-navbuttons .container-fluid, #mobile-navbuttons .container-fluid {
+	padding: 0;
+}
+
+.navbutton:hover, .navbutton {
+	color: white;
+    text-decoration: none;
+	background: var(--sami-header-2);
+}
+
+
+.navbutton span {
+	background: var(--sami-header-2);
+    font-size: 1.2rem;
+	padding: 0px 0.2rem;
+}
+
+
+.navbutton:hover span {
+	background: var(--sami-header-2-hover);
+}
+
+.navbutton img, .navbutton i {
+	background: var(--sami-header-2);
+    width: 24px;
+    font-size: 1.4rem;
+}
+
+.navbutton:hover {
+    margin: 0;
+	background: var(--sami-header-2-hover);
+    padding: 9px 15px 10px 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.navbutton:hover img, .navbutton:hover i {
+	background: var(--sami-header-2-hover);
+    width: 24px;
+}
+
+.navbuttons {
+	border-bottom: var(--sami-accent-2) solid 5px;
+	margin: 0;
+	background: var(--sami-header-2);
+}
+
+#main-navbuttons[expanded="true"] {
+	border-bottom: none;
+}
+
+@media screen and (max-width: 727px) {
+	.desktop-buttons {
+		display: none;
+	}
 }

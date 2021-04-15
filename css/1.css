@@ -62,25 +62,6 @@ nunito {
 		grid-column: 1 / 4;
 	}
 }
-.main-button {
-	padding: 15px;
-	height: 4rem;
-	font-family: 'Fredoka One' !important;
-	max-width: 7rem;
-	width: 4rem;
-	border-radius: 12.5% !important;
-	visibility: visible;
-	animation: bounce-in-fwd 1.1s cubic-bezier(.645,.045,.355,1.000) 1.6s both;
-	flex-direction: column !important;
-	align-items: center !important;
-	background: var(--sami-accent);
-	color: #FFFFFF !important;
-	box-shadow: 0px 0px 0px 5px white !important;
-	border-style: dashed !important;
-	border-color: #FFFFFF !important;
-	border-width: 0.3rem !important;
-	position: relative !important;
-}
 
 .hero .fullscreen .hero-img .parallax-img {
 	height: 20rem;
@@ -102,19 +83,6 @@ nunito {
 	animation: fade-in-left 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-.title {
-	color: #fff;
-}
-
-.avtr:not(:hover) {
-	animation: unspin .6s cubic-bezier(.68,-.55,.265,1.55) 1 reverse both;
-}
-.avtr:hover {
-	animation: spin .6s linear infinite;
-}
-.avtr {
-	border: 5px #FFFFFF dashed !important;
-}
 .badge-stats .stats-right {
 	display: inline-block;
 	padding: .35em .65em;

@@ -16,3 +16,207 @@
 .mb1 {
 	width: 83.1548px;
 }
+
+.small-circle {
+	width: 2.5rem;
+	border-radius: 50% !important;
+}
+
+.medium-circle {
+	width: 10rem;
+	border-radius: 50% !important;
+}
+
+
+.large-circle {
+	width: 12rem;
+	border-radius: 50% !important;
+}
+
+.xlarge-circle {
+	width: 15rem;
+	border-radius: 50% !important;
+}
+
+.infobox {
+	background-color: var(--sami-accent);
+	padding: 1rem 2rem;
+	width: max-content;
+	border: solid var(--sami-accent-2) 5px;
+	border-radius: 25px;
+	position: relative;
+	left: 6rem;
+	bottom: 6rem;
+}
+
+#splash {
+	font-family: "Open Sans Condensed";
+	font-size: 1.8rem;
+	font-weight: 600;
+}
+
+.description {
+	text-align: left;
+	font-family: "Open Sans";
+	font-size: 130%;
+}
+.description [class^="descheader-"] {
+	position: relative;
+	right: 1rem;
+}
+.descheader-1 {
+	font-size: 150%;
+	font-weight: 800;
+	border-bottom: solid var(--sami-accent-2) 3px;
+}
+.descheader-2 {
+	font-size: 1.8rem;
+	font-weight: 800;
+}
+.descheader-3 {
+	font-size: 1.75rem;
+	font-weight: 800;
+}
+.descheader-4 {
+	font-size: 1.55rem;
+	font-weight: 800;
+}
+.descheader-5 {
+	font-size: 1.35rem;
+	font-weight: 800;
+}
+
+#mobile-navbuttons[expanded="true"] {
+	display: block;
+}
+
+#mobile-navbuttons[expanded="false"] {
+	display: none;
+}
+#mobile-navbuttons {
+	position: relative;
+}
+
+
+.invite-button {
+	color: white;
+	text-decoration: none;
+	font-family: "Titillium Web";
+	font-size: 1.8rem;
+	font-weight: 900;
+	border: var(--sami-accent-2) solid 5px;
+	text-shadow: 3px 3px var(--sami-accent-2);
+	max-width: min-content;
+	background: var(--sami-accent);
+    padding: 9px 30px 10px 30px;
+    display: flex;
+	margin: 0.5rem 1.5rem 0 0;
+    align-items: center;
+    position: relative;
+}
+
+.invite-button:hover {
+	color: var(--sami-accent-2);
+	background: var(--sami-accent-hover);
+	text-shadow: 3px 3px white;
+}
+
+.invite-button:after {
+    content: "";
+    width: 0;
+    height: 0;
+	color: transparent;
+    border-color: var(--sami-accent) transparent transparent;
+    border-style: solid;
+    border-width: 66px 15px 0 0;
+    padding-left: 1px;
+    position: absolute;
+    right: -15px;
+    top: 0;
+    z-index: 1;
+}
+
+.invite-button:hover:after {
+    border-color: var(--sami-accent-hover) transparent transparent;
+}
+
+.invite-button:before {
+    content: "";
+    width: 0;
+    height: 0;
+	color: transparent;
+    border-color: transparent transparent var(--sami-accent);
+    border-style: solid;
+	border-width: 0 0 69px 15px;
+    padding-left: 1px;
+    position: absolute;
+    left: -15px;
+    top: 1px !important;
+    z-index: 1;
+}
+
+.invite-button:hover:before {
+    border-color: transparent transparent var(--sami-accent-hover);
+}
+
+.col-3 {
+	padding: 0 0 0 6rem;
+}
+
+.col-3 .navmenu {
+	border: var(--sami-accent-2) solid;
+}
+
+.col-3 a {
+	background: var(--sami-accent);
+}
+
+.row {
+	padding: -3rem 0 0 0;
+}
+.col-8 {
+	background: var(--sami-accent);
+	border: var(--sami-accent-2) solid;
+	margin: 0 0 0 1rem;
+}
+
+@media screen and (max-width: 727px) {
+	.description {
+		text-align: -webkit-center;
+	}
+	#longdesc {
+		max-width: 36rem;
+	}
+	.desktop-buttons {
+		display: none;
+	}
+	#mobile-expand-toggle {
+		display: block;
+	}
+	.infobox {
+		left: 0;
+		bottom: 3.3rem;
+	}
+	.description [class^="descheader-"] {
+		position: unset;
+	}
+}
+@media screen and (min-width: 728px) {
+	.desktop-buttons {
+		display: block;
+	}
+	#mobile-expand-toggle {
+		display: none;
+	}
+	#mobile-navbuttons {
+		display: none;
+	}
+	.infobox {
+		display: inline-block;
+		left: 6rem;
+		bottom: 5rem;
+	}
+	.description {
+		margin: -5rem 0 0rem 10%;
+	}
+}
