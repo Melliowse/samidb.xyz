@@ -1,318 +1,163 @@
-<doctype html>
-<html
-    lang="en"
-    style="overflow-x: hidden;"
-    onkeydown="keypress(event)">
-        <head>
-            <link
-                rel="stylesheet" 
-                href="css/animations.css">
-            <link
-                rel="stylesheet"
-                href="https://fonts.googleapis.com/css?family=Fredoka+One"
-                />
-            <link
-                rel="stylesheet"
-                href="https://fonts.googleapis.com/css?family=Walter+Turncoat"
-                />
-            <link
-                rel="stylesheet"
-                href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-                integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-                crossorigin="anonymous"
-                />
-            <script
-                src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-                crossorigin="anonymous">
-            </script>
-            
-            <script>
-                window.addEventListener("load", loadFunction);
-                async function nameSwap() {
-                    document
-                        .getElementsByClassName("slide-left1")[0].style
-                        .setProperty("visibility", "hidden");
-                    document
-                        .getElementsByClassName("slide-right")[0].style
-                        .setProperty("display", "none");
-                    document
-                        .getElementsByClassName("slide-left1")[0].style
-                        .setProperty("display", "block");
-                    document
-                        .getElementsByClassName("slide-left1")[0].style
-                        .animationPlayState = "default";
-                    await wait(500);
-                    document
-                        .getElementsByClassName("slide-left1")[0].style
-                        .setProperty("visibility", "visible");
-                }
-                function wait(ms) {
-                    return new Promise((resolve) => 
-                        setTimeout(resolve, ms)
-                    );
-                }
-                function loadFunction() {
-                    document
-                        .getElementsByClassName("slide-right")[0]
-                        .addEventListener("webkitAnimationEnd", nameSwap);
-                }
-            </script>
-            <title>
-                SamiDB - A very cozy discord bot
-            </title>
-            <meta
-                property="og:type"
-                content="website"
-                />
-            <meta
-                property="og:url"
-                content="https://samidb.xyz/"
-                />
-            <meta
-                property="og:title" 
-                content="SamiDB - A very cozy discord bot"
-                />
-            <meta
-                property="og:description" 
-                content="Sami has tons of features including portals, a multi-server chat!"
-                />
-            <meta
-                property="og:image" 
-                content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" 
-                />
-            <meta
-                property="og:image:width" 
-                content="400" 
-                />
-            <meta
-                property="og:image:height" 
-                content="400" 
-                />
-            <meta
-                name="theme-color" 
-                content="#80cee1" 
-                />
 
-            <style>
-                .title {
-                    color: #fff;
-                }
-                .iconA {
-                    width: 50px height 50px;
-                }
-                .avtr:not(:hover) {
-                    animation: unspin 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1 reverse both;
-                }
-                .avtr:hover {
-                    animation: spin 0.6s linear infinite;
-                }
-                .avtr {
-                    border: 5px #ffffff dashed !important;
-                }
-                .stroke {
-                    color: black;
-                    text-shadow: -2px -2px 0 #00fef3, 2px -2px 0 #00fef3, -2px 2px 0 #00fef3, 2px 2px 0 #00fef3;
-                }
-                .sbutton {
-                    font-weight: 700;
-                    max-width: 50%;
-                    color: #000;
-                    --btn-fg: #00fef3;
-                    --btn-color: #00fef3;
-                    --btn-border-color: #000000;
-                    font-family: Montserrat, sans-serif;
-                }
-                .footer {
-                    position: relative !important;
-                    left: 0 !important;
-                    bottom: 0 !important;
-                    width: 100% !important;
-                    background-color: #242424 !important;
-                    color: white !important;
-                    font-weight: 350 !important;
-                    text-align: center;
-                }
-                .main-button:hover:not(.nohover) {
-                    background-color: #dfefff !important;
-                }
-                :root {
-                    --cirrus-warning: #dd9ac2 !important;
-                    --bs-table-bg: #dd9ac2 !important;
-                }
-                .navmenu {
-                    padding: 8px;
-                    font-family: "Fredoka One";
-                    max-width: 55rem;
-                    border-radius: 4% !important;
-                    visibility: visible;
-                    flex-direction: column !important;
-                    align-items: center !important;
-                    margin-left: 1rem !important;
-                    margin-right: 1rem !important;
-                    background: #80cee1 !important;
-                    color: #ffffff !important;
-                    box-shadow: 0px 0px 0px 5px white !important;
-                    border-left: none;
-                    border-style: dashed !important;
-                    border-color: #ffffff !important;
-                    border-width: 0.3rem !important;
-                    position: relative !important;
-                }
-                .list-group-item {
-                    background: #80cee1 !important;
-                    border-right: none !important;
-                    border-left: none !important;
-                }
-                .main-button {
-                    padding: 8px;
-                    font-family: "Fredoka One";
-                    max-width: 55rem;
-                    border-radius: 4% !important;
-                    visibility: visible;
-                    flex-direction: column !important;
-                    align-items: center !important;
-                    margin-left: 1rem !important;
-                    margin-right: 1rem !important;
-                    background: #80cee1 !important;
-                    color: #ffffff !important;
-                    box-shadow: 0px 0px 0px 5px white !important;
-                    border-style: dashed !important;
-                    border-color: #ffffff !important;
-                    border-width: 0.3rem !important;
-                    position: relative !important;
-                }
-                .icon {
-                    color: 00fef3;
-                }
-            </style>
-            <!-- Required meta tags -->
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!DOCTYPE html>
+<html lang="en" style="overflow-x:hidden;" onkeydown="keypress(event)">
+	<head>
+		<!--
+		--- JS
+		-->
+		
+		<script type="text/javascript" src="./js/require.js"></script>
+		<script type="text/javascript" src="./js/index.js"></script>
+		
+		<script 
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" 
+			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" 
+			crossorigin="anonymous"
+		></script>
+		
+		<script src="https://kit.fontawesome.com/29f9977088.js" crossorigin="anonymous"></script>
+		
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-PFMSHPV1ER"
+		>
+			window.dataLayer = window.dataLayer || [];
 
-            <!-- Load Bootstrap -->
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'G-PFMSHPV1ER');
+		</script>
+		
+		<!--
+		--- CSS
+		-->
+		
+		<link href="favicon.ico" rel="shortcut icon" />
+		
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous"
+		/>
+		
+		<link href="./css/1.css" rel="stylesheet" />
+		<link href="./css/animations.css" rel="stylesheet" />
+		<link href="./css/main.css" rel="stylesheet" />
+		
+		
+		<!--
+		--- Meta Tags
+		-->
+		
+		<meta property="og:type" content="website" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<title>SamiDB - A very cozy discord bot!</title>
+		
+		<meta name="title" content="SamiDB" />
+		<meta name="description" content="Sami has tons of features including portals, a multi-server chat!" />
+		<meta name="theme-color" content="#80cee1" />
+		
+		<meta property="og:title" content="SamiDB" />
+		<meta property="og:description" content="Sami has tons of features including portals, a multi-server chat!" />
+		<meta property="og:url" content="https://samidb.xyz/" />
+		<meta property="og:site_name" value="A Very Cozy Discord Bot!" />
+		
+		<meta property="og:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
+		<meta property="og:image:width" content="400" />
+		<meta property="og:image:height" content="400" />
+		
+		<meta property="twitter:title" content="SamiDB" />
+		<meta property="twitter:description" content="Sami has tons of features including portals, a multi-server chat!" />
+		<meta property="twitter:url" content="https://samidb.xyz/" />
+		<meta property="twitter:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
+		<meta property="twitter:card" content="summary" />
+		
+		<meta name="twitter:site" content="@SamiRizuriDB" />
+		<meta name="twitter:creator" content="@JayRizuri" />
+	</head>
 
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="https://unpkg.com/cirrus-ui@0.5.5/dist/cirrus.min.css" />
-
-            <style>
-                .backspace {
-                    margin-left: -4px;
-                }
-                .selector-for-some-widget {
-                    box-sizing: content-box;
-                }
-                :root {
-                    --main-bg-color: #34343434;
-                    --main-body-element-color: #252525;
-                }
-                body {
-                    text-align: -webkit-center;
-                    background-color: #343434;
-                    color: white;
-                    line-height: 1.8;
-                    font-size: 1rem;
-                    font-weight: 400;
-                }
-                nunito {
-                    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-                    letter-spacing: 0.01rem;
-                    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-                }
-                .head {
-                    background-color: #343434;
-                }
-                .avatar.avatar--xlarge {
-                    position: relative;
-                    top: 4px;
-                    font-size: 10rem;
-                    height: 10rem;
-                    width: 10rem;
-                }
-                .avatar.avatar--xlarge1 {
-                    position: relative;
-                    top: 15px;
-                    font-size: 10.5rem;
-                    height: 10.5rem;
-                    width: 10.5rem;
-                }
-                .nav-item a {
-                    padding: 0.05rem 0.1rem;
-                }
-                @media screen and (min-width: 769px) {
-                    .content {
-                        grid-column: 1 / 4;
-                    }
-                }
-                @media screen and (min-width: 769px) {
-                    .content {
-                        grid-column: 1 / 4;
-                    }
-                }
-                @media screen and (max-width: 400px) {
-                    .content {
-                        grid-column: 1 / 4;
-                    }
-                }
-            </style>
-        </head>
-        <div style="background-color: #252525;" class="header header-fixed unselectable header-animated">
-            <div class="header-brand">
-                <div class="nav-item">
-                    <a href="http://samidb.xyz"><h6 class="title">Sami</h6></a>
-                </div>
-                <div class="nav-item no-hover">
-                    <a><h6 class="title">/</h6></a>
-                </div>
-                <div class="nav-item no-hover">
-                    <a><h6 class="title">Commands</h6></a>
-                </div>
-                <div class="nav-item no-hover">
-                    <a><h6 class="title">/</h6></a>
-                </div>
-                <div class="nav-item">
-                    <a href="https://github.com/JayRizuri">
-                        <a><h6 class="title">Devs</h6></a>
-                    </a>
-                </div>
-                <div class="nav-item no-hover">
-                    <a><h6 class="title">/</h6></a>
-                </div>
-                <div class="nav-item">
-                    <a href="https://top.gg/bot/754724667323056138/vote"><h6 class="title">Vote</h6></a>
-                </div>
-                <div class="nav-item nav-btn" id="header-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            <div class="header-nav" style="background-color: #252525;" id="header-menu">
-                <!-- Other nav categories, controls, nav-items, etc. This is hidden on touch enabled devices -->
-            </div>
-        </div>
-        <br />
-        <body style="bottom: 10px; position: relative;">
-            <div style="height: 20rem; background: url(https://raw.githubusercontent.com/JayRizuri/jayrizuri.github.io/master/C761CF81-8205-4B7A-B2A9-E18D5EDD0406.jpeg);" id="splash-img" class="hero fullscreen hero-img parallax-img">
-                <div class="hero-body">
-                    <div style="top: 30px; position: relative;" class="content u-text-center">
-                        <img
-                            class="u-hide-mobile avtr"
-                            style="border-radius: 50%; max-width: 165%; height: 100%; position: relative; left: 0px;"
-                            style="u-circle"
-                            src="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg"
-                        />
-                        <br />
-                        <h5 class="stroke slide-right uppercase sub-title">A very cozy discord bot</h5>
-                        <h5 class="stroke slide-left1 uppercase sub-title" style="display: none;">Commands</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-2">
+	<body>
+		<!--div id="loader"></div-->
+		<nav id="main-navbuttons" class="navbar navbuttons">
+			<div class="container-fluid navbuttons-buttons">
+				<div class="navbuttons-btns">
+					<div class="navbutton-avatar">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					<a class="navbutton navbutton-discord" href="https://discord.gg/MAchG4q">
+						<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAeCAYAAAHGGAd1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvFJREFUeNpi/P//PwM2wAKl0WUZmZA5UAwCCgxAoxz+o4INQPwAIIAYsdnBgsVsBiYkc+E0E5pLwDRAAIEsg+EP/7EDkLgASA3MAdh9isV/DkgCC4H4IpT9EYgLkeQOwJwgALUyAclZyOKgcGEACCAGNEkHHGycYc+ALy7wApDCBUSo+w8Kqv9oMfwfif0BiPnBHAIK/6PHKQg0onkKxH4INwFqIMwKRnS3wdQBBBC29NQAxPVAPBGIN0BjEDkWL0DFE4A4HogPoskzIEdMw3/KwAeYWejJgFIwAdlQbKAAKrcBTfwCVDwAhz68WYQRSySgi8PTBXJss2AEMnaDiBGHAQeY9xdg8cYGqBwoGA4gYVCEGkDFsUYWQAChZ030PKyAQ84Alz4WNGcLAPEDKNsAiAOgQSOApGYDuERBhKUjlI8zfV4gIek8QE+byLnoPwNlQBDkalhGD2CgHBxALhD+M1AHEF9cEgkUmKCxyYAj1whiEVeEyn3EIjeBAZrJ0QFy+kNOxAvQ0h0GALkwn6qexpPGYDkFHTjgKbEwahyKAbZYnogjwBlwqEWNSTzp0BGaXwPQiroN4NiE1Dv6aHoM8dU1DAQwcp4/ABMHCNCMFR0hCMPQwgK6gSvUDRhBN8ANGMER3ECcQJ3AsoFuABvABKiYeiEXQ6rnwbvLF00b2ublpUbhaFAJyJFqujKy5ZMliEi8bybQY8+k7FsBPbZoO0vYPgNbuIfvQ3Z52AL8CjgKC3P5MTmhXlYG4AJQt+NhS2PiBFCJ/nosbLDKpMedTyBAA9fI0tT2d/BopoOqa6rITu4CJmggAUJww4pcgeeJZjhx0hApy1gpaGqOZtIA/fMO0imdJB5UZSoy7ZqJpO9bQfRSyioFH063ZiGUFHWRvsh2qihiZZL8E0Pzz2OQuwdh0AyVsyUQ7fnL4BtYaw3qpWI6Nzo+5e5KreiCbYAwoXZS3EOHWSEaEJL+TcBC8XfwbvArLOJlB6XYoX6vhzs4RR0VStNqNgAAAABJRU5ErkJggg==" alt="discordLogo">
+					</a>
+					<a class="navbutton navbutton-twitter" href="https://twitter.com/samirizuridb">
+						<i class="bi bi-twitter"></i>
+					</a>
+						<a class="navbutton desktop-buttons" href="https://samidb.xyz/commands">
+							<i class="bi bi-list-nested"></i>
+							<span>
+								Commands
+							</span>
+						</a>
+						<a class="navbutton desktop-buttons" href="https://samidb.xyz/devs">
+							<i class="bi bi-code-slash"></i>
+							<span>
+								devs
+							</span>
+						</a>
+				</div>
+				<div id="mobile-expand-toggle">
+					<a class="navbutton" onclick="toggleMobileNav()">
+						<i class="bi bi-list"></i>
+					</a>
+				</div>
+			</div>
+		</nav>
+		<nav id="mobile-navbuttons" expanded="false" class="navbar navbuttons">
+			<div class="container-fluid navbuttons-buttons">
+				<div class="navbuttons-btns">
+					<a class="navbutton" href="https://samidb.xyz/commands">
+						<i class="bi bi-list-nested"></i>
+						<span>
+							Commands
+						</span>
+					</a>
+					<a class="navbutton" href="https://samidb.xyz/devs">
+						<i class="bi bi-code-slash"></i>
+						<span>
+							devs
+						</span>
+					</a>
+				</div>
+			</div>
+		</nav>
+		<nav class="navbar navbar-header">
+			<img src="http://cdn.samidb.xyz/avatar.jpg" class="large-circle"/>
+			<span id="tagline">
+				A very cozy discord bot.
+			</span>
+		</nav>
+		<div class="infobox">
+			<span id="splash">
+				Loading...
+			</span>
+		</div>
+		
+		<div class="description">
+			<div style="display: flex">
+				<a class="invite-button">
+					<i class="bi bi-plus-square"></i>&nbsp;&nbsp;Invite
+				</a><a class="invite-button">
+					<i class="bi bi-house"></i>&nbsp;&nbsp;Support
+				</a>
+			</div>
+		</div>
+		<br>
+		
+		<div class="row">
+                <div class="col-3">
                     <div id="#top" class="navmenu list-group">
                         <a class="list-group-item list-group-item-action" href="#Fun">Fun</a>
                         <a class="list-group-item list-group-item-action" href="#Misc">Misc</a>
@@ -325,7 +170,7 @@
                     <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0"></div>
                 </div>
                 <br />
-                <div class="col-10">
+                <div class="col-8">
                     <div class="main-button nohover">
                         <table class="table">
                             <thead>
@@ -766,18 +611,27 @@
                     </div>
                 </div>
             </div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <h4 class="u-text-center u-center animated fadeIns"></h4>
-            <div class="footer" style="text-align: left;">
-                <a style="margin-bottom: 5;"></a>
-                <img style="border-radius: 50%; max-width: 2rem; height: 2rem; position: relative; left: 0px;" src="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
-                <span style="font-weight: 600; margin-bottom: 0; color: #80cee1;">Sami</span><span style="font-weight: 600; margin-bottom: 0;">DB</span>
-                <a style="font-weight: 399;">&#169;2020 Jay Rizuri</a>
-            </div>
-        </body>
-    </html>
-</doctype>
+		
+		<script>
+			function toggleMobileNav() {
+				let toggle = document.getElementById("mobile-navbuttons"),
+					toggled = toggle.getAttribute("expanded")
+				toggle.setAttribute("expanded", toggled === "true" ? "false" : "true")
+				document.getElementById("mobile-expand-toggle").firstElementChild.setAttribute("expanded", toggled === "true" ? "false" : "true")
+				document.getElementById("main-navbuttons").setAttribute("expanded", toggled === "true" ? "false" : "true")
+			}
+			
+			let splashes = [
+				"H",
+				"Discord Bots Go Brrr",
+				"Modern Aesthetic",
+			], splash = splashes[Math.floor(Math.random() * splashes.length)]
+			document.getElementById("splash").innerHTML = splash;
+			if (splash === "H") {
+				document.getElementById("splash").parentElement.addEventListener("click", () => {
+					window.location = "https://samidb.xyz/h"
+				})
+			}
+		</script>
+	</body>
+</html>
