@@ -99,6 +99,7 @@
 
 
 .invite-button {
+	user-select: none;
 	color: white;
 	text-decoration: none;
 	font-family: "Titillium Web";
