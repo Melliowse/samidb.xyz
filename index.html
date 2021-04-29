@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="overflow-x:hidden;" onkeydown="keypress(event)">
+<html lang="en">
 	<head>
 		<!--
 		--- JS
@@ -66,9 +66,51 @@
 		<meta name="twitter:site" content="@SamiRizuriDB" />
 		<meta name="twitter:creator" content="@JayRizuri" />
 		<script>
-			fetch('https://fateslist.xyz/api/bots/754724667323056138/widget', {method: "GET"})
+			// Fetched stats event
+			const fetchedStats = new CustomEvent("fetchedStats");
+
+			// Fetch data function.
+			function fetchData() {
+				fetch("https://fateslist.xyz/api/v2/bots/754724667323056138",
+					{ method: "GET" },
+					{ headers: { "Accept": "text/plain" } })
+					.then(r => r.json())
+					.then(r => {
+					console.log("h")
+						localStorage.setItem("fatesdata", JSON.stringify({
+							...r,
+							fetchedOn: Date.now()
+						}))
+					})
+			}
+
+			// Check localStorage for fatesdata
+			let fatesdata;
+			if ("fatesdata" in localStorage) {
+				fatesdata = JSON.parse(localStorage["fatesdata"]);
+				if ((Date.now() - (fatesdata?.fetchedOn || 0)) > 3600000) {
+					delete localStorage["fatesdata"];
+					fetchData();
+				}
+			} else {
+				fetchData();
+			}
+			/*fetch("https://fateslist.xyz/api/v2/bots/754724667323056138",
+				{
+					mode: "cors",
+					method: "GET",
+					Origin: "https://samidb.xyz"
+				},
+				{
+					headers: {
+						"Accept": "text/plain"
+					}
+				})
 				.then(r => r.json())
-				.then(r => console.log(r))
+				.then(r => {
+					document.dispatchEvent(fetchedStats);
+					document.fatesdata = r;
+				});*/
 		</script>
 	</head>
 
@@ -153,6 +195,13 @@
 				With commands that to talk between different servers, emote commands, logging features, and more, you can make your server unique to you<br>
 			</div>
 		</div>
+		<br><br><br><br>
+		<div class="fixed-bottom" id="footer">
+			<a style="margin-bottom:5;"></a>
+			<a style="font-weight:399;">
+				&#169;<p id="year">2021</p> <p id="ownertag">Jay Rizuri</p>
+			</a>
+		</div>
 		
 		<script>
 			function toggleMobileNav() {
@@ -162,7 +211,6 @@
 				document.getElementById("mobile-expand-toggle").firstElementChild.setAttribute("expanded", toggled === "true" ? "false" : "true")
 				document.getElementById("main-navbuttons").setAttribute("expanded", toggled === "true" ? "false" : "true")
 			}
-			
 			let splashes = [
 				"H",
 				"Discord Bots Go Brrr",
@@ -174,11 +222,11 @@
 					window.location = "https://samidb.xyz/h"
 				})
 			}
+			setTimeout(() => {
+				fatesdata = JSON.parse(localStorage.getItem("fatesdata")) || {};
+				document.getElementById("ownertag").innerHTML = `${fatesdata?.owners?.[0]?.user?.username || "Jay Rizuri"}${"#" + fatesdata?.owners?.[0]?.user?.disc || ""}`;
+			}, 500);
+				document.getElementById("year").innerHTML = `${(new Date(Date.now())).getFullYear()}`;
 		</script>
-		<br><br><br><br>
-		<div class="fixed-bottom" id="footer">
-			<a style="margin-bottom:5;"></a>
-			<a style="font-weight:399;">&#169;2020 Jay Rizuri</a>
-		</div>
 	</body>
 </html>
