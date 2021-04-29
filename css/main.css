@@ -21,6 +21,10 @@ body {
 	background-color: var(--sami-bg) !important;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 a, a:active, a:focus, a:hover {
     outline: 0;
 }
