@@ -89,7 +89,6 @@
 			if ("fatesdata" in localStorage) {
 				fatesdata = JSON.parse(localStorage["fatesdata"]);
 				if ((Date.now() - (fatesdata?.fetchedOn || 0)) > 3600000) {
-					delete localStorage["fatesdata"];
 					fetchData();
 				}
 			} else {
@@ -167,7 +166,7 @@
 			</div>
 		</nav>
 		<nav class="navbar navbar-header">
-			<img src="http://cdn.samidb.xyz/avatar.jpg" class="large-circle"/>
+			<img src="http://cdn.samidb.xyz/avatar.jpg" draggable="false" class="large-circle"/>
 			<span id="tagline">
 				A very cozy discord bot.
 			</span>
@@ -205,21 +204,21 @@
 									<i class="bi bi-people-fill"></i>&nbsp;
 								<p>Users</p>
 							</div>
-							<p stat="user_count" class="stat">Unknown</p>
+							<p stat="user_count" class="stat">Loading...</p>
 						</div>
 						<div class="col">
 							<div class="descheader-5">
 									<i class="bi bi-house-fill"></i>&nbsp;
 								<p>Servers</p>
 							</div>
-							<p stat="server_count" class="stat">Unknown</p>
+							<p stat="server_count" class="stat">Loading...</p>
 						</div>
 						<div class="col">
 							<div class="descheader-5">
 									<i class="bi bi-cpu-fill"></i>&nbsp;
 								<p>Shards</p>
 							</div>
-							<p stat="shard_count" class="stat">Unknown</p>
+							<p stat="shard_count" class="stat">Loading...</p>
 						</div>
 					</div>
 				</div>
