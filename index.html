@@ -179,7 +179,7 @@
 		</div>
 		
 		<div class="description">
-			<div style="justify-content: center; display: flex">
+			<div style="max-width: min-content; justify-content: center; display: flex">
 				<a class="invite-button" href="https://discord.com/api/oauth2/authorize?client_id=754724667323056138&permissions=37080064&scope=bot">
 					<i class="bi bi-plus-square"></i>&nbsp;&nbsp;Invite
 				</a>
@@ -188,11 +188,41 @@
 				</a>
 			</div>
 			<span class="descheader-1">
-				A True Multi-Purpose Bot.
+				<p>A True Multi-Purpose Bot.</p>
 			</span>
 			<div id="longdesc">
 				SamiDB is a stylish bot with many commands and features that are sure to make your server special.<br>
-				With commands that to talk between different servers, emote commands, logging features, and more, you can make your server unique to you<br>
+				With commands that to talk between different servers, emote commands, logging features, and more, you can make your server unique to you!
+			</div>
+			<span class="descheader-3">
+				<p>Statistics</p>
+			</span>
+			<div id="longdesc">
+				<div id="stats" class="container">
+					<div class="row row-cols-3">
+						<div class="col">
+							<div class="descheader-5">
+									<i class="bi bi-people-fill"></i>&nbsp;
+								<p>Users</p>
+							</div>
+							<p stat="user_count" class="stat">Unknown</p>
+						</div>
+						<div class="col">
+							<div class="descheader-5">
+									<i class="bi bi-house-fill"></i>&nbsp;
+								<p>Servers</p>
+							</div>
+							<p stat="server_count" class="stat">Unknown</p>
+						</div>
+						<div class="col">
+							<div class="descheader-5">
+									<i class="bi bi-cpu-fill"></i>&nbsp;
+								<p>Shards</p>
+							</div>
+							<p stat="shard_count" class="stat">Unknown</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<br><br><br><br>
@@ -224,7 +254,10 @@
 			}
 			setTimeout(() => {
 				fatesdata = JSON.parse(localStorage.getItem("fatesdata")) || {};
-				document.getElementById("ownertag").innerHTML = `${fatesdata?.owners?.[0]?.user?.username || "Jay Rizuri"}${"#" + fatesdata?.owners?.[0]?.user?.disc || ""}`;
+				document.getElementById("ownertag").innerHTML = `${fatesdata?.owners?.[0]?.user?.username || "Jay Rizuri"}${"#" + fatesdata?.owners?.[0]?.user?.disc || ""}`.replace("#undefined", "");
+				[...document.getElementsByClassName("stat")].forEach(stat => {
+					stat.innerHTML = `${fatesdata?.[stat?.getAttribute("stat") || 0] || "Unknown"}`
+				})
 			}, 500);
 				document.getElementById("year").innerHTML = `${(new Date(Date.now())).getFullYear()}`;
 		</script>
