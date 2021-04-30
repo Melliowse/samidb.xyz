@@ -7,10 +7,10 @@
 	width: 9rem;
 }
 
-#footer p {
+p {
 	display: inline;
 }
- 
+
 .btn-group .main-button {
 	margin: 0 1rem 0 1rem;
 }
@@ -59,6 +59,10 @@
 	font-weight: 600;
 }
 
+/*
+ --- Descriptions
+*/
+
 .description {
 	text-align: left;
 	font-family: "Open Sans";
@@ -67,27 +71,63 @@
 .description [class^="descheader-"] {
 	position: relative;
 	right: 1rem;
+	top: 0.38rem;
 }
-.descheader-1 {
-	font-size: 150%;
-	font-weight: 800;
+
+[class^="descheader-"] p {
 	border-bottom: solid var(--sami-accent-2) 3px;
 }
-.descheader-2 {
+
+.descheader-1 p {
+	font-size: 150%;
+	font-weight: 800;
+}
+.descheader-2 p {
 	font-size: 1.8rem;
 	font-weight: 800;
 }
-.descheader-3 {
+.descheader-4::before {
+	content: "–";
+	font-family: revert;
+	font-size: 1.8rem;
+	font-weight: 100;
+}
+
+.descheader-3 p {
 	font-size: 1.75rem;
 	font-weight: 800;
 }
-.descheader-4 {
+.descheader-4 p {
 	font-size: 1.55rem;
 	font-weight: 800;
 }
-.descheader-5 {
+.descheader-4 {
+	position: relative;
+	right: 0.76rem;
+}
+.descheader-5 p {
 	font-size: 1.35rem;
 	font-weight: 800;
+}
+
+.row {
+	justify-content: center;
+}
+.col {
+    display: grid;
+    justify-content: center;
+}
+
+.col p.stat {
+	margin-bottom: 0px;
+    display: grid;
+}
+#longdesc {
+	background: var(--sami-box-bg);
+	max-width: 84vw;
+	border-radius: 12.5px;
+	border: solid var(--sami-accent-2) 3px;
+	padding: 1rem;
 }
 
 #mobile-navbuttons[expanded="true"] {
