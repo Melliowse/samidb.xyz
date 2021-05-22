@@ -8,7 +8,7 @@
 		<script type="text/javascript" src="./js/require.js"></script>
 		<script type="text/javascript" src="./js/index.js"></script>
 		<script>
-			function keypress(event) {
+			document.keypress = (event) => {
 			    if (String(event.key).toLowerCase() == "a"
 			    || String(event.key).toLowerCase() == "y"
 			    || String(event.key).toLowerCase() == "u"
@@ -18,7 +18,6 @@
 			    if (typed.indexOf("ayumi") !== -1)
 				window.location = `http://samidb.xyz/AyumiIsDead`;
 			};
-			document.addEventListener("keypress", keypress);
 		</script>
 		
 		<script 
