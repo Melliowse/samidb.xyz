@@ -1,683 +1,853 @@
-
 <!DOCTYPE html>
 <html lang="en" style="overflow-x:hidden;" onkeydown="keypress(event)">
-	<head>
-		<!--
+
+<head>
+	<!--
 		--- JS
 		-->
-		
-		<script type="text/javascript" src="./js/require.js"></script>
-		<script type="text/javascript" src="./js/index.js"></script>
-		
-		<script 
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" 
-			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" 
-			crossorigin="anonymous"
-		></script>
-		
-		<script src="https://kit.fontawesome.com/29f9977088.js" crossorigin="anonymous"></script>
-		
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-PFMSHPV1ER"
-		>
-			window.dataLayer = window.dataLayer || [];
 
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag('js', new Date());
-			gtag('config', 'G-PFMSHPV1ER');
-		</script>
-		
-		<!--
+	<script type="text/javascript" src="./js/require.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+		crossorigin="anonymous"></script>
+
+	<script src="https://kit.fontawesome.com/29f9977088.js" crossorigin="anonymous"></script>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFMSHPV1ER">
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'G-PFMSHPV1ER');
+	</script>
+
+	<!--
 		--- CSS
 		-->
-		
-		<link href="favicon.ico" rel="shortcut icon" />
-		
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-			crossorigin="anonymous"
-		/>
-		
-		<link href="./css/1.css" rel="stylesheet" />
-		<link href="./css/animations.css" rel="stylesheet" />
-		<link href="./css/main.css" rel="stylesheet" />
-		
-		
-		<!--
+
+	<link href="favicon.ico" rel="shortcut icon" />
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+
+	<link href="./css/1.css" rel="stylesheet" />
+	<link href="./css/animations.css" rel="stylesheet" />
+	<link href="./css/main.css" rel="stylesheet" />
+
+
+	<!--
 		--- Meta Tags
 		-->
-		
-		<meta property="og:type" content="website" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		
-		<title>SamiDB - A very cozy discord bot!</title>
-		
-		<meta name="title" content="SamiDB" />
-		<meta name="description" content="Sami has tons of features including portals, a multi-server chat!" />
-		<meta name="theme-color" content="#80cee1" />
-		
-		<meta property="og:title" content="SamiDB" />
-		<meta property="og:description" content="Sami has tons of features including portals, a multi-server chat!" />
-		<meta property="og:url" content="https://samidb.xyz/" />
-		<meta property="og:site_name" value="A Very Cozy Discord Bot!" />
-		
-		<meta property="og:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
-		<meta property="og:image:width" content="400" />
-		<meta property="og:image:height" content="400" />
-		
-		<meta property="twitter:title" content="SamiDB" />
-		<meta property="twitter:description" content="Sami has tons of features including portals, a multi-server chat!" />
-		<meta property="twitter:url" content="https://samidb.xyz/" />
-		<meta property="twitter:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
-		<meta property="twitter:card" content="summary" />
-		
-		<meta name="twitter:site" content="@SamiRizuriDB" />
-		<meta name="twitter:creator" content="@JayRizuri" />
-	</head>
 
-	<body>
-		<!--div id="loader"></div-->
-		<nav id="main-navbuttons" class="navbar navbuttons">
-			<div class="container-fluid navbuttons-buttons">
-				<div class="navbuttons-btns">
-					<div class="navbutton-avatar">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					</div>
-					<a class="navbutton navbutton-discord" href="https://discord.gg/MAchG4q">
-						<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAeCAYAAAHGGAd1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvFJREFUeNpi/P//PwM2wAKl0WUZmZA5UAwCCgxAoxz+o4INQPwAIIAYsdnBgsVsBiYkc+E0E5pLwDRAAIEsg+EP/7EDkLgASA3MAdh9isV/DkgCC4H4IpT9EYgLkeQOwJwgALUyAclZyOKgcGEACCAGNEkHHGycYc+ALy7wApDCBUSo+w8Kqv9oMfwfif0BiPnBHAIK/6PHKQg0onkKxH4INwFqIMwKRnS3wdQBBBC29NQAxPVAPBGIN0BjEDkWL0DFE4A4HogPoskzIEdMw3/KwAeYWejJgFIwAdlQbKAAKrcBTfwCVDwAhz68WYQRSySgi8PTBXJss2AEMnaDiBGHAQeY9xdg8cYGqBwoGA4gYVCEGkDFsUYWQAChZ030PKyAQ84Alz4WNGcLAPEDKNsAiAOgQSOApGYDuERBhKUjlI8zfV4gIek8QE+byLnoPwNlQBDkalhGD2CgHBxALhD+M1AHEF9cEgkUmKCxyYAj1whiEVeEyn3EIjeBAZrJ0QFy+kNOxAvQ0h0GALkwn6qexpPGYDkFHTjgKbEwahyKAbZYnogjwBlwqEWNSTzp0BGaXwPQiroN4NiE1Dv6aHoM8dU1DAQwcp4/ABMHCNCMFR0hCMPQwgK6gSvUDRhBN8ANGMER3ECcQJ3AsoFuABvABKiYeiEXQ6rnwbvLF00b2ublpUbhaFAJyJFqujKy5ZMliEi8bybQY8+k7FsBPbZoO0vYPgNbuIfvQ3Z52AL8CjgKC3P5MTmhXlYG4AJQt+NhS2PiBFCJ/nosbLDKpMedTyBAA9fI0tT2d/BopoOqa6rITu4CJmggAUJww4pcgeeJZjhx0hApy1gpaGqOZtIA/fMO0imdJB5UZSoy7ZqJpO9bQfRSyioFH063ZiGUFHWRvsh2qihiZZL8E0Pzz2OQuwdh0AyVsyUQ7fnL4BtYaw3qpWI6Nzo+5e5KreiCbYAwoXZS3EOHWSEaEJL+TcBC8XfwbvArLOJlB6XYoX6vhzs4RR0VStNqNgAAAABJRU5ErkJggg==" alt="discordLogo">
-					</a>
-					<a class="navbutton navbutton-twitter" href="https://twitter.com/samirizuridb">
-						<i class="bi bi-twitter"></i>
-					</a>
-						<a class="navbutton desktop-buttons" href="https://samidb.xyz/commands">
-							<i class="bi bi-list-nested"></i>
-							<span>
-								Commands
-							</span>
-						</a>
-						<a class="navbutton desktop-buttons" href="https://samidb.xyz/devs">
-							<i class="bi bi-code-slash"></i>
-							<span>
-								devs
-							</span>
-						</a>
+	<meta property="og:type" content="website" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>SamiDB - A very cozy discord bot!</title>
+
+	<meta name="title" content="SamiDB" />
+	<meta name="description" content="Sami has tons of features including portals, a multi-server chat!" />
+	<meta name="theme-color" content="#80cee1" />
+
+	<meta property="og:title" content="SamiDB" />
+	<meta property="og:description" content="Sami has tons of features including portals, a multi-server chat!" />
+	<meta property="og:url" content="https://samidb.xyz/" />
+	<meta property="og:site_name" value="A Very Cozy Discord Bot!" />
+
+	<meta property="og:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
+	<meta property="og:image:width" content="400" />
+	<meta property="og:image:height" content="400" />
+
+	<meta property="twitter:title" content="SamiDB" />
+	<meta property="twitter:description" content="Sami has tons of features including portals, a multi-server chat!" />
+	<meta property="twitter:url" content="https://samidb.xyz/" />
+	<meta property="twitter:image"
+		content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
+	<meta property="twitter:card" content="summary" />
+
+	<meta name="twitter:site" content="@SamiRizuriDB" />
+	<meta name="twitter:creator" content="@JayRizuri" />
+</head>
+
+<body>
+	<!--div id="loader"></div-->
+	<nav id="main-navbuttons" class="navbar navbuttons">
+		<div class="container-fluid navbuttons-buttons">
+			<div class="navbuttons-btns">
+				<div class="navbutton-avatar">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</div>
-				<div id="mobile-expand-toggle">
-					<a class="navbutton" onclick="toggleMobileNav()">
-						<i class="bi bi-list"></i>
-					</a>
-				</div>
+				<a class="navbutton navbutton-discord" href="https://discord.gg/MAchG4q">
+					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAeCAYAAAHGGAd1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvFJREFUeNpi/P//PwM2wAKl0WUZmZA5UAwCCgxAoxz+o4INQPwAIIAYsdnBgsVsBiYkc+E0E5pLwDRAAIEsg+EP/7EDkLgASA3MAdh9isV/DkgCC4H4IpT9EYgLkeQOwJwgALUyAclZyOKgcGEACCAGNEkHHGycYc+ALy7wApDCBUSo+w8Kqv9oMfwfif0BiPnBHAIK/6PHKQg0onkKxH4INwFqIMwKRnS3wdQBBBC29NQAxPVAPBGIN0BjEDkWL0DFE4A4HogPoskzIEdMw3/KwAeYWejJgFIwAdlQbKAAKrcBTfwCVDwAhz68WYQRSySgi8PTBXJss2AEMnaDiBGHAQeY9xdg8cYGqBwoGA4gYVCEGkDFsUYWQAChZ030PKyAQ84Alz4WNGcLAPEDKNsAiAOgQSOApGYDuERBhKUjlI8zfV4gIek8QE+byLnoPwNlQBDkalhGD2CgHBxALhD+M1AHEF9cEgkUmKCxyYAj1whiEVeEyn3EIjeBAZrJ0QFy+kNOxAvQ0h0GALkwn6qexpPGYDkFHTjgKbEwahyKAbZYnogjwBlwqEWNSTzp0BGaXwPQiroN4NiE1Dv6aHoM8dU1DAQwcp4/ABMHCNCMFR0hCMPQwgK6gSvUDRhBN8ANGMER3ECcQJ3AsoFuABvABKiYeiEXQ6rnwbvLF00b2ublpUbhaFAJyJFqujKy5ZMliEi8bybQY8+k7FsBPbZoO0vYPgNbuIfvQ3Z52AL8CjgKC3P5MTmhXlYG4AJQt+NhS2PiBFCJ/nosbLDKpMedTyBAA9fI0tT2d/BopoOqa6rITu4CJmggAUJww4pcgeeJZjhx0hApy1gpaGqOZtIA/fMO0imdJB5UZSoy7ZqJpO9bQfRSyioFH063ZiGUFHWRvsh2qihiZZL8E0Pzz2OQuwdh0AyVsyUQ7fnL4BtYaw3qpWI6Nzo+5e5KreiCbYAwoXZS3EOHWSEaEJL+TcBC8XfwbvArLOJlB6XYoX6vhzs4RR0VStNqNgAAAABJRU5ErkJggg=="
+						alt="discordLogo">
+				</a>
+				<a class="navbutton navbutton-twitter" href="https://twitter.com/samirizuridb">
+					<i class="bi bi-twitter"></i>
+				</a>
+				<a class="navbutton desktop-buttons" href="https://samidb.xyz/commands">
+					<i class="bi bi-list-nested"></i>
+					<span>
+						Commands
+					</span>
+				</a>
+				<a class="navbutton desktop-buttons" href="https://samidb.xyz/devs">
+					<i class="bi bi-code-slash"></i>
+					<span>
+						devs
+					</span>
+				</a>
 			</div>
-		</nav>
-		<nav id="mobile-navbuttons" expanded="false" class="navbar navbuttons">
-			<div class="container-fluid navbuttons-buttons">
-				<div class="navbuttons-btns">
-					<a class="navbutton" href="https://samidb.xyz/commands">
-						<i class="bi bi-list-nested"></i>
-						<span>
-							Commands
-						</span>
-					</a>
-					<a class="navbutton" href="https://samidb.xyz/devs">
-						<i class="bi bi-code-slash"></i>
-						<span>
-							devs
-						</span>
-					</a>
-				</div>
-			</div>
-		</nav>
-		<nav class="navbar navbar-header">
-			<img src="http://cdn.samidb.xyz/avatar.jpg" class="large-circle"/>
-			<span id="tagline">
-				A very cozy discord bot.
-			</span>
-		</nav>
-		<div class="infobox">
-			<span id="splash">
-				Loading...
-			</span>
-		</div>
-		
-		<div class="description">
-			<div style="display: flex;justify-content: center;">
-				<a class="invite-button">
-					<i class="bi bi-plus-square"></i>&nbsp;&nbsp;Invite
-				</a><a class="invite-button">
-					<i class="bi bi-house"></i>&nbsp;&nbsp;Support
+			<div id="mobile-expand-toggle">
+				<a class="navbutton" onclick="toggleMobileNav()">
+					<i class="bi bi-list"></i>
 				</a>
 			</div>
 		</div>
-		<br>
-		
-		<div class="row">
-                <div class="col-3">
-                    <div id="#top" class="navmenu list-group">
-                        <a class="list-group-item list-group-item-action" href="#Bot">Bot</a>
-                        <a class="list-group-item list-group-item-action" href="#Fun">Fun</a>
-                        <a class="list-group-item list-group-item-action" href="#Images">Images</a>
-                        <a class="list-group-item list-group-item-action" href="#Misc">Misc</a>
-                        <a class="list-group-item list-group-item-action" href="#Moderation">Moderation</a>
-                        <a class="list-group-item list-group-item-action" href="#Music">Music</a>
-                        <a class="list-group-item list-group-item-action" href="#NSFW">NSFW</a>
-                        <a class="list-group-item list-group-item-action" href="#RP">Roleplay</a>
-                        <a class="list-group-item list-group-item-action" href="#Utility">Utility</a>
-                    </div>
-                    <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0"></div>
-                </div>
-                <br />
-                <div class="col-8">
-                    <div class="main-button nohover">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col" id="Bot">Command</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Usage</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">donate</th>
-                                    <td>Sami does not charge you to use any features, but hosting Sami costs money. Please consider donating.</td>
-                                    <td>s?donate</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">help</th>
-                                    <td>Provides information about a command or category.</td>
-                                    <td>s?help <Command|Category></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">info</th>
-                                    <td>Sends information about me.</td>
-                                    <td>s?info <advanced|packages></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">invite</th>
-                                    <td>Add Sami to your server!</td>
-                                    <td>s?invite</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">setup</th>
-                                    <td>Sets up the samisettings channel for your server.</td>
-                                    <td>s?setup</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">suggest</th>
-                                    <td>suggest ideas for features and commands</td>
-                                    <td>s?suggest</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" id="Fun">uptime</th>
-                                    <td>Sends the time Sami has been running for.</td>
-                                    <td>s?uptime</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">8ball</th>
-                                    <td>Play 8ball!</td>
-                                    <td>s?8ball [random word]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">catboy</th>
-                                    <td>Grabs a random image of a catboy.</td>
-                                    <td>s?catboy</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">catgirl</th>
-                                    <td>Grabs a random image of a catgirl.</td>
-                                    <td>s?catgirl</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">drunk</th>
-                                    <td>Tells you how drunk you are.</td>
-                                    <td>s?drunk [user]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">flip</th>
-                                    <td>Flips a coin.</td>
-                                    <td>s?flip</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">howgay</th>
-                                    <td>Rates how gay you are.</td>
-                                    <td>s?howgay [user]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">meme</th>
-                                    <td>Grabs a random meme.</td>
-                                    <td>s?meme</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">pokedex</th>
-                                    <td>WHOS THAT POKEMON!?!?!?</td>
-                                    <td>s?pokedex [name|number]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">rps</th>
-                                    <td>Rock! Paper! Scissors! Gun...?</td>
-                                    <td>s?rps [rock|paper|scissors]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">ship</th>
-                                    <td>Rates how well two users would ship together.</td>
-                                    <td>s?ship [user1] [user2]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" id="Misc">yugioh</th>
-                                    <td>Searches ygoprodeck for yugioh card information.</td>
-                                    <td>s?yugioh [name|number]</td>
-                                </tr>
-                                <!--
-                                ================================================================================================
-                            -->
-                                <tr>
-                                    <th scope="row"></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <!--
-                                ================================================================================================
-                            -->
-
-                                <tr>
-                                    <th scope="row">anime</th>
-                                    <td>Gets information for an anime via Kitsu</td>
-                                    <td>s?anime [name]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">donate</th>
-                                    <td>Gives you the donation information.</td>
-                                    <td>s?donate</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">help</th>
-                                    <td>Gives you a list of commands.</td>
-                                    <td>s?help [category]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">info</th>
-                                    <td>Gives you info about the bot.</td>
-                                    <td>s?info</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">link</th>
-                                    <td>Connects your server to the Portal Network</td>
-                                    <td>s?link</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">manga</th>
-                                    <td>Gets information for an manga via Kitsu</td>
-                                    <td>s?manga [name]</td>
-                                </tr>
-                                <tr></tr>
-                                <tr>
-                                    <th scope="row">prefix</th>
-                                    <td>Sets the prefix for your server.</td>
-                                    <td>s?prefix set [prefix]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">setup</th>
-                                    <td>Sets up the bot for your server.[Must be performed to use the prefix command]</td>
-                                    <td>s?setup</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">skin</th>
-                                    <td>Gets the skin for a Minecraft(Java) Account.</td>
-                                    <td>s?skin [username]</td>
-                                </tr>
-                                <tr></tr>
-                                <tr>
-                                    <th scope="row" id="misc">snipe</th>
-                                    <td>Gets the most recently deleted message in the channel.</td>
-                                    <td>s?snipe</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">unlink</th>
-                                    <td>Disconnects your server to the Portal Network</td>
-                                    <td>s?unlink</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">uptime</th>
-                                    <td>Tells you the uptime of the bot.</td>
-                                    <td>s?uptime</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" id="Moderation">urban</th>
-                                    <td>Searches Urban Dictionary for a word.</td>
-                                    <td>s?urban [word]</td>
-                                </tr>
-
-                                <!--
-                                ================================================================================================
-                            -->
-                                <tr>
-                                    <th scope="row"></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <!--
-                                ================================================================================================
-                            -->
-
-                                <tr>
-                                    <th scope="row">ban</th>
-                                    <td>BEGONE THOT!!!!</td>
-                                    <td>s?ban [user] [reason]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">kick</th>
-                                    <td>BEGONE THOT!!!! (but you can still come back)</td>
-                                    <td>s?kick [user] [reason]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">mute</th>
-                                    <td>shut.</td>
-                                    <td>s?mute [user] [time] [reason]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">purge</th>
-                                    <td>Purge this chat of all it's sins.</td>
-                                    <td>s?purge [number]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">softban</th>
-                                    <td>Useful for removing all of a user's messages</td>
-                                    <td>s?softban [user] [reason]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">unmute</th>
-                                    <td>speak.</td>
-                                    <td>s?unmute [user]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" id="Music">warn</th>
-                                    <td>Stop sending porn in general.</td>
-                                    <td>s?warn [user] [reason]</td>
-                                </tr>
-
-                                <!--
-                                ================================================================================================
-                            -->
-                                <tr>
-                                    <th scope="row"></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <!--
-                                ================================================================================================
-                            -->
-
-                                <tr>
-                                    <th scope="row">bassboost</th>
-                                    <td>You have lost your ear privileges.</td>
-                                    <td>s?bassboost</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">join</th>
-                                    <td>Yes am here</td>
-                                    <td>s?join</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">leave</th>
-                                    <td>Aight imma head out.</td>
-                                    <td>s?leave</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">loop</th>
-                                    <td>Loops the music.Loops the music.Loops the music.Loops the music.Loops the music.Loops the music...</td>
-                                    <td>s?loop</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">nowplaying</th>
-                                    <td>Wait what song is this?</td>
-                                    <td>s?nowplaying</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">pause</th>
-                                    <td>Pauses t</td>
-                                    <td>s?pause</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">play</th>
-                                    <td>Sami, play despacito.</td>
-                                    <td>s?play [song name|video url|playlist url]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">queue</th>
-                                    <td>what is the "ueue" for</td>
-                                    <td>s?queue</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">remove</th>
-                                    <td>Wrong song</td>
-                                    <td>s?remove [number]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">shuffle</th>
-                                    <td>Stuefues hhe qfeel.</td>
-                                    <td>s?shuffle</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">skip</th>
-                                    <td>I don't like this song</td>
-                                    <td>s?skip</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" id="NSFW">unpause</th>
-                                    <td>unpause</td>
-                                    <td>s?unpause</td>
-                                </tr>
-
-                                <!--
-                                ================================================================================================
-                            -->
-                                <tr>
-                                    <th scope="row"></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <!--
-                                ================================================================================================
-                            -->
-
-                                <tr>
-                                    <th scope="row">danbooru</th>
-                                    <td>Grabs images from danbooru.</td>
-                                    <td>s?danbooru [tags(seperated by commas)]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">gelbooru</th>
-                                    <td>Grabs images from gelbooru.</td>
-                                    <td>s?gelbooru [tags(seperated by commas)]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">hentaibomb</th>
-                                    <td>TACTICAL NUKE, INCOMING!!!!</td>
-                                    <td>s?hentaibomb [tags(seperated by commas)]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" id="RP">rule34</th>
-                                    <td>Grabs images from rule34.</td>
-                                    <td>s?rule34 [tags(seperated by commas)]</td>
-                                </tr>
-
-                                <!--
-                                ================================================================================================
-                            -->
-                                <tr>
-                                    <th scope="row"></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <!--
-                                ================================================================================================
-                            -->
-
-                                <tr>
-                                    <th scope="row">blush</th>
-                                    <td>&#183;///////&#183;</td>
-                                    <td>s?blush</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">boop</th>
-                                    <td>Boop that snoot!</td>
-                                    <td>s?boop [user]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">cry</th>
-                                    <td>Sad.</td>
-                                    <td>s?cry</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">cuddle</th>
-                                    <td>Cuddles!</td>
-                                    <td>s?cuddle [user]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">hug</th>
-                                    <td>Require hug.</td>
-                                    <td>s?hug [user]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">kill</th>
-                                    <td>Stab stab stab!</td>
-                                    <td>s?kill [user]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">kiss</th>
-                                    <td>I love you!</td>
-                                    <td>s?kiss [user]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">pat</th>
-                                    <td>Free headpats!</td>
-                                    <td>s?pat [user]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">pout</th>
-                                    <td>Hmmph!</td>
-                                    <td>s?pout</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">slap</th>
-                                    <td>Bitch.</td>
-                                    <td>s?slap [user]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">sleepy</th>
-                                    <td>*Yawn*</td>
-                                    <td>s?sleepy</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">smile</th>
-                                    <td>Happy!</td>
-                                    <td>s?smile</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" id="Utility">thinking</th>
-                                    <td>Hmmmm....</td>
-                                    <td>s?Thinking</td>
-                                </tr>
-
-                                <!--
-                                ================================================================================================
-                            -->
-                                <tr>
-                                    <th scope="row"></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <!--
-                                ================================================================================================
-                            -->
-
-                                <tr>
-                                    <th scope="row">avatar</th>
-                                    <td>Gets someones avatar</td>
-                                    <td>s?avatar</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">base64</th>
-                                    <td>Q29udmVydHMgdGV4dCB0byBiYXNlNjQ=r</td>
-                                    <td>s?base64 [text]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">color</th>
-                                    <td>Whats your favorite color?</td>
-                                    <td>s?color [hex|rgb|hsl]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">emoji</th>
-                                    <td>Emoji</td>
-                                    <td>s?emoji [emoji]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">invite</th>
-                                    <td>Invite me to your server(or join mine)</td>
-                                    <td>s?invite</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">ping</th>
-                                    <td>pong</td>
-                                    <td>s?ping</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">poll</th>
-                                    <td>Pokemon go to the polls</td>
-                                    <td>s?poll [question] [-yn | : option1, option2, option3, option4]</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">server</th>
-                                    <td>Gives you the server information</td>
-                                    <td>s?server</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">user</th>
-                                    <td>Gives you information about a user</td>
-                                    <td>s?user [user]</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-		
-		<script>
-			function toggleMobileNav() {
-				let toggle = document.getElementById("mobile-navbuttons"),
-					toggled = toggle.getAttribute("expanded")
-				toggle.setAttribute("expanded", toggled === "true" ? "false" : "true")
-				document.getElementById("mobile-expand-toggle").firstElementChild.setAttribute("expanded", toggled === "true" ? "false" : "true")
-				document.getElementById("main-navbuttons").setAttribute("expanded", toggled === "true" ? "false" : "true")
-			}
-			
-			let splashes = [
-				"H",
-				"Discord Bots Go Brrr",
-				"Modern Aesthetic",
-			], splash = splashes[Math.floor(Math.random() * splashes.length)]
-			document.getElementById("splash").innerHTML = splash;
-			if (splash === "H") {
-				document.getElementById("splash").parentElement.addEventListener("click", () => {
-					window.location = "https://samidb.xyz/h"
-				})
-			}
-		</script>
-		<br><br><br><br>
-		<div id="footer">
-			<a style="margin-bottom:5;"></a>
-			<a style="font-weight:399;">&#169;2020 Jay Rizuri</a>
+	</nav>
+	<nav id="mobile-navbuttons" expanded="false" class="navbar navbuttons">
+		<div class="container-fluid navbuttons-buttons">
+			<div class="navbuttons-btns">
+				<a class="navbutton" href="https://samidb.xyz/commands">
+					<i class="bi bi-list-nested"></i>
+					<span>
+						Commands
+					</span>
+				</a>
+				<a class="navbutton" href="https://samidb.xyz/devs">
+					<i class="bi bi-code-slash"></i>
+					<span>
+						devs
+					</span>
+				</a>
+			</div>
 		</div>
-	</body>
+	</nav>
+	<nav class="navbar navbar-header">
+		<img src="http://cdn.samidb.xyz/avatar.jpg" class="large-circle" />
+		<span id="tagline">
+			A very cozy discord bot.
+		</span>
+	</nav>
+	<div class="infobox">
+		<span id="splash">
+			Loading...
+		</span>
+	</div>
+
+	<div class="description">
+		<div style="display: flex;justify-content: center;">
+			<a class="invite-button">
+				<i class="bi bi-plus-square"></i>&nbsp;&nbsp;Invite
+			</a><a class="invite-button">
+				<i class="bi bi-house"></i>&nbsp;&nbsp;Support
+			</a>
+		</div>
+	</div>
+	<br>
+
+	<div class="row">
+		<div class="col-3">
+			<div id="#top" class="navmenu list-group">
+				<a class="list-group-item list-group-item-action" href="#Bot">Bot</a>
+				<a class="list-group-item list-group-item-action" href="#Fun">Fun</a>
+				<a class="list-group-item list-group-item-action" href="#Images">Images</a>
+				<a class="list-group-item list-group-item-action" href="#Misc">Misc</a>
+				<a class="list-group-item list-group-item-action" href="#Moderation">Moderation</a>
+				<a class="list-group-item list-group-item-action" href="#Music">Music</a>
+				<a class="list-group-item list-group-item-action" href="#NSFW">NSFW</a>
+				<a class="list-group-item list-group-item-action" href="#RP">Roleplay</a>
+				<a class="list-group-item list-group-item-action" href="#Search">Search</a>
+				<a class="list-group-item list-group-item-action" href="#Utility">Utility</a>
+			</div>
+			<div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example"
+				tabindex="0"></div>
+		</div>
+		<br />
+		<div class="col-8">
+			<div class="main-button nohover">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col" id="Bot">Command</th>
+							<th scope="col">Description</th>
+							<th scope="col">Usage</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">donate</th>
+							<td>Sami does not charge you to use any features, but hosting Sami costs money. Please
+								consider donating.</td>
+							<td>s?donate</td>
+						</tr>
+						<tr>
+							<th scope="row">help</th>
+							<td>Provides information about a command or category.</td>
+							<td>s?help &#60;Command|Category>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">info</th>
+							<td>Sends information about me.</td>
+							<td>s?info &#60;advanced|packages>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">invite</th>
+							<td>Add Sami to your server!</td>
+							<td>s?invite</td>
+						</tr>
+						<tr>
+							<th scope="row">setup</th>
+							<td>Sets up the samisettings channel for your server.</td>
+							<td>s?setup</td>
+						</tr>
+						<tr>
+							<th scope="row">suggest</th>
+							<td>suggest ideas for features and commands</td>
+							<td>s?suggest</td>
+						</tr>
+						<tr>
+							<th scope="row" id="Fun">uptime</th>
+							<td>Sends the time Sami has been running for.</td>
+							<td>s?uptime</td>
+						</tr>
+
+
+						<tr>
+							<th scope="row"></th>
+							<td></td>
+							<td></td>
+						</tr>
+
+
+						<tr>
+							<th scope="row">8ball</th>
+							<td>Play 8ball</td>
+							<td>s?8ball [random word]</td>
+						</tr>
+						<tr>
+							<th scope="row">babucat</th>
+							<td>cat</td>
+							<td>s?babucat</td>
+						</tr>
+						<tr>
+							<th scope="row">blackjack</th>
+							<td>Starts a game of blackjack.</td>
+							<td>s?blackjack</td>
+						</tr>
+						<tr>
+							<th scope="row">cat</th>
+							<td>Gets a random cat picture.</td>
+							<td>s?cat</td>
+						</tr>
+						<tr>
+							<th scope="row">catboy</th>
+							<td>Sends a cute catboy.</td>
+							<td>s?catboy</td>
+						</tr>
+						<tr>
+							<th scope="row">catgirl</th>
+							<td>Sends a cute catgirl.</td>
+							<td>s?catgirl</td>
+						</tr>
+						<tr>
+							<th scope="row">corn</th>
+							<td>c o r n</td>
+							<td>s?corn</td>
+						</tr>
+						<tr>
+							<th scope="row">dog</th>
+							<td>Gets a random doggo picture.</td>
+							<td>s?dog</td>
+						</tr>
+						<tr>
+							<th scope="row">drunk</th>
+							<td>heri deurfn ar e you</td>
+							<td>s?drunk <@user>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">goose</th>
+							<td>Hjonk Hjonk</td>
+							<td>s?goose</td>
+						</tr>
+						<tr>
+							<th scope="row">howgay</th>
+							<td>Rates how gay you are.</td>
+							<td>s?howgay <@user>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">game</th>
+							<td>Insults a game.</td>
+							<td>s?insultgame</td>
+						</tr>
+						<tr>
+							<th scope="row">meme</th>
+							<td>Sends funny memes</td>
+							<td>s?meme</td>
+						</tr>
+						<tr>
+							<th scope="row">nuggies</th>
+							<td>Chicken nuggies!</td>
+							<td>s?nuggies</td>
+						</tr>
+						<tr>
+							<th scope="row">rps</th>
+							<td>Rock, Paper, Scissors, Shoot! gunfire</td>
+							<td>s?rps</td>
+						</tr>
+						<tr>
+							<th scope="row">sans</th>
+							<td>The easiest enemy. Can only deal 1 damage.</td>
+							<td>s?sans</td>
+						</tr>
+						<tr>
+							<th scope="row" id="Images">ship</th>
+							<td>I ship it!</td>
+							<td>s?ship user user</td>
+						</tr>
+
+
+						<tr>
+							<th scope="row"></th>
+							<td></td>
+							<td></td>
+						</tr>
+
+
+						<tr>
+							<th scope="row">flip</th>
+							<td>Flips an image.</td>
+							<td>s?flip</td>
+						</tr>
+						<tr>
+							<th scope="row">caption</th>
+							<td>Adds captions to images.</td>
+							<td>s?caption</td>
+						</tr>
+						<tr>
+							<th scope="row">flop</th>
+							<td>flops an image.</td>
+							<td>s?flop</td>
+						</tr>
+						<tr>
+							<th scope="row">greyscale</th>
+							<td>Makes images greyscale.</td>
+							<td>s?greyscale</td>
+						</tr>
+						<tr>
+							<th scope="row">mirror</th>
+							<td>Mirrors an image.</td>
+							<td>s?mirror</td>
+						</tr>
+						<tr>
+							<th scope="row">rorrim</th>
+							<td>.egami na srorriM</td>
+							<td>s?rorrim</td>
+						</tr>
+						<tr>
+							<th scope="row" id="Misc">vmirror</th>
+							<td>Vertically mirrors an image.</td>
+							<td>s?vmirror</td>
+						</tr>
+						<tr>
+							<th scope="row">eval</th>
+							<td>Evaluation: your dick is small</td>
+							<td>s?eval code</td>
+						</tr>
+						<tr>
+							<th scope="row">link</th>
+							<td>Summons a portal in your server</td>
+							<td>s?link</td>
+						</tr>
+						<tr>
+							<th scope="row">nick</th>
+							<td>Changes your nickname.</td>
+							<td>s?nick [nickname]</td>
+						</tr>
+						<tr>
+							<th scope="row">prefix</th>
+							<td>Server prefixes.</td>
+							<td>s?prefix &#60;set|get> &#60;prefix>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">reload</th>
+							<td>reload a command</td>
+							<td>s?reload command</td>
+						</tr>
+						<tr>
+							<th scope="row">rules</th>
+							<td>Sends the rules for portals.</td>
+							<td>s?rules</td>
+						</tr>
+						<tr>
+							<th scope="row">snipe</th>
+							<td>https://youtu.be/9NZDwZbyDus</td>
+							<td>s?snipe</td>
+						</tr>
+						<tr>
+							<th scope="row" id="Moderation">unlink</th>
+							<td>Removes a portal in your server</td>
+							<td>s?unlink</td>
+						</tr>
+
+
+						<tr>
+							<th scope="row"></th>
+							<td></td>
+							<td></td>
+						</tr>
+
+
+						<tr>
+							<th scope="row">ban</th>
+							<td>Ban that bitch</td>
+							<td>s?ban @user</td>
+						</tr>
+						<tr>
+							<th scope="row">channel</th>
+							<td>Channel management.</td>
+							<td>s?channel</td>
+						</tr>
+						<tr>
+							<th scope="row">kick</th>
+							<td>stop sending porn in general</td>
+							<td>s?kick @user</td>
+						</tr>
+						<tr>
+							<th scope="row">mute</th>
+							<td>Shut.</td>
+							<td>s?mute @user time</td>
+						</tr>
+						<tr>
+							<th scope="row">purge</th>
+							<td>shhhhhh</td>
+							<td>s?purge number</td>
+						</tr>
+						<tr>
+							<th scope="row">role</th>
+							<td>manipulate roles</td>
+							<td>s?role</td>
+						</tr>
+						<tr>
+							<th scope="row">softban</th>
+							<td>Ban that bitch(but not really)</td>
+							<td>s?softban @user</td>
+						</tr>
+						<tr>
+							<th scope="row">topic</th>
+							<td>Changes the topic of the channel you are in.</td>
+							<td>s?topic [topic|message id]</td>
+						</tr>
+						<tr>
+							<th scope="row">unban</th>
+							<td>unban that ok person</td>
+							<td>s?unban @user</td>
+						</tr>
+						<tr>
+							<th scope="row">unmute</th>
+							<td>speak</td>
+							<td>s?unmute @user reason</td>
+						</tr>
+						<tr>
+							<th scope="row" id="Music">warn</th>
+							<td>Stop.</td>
+							<td>s?warn @user</td>
+						</tr>
+
+
+						<tr>
+							<th scope="row"></th>
+							<td></td>
+							<td></td>
+						</tr>
+
+
+						<tr>
+							<th scope="row">bassboost</th>
+							<td>BOOOOOOST</td>
+							<td>s?bassboost</td>
+						</tr>
+						<tr>
+							<th scope="row">join</th>
+							<td>Make Sami join your vc</td>
+							<td>s?join</td>
+						</tr>
+						<tr>
+							<th scope="row">leave</th>
+							<td>bye</td>
+							<td>s?leave</td>
+						</tr>
+						<tr>
+							<th scope="row">loop</th>
+							<td>Brother give me lööps</td>
+							<td>s?loop</td>
+						</tr>
+						<tr>
+							<th scope="row">nowplaying</th>
+							<td>this is playing</td>
+							<td>s?nowplaying</td>
+						</tr>
+						<tr>
+							<th scope="row">pause</th>
+							<td>pause</td>
+							<td>s?pause</td>
+						</tr>
+						<tr>
+							<th scope="row">play</th>
+							<td>Sami, play despacito</td>
+							<td>s?play songname/url</td>
+						</tr>
+						<tr>
+							<th scope="row">queue</th>
+							<td>view the queue</td>
+							<td>s?queue</td>
+						</tr>
+						<tr>
+							<th scope="row">remove</th>
+							<td>Yeet the song out of your queue</td>
+							<td>s?remove songid</td>
+						</tr>
+						<tr>
+							<th scope="row">shuffle</th>
+							<td>puts cards on table and slides them around</td>
+							<td>s?shuffle</td>
+						</tr>
+						<tr>
+							<th scope="row">skip</th>
+							<td>eww wtf is this</td>
+							<td>s?skip</td>
+						</tr>
+						<tr>
+							<th scope="row">unpause</th>
+							<td>continue</td>
+							<td>s?unpause</td>
+						</tr>
+						<tr>
+							<th scope="row" id="NSFW">volume</th>
+							<td>sets the volume of the song</td>
+							<td>s?volume</td>
+						</tr>
+
+						<tr>
+							<th scope="row">boobs</th>
+							<td>I mean some serious honkers. A real set of badonkers. Packin some dobonhonkeros. Massive
+								dohoonkabhankoloos. Big ol' tonhongerekoogers.</td>
+							<td>s?boobs</td>
+						</tr>
+						<tr>
+							<th scope="row">cum</th>
+							<td>She wants to dominate you</td>
+							<td>s?cum</td>
+						</tr>
+						<tr>
+							<th scope="row">danbooru</th>
+							<td>lewd</td>
+							<td>s?danbooru tags</td>
+						</tr>
+						<tr>
+							<th scope="row">feet</th>
+							<td>This command only exists because I was paid to make it.</td>
+							<td>s?feet</td>
+						</tr>
+						<tr>
+							<th scope="row">femboy</th>
+							<td>She has a dick?</td>
+							<td>s?femboy</td>
+						</tr>
+						<tr>
+							<th scope="row">femdom</th>
+							<td>She wants to dominate you</td>
+							<td>s?femdom</td>
+						</tr>
+						<tr>
+							<th scope="row">futa</th>
+							<td>She has both?</td>
+							<td>s?futa</td>
+						</tr>
+						<tr>
+							<th scope="row">gelbooru</th>
+							<td>gelbooru</td>
+							<td>s?gelbooru tags</td>
+						</tr>
+						<tr>
+							<th scope="row">hentaibomb</th>
+							<td>bombs the channel with lust and lewd</td>
+							<td>s?hentaibomb tags</td>
+						</tr>
+						<tr>
+							<th scope="row">rule34</th>
+							<td>34</td>
+							<td>s?rule34 tags</td>
+						</tr>
+						<tr>
+							<th scope="row">yaoi</th>
+							<td>yaoi is hot.</td>
+							<td>s?yaoi</td>
+						</tr>
+						<tr>
+							<th scope="row" id="RP">yuri</th>
+							<td>Yuri is justice.</td>
+							<td>s?yuri</td>
+						</tr>
+
+
+						<tr>
+							<th scope="row"></th>
+							<td></td>
+							<td></td>
+						</tr>
+
+
+						<tr>
+							<th scope="row">blush</th>
+							<td>Someone's face is lookin a bit red.</td>
+							<td>s?blush</td>
+						</tr>
+						<tr>
+							<th scope="row">bonk</th>
+							<td>Send them to horny jail.</td>
+							<td>s?bonk [@user]</td>
+						</tr>
+						<tr>
+							<th scope="row">boop</th>
+							<td>boop that snoot@</td>
+							<td>s?boop @user</td>
+						</tr>
+						<tr>
+							<th scope="row">cry</th>
+							<td>d- don't cry! here, have a lollipop!</td>
+							<td>s?cry</td>
+						</tr>
+						<tr>
+							<th scope="row">cuddle</th>
+							<td>Cuddles!</td>
+							<td>s?snuggle @user</td>
+						</tr>
+						<tr>
+							<th scope="row">fuck</th>
+							<td>sex.</td>
+							<td>s?fuck</td>
+						</tr>
+						<tr>
+							<th scope="row">highfive</th>
+							<td>Slap my hand</td>
+							<td>s?highfive @user</td>
+						</tr>
+						<tr>
+							<th scope="row">hug</th>
+							<td>Sometimes you just need a hug.</td>
+							<td>s?hug [@user]</td>
+						</tr>
+						<tr>
+							<th scope="row">kill</th>
+							<td>Stab Stab Stab!</td>
+							<td>s?kill @user</td>
+						</tr>
+						<tr>
+							<th scope="row">kiss</th>
+							<td>:heart_eyes:</td>
+							<td>s?kiss [@user]</td>
+						</tr>
+						<tr>
+							<th scope="row">lick</th>
+							<td>LEWD.</td>
+							<td>s?nom [@user]</td>
+						</tr>
+						<tr>
+							<th scope="row">nom</th>
+							<td>Yummy.</td>
+							<td>s?nom [@user]</td>
+						</tr>
+						<tr>
+							<th scope="row">pat</th>
+							<td>Please pat my head.</td>
+							<td>s?pat [@user]</td>
+						</tr>
+						<tr>
+							<th scope="row">pout</th>
+							<td>Hmmph!</td>
+							<td>s?pout</td>
+						</tr>
+						<tr>
+							<th scope="row">slap</th>
+							<td>No description provided.</td>
+							<td>s?slap [@user]</td>
+						</tr>
+						<tr>
+							<th scope="row">sleepy</th>
+							<td>Me want sleep</td>
+							<td>s?sleepy</td>
+						</tr>
+						<tr>
+							<th scope="row">smile</th>
+							<td>:slight_smile:</td>
+							<td>s?smile</td>
+						</tr>
+						<tr>
+							<th scope="row" id="Search">think</th>
+							<td>T H O N K</td>
+							<td>s?thinking</td>
+						</tr>
+
+
+						<tr>
+							<th scope="row"></th>
+							<td></td>
+							<td></td>
+						</tr>
+
+
+						<tr>
+							<th scope="row">anime</th>
+							<td>Searches My Anime List for an anime.</td>
+							<td>s?anime [anime]</td>
+						</tr>
+						<tr>
+							<th scope="row">crypto</th>
+							<td>Gets information about crypto currencies.</td>
+							<td>s?crypto [currency]</td>
+						</tr>
+						<tr>
+							<th scope="row">im</th>
+							<td>Searches MAL for an anime character.</td>
+							<td>s?im</td>
+						</tr>
+						<tr>
+							<th scope="row">img</th>
+							<td>Searches google for images.</td>
+							<td>s?img</td>
+						</tr>
+						<tr>
+							<th scope="row">lyrics</th>
+							<td>Gets the lyrics of a song.</td>
+							<td>s?lyrics [song name]</td>
+						</tr>
+						<tr>
+							<th scope="row">manga</th>
+							<td>Searches My Anime List for Manga.</td>
+							<td>s?manga [manga]</td>
+						</tr>
+						<tr>
+							<th scope="row">pokedex</th>
+							<td>WHOS THAT POKEMON?</td>
+							<td>s?pokedex id/name</td>
+						</tr>
+						<tr>
+							<th scope="row">skin</th>
+							<td>fetch a minecraft skin</td>
+							<td>s?skin &#60;head|cube|body> [username]</td>
+						</tr>
+						<tr>
+							<th scope="row">urban</th>
+							<td>Searches urban dictionary for a word/term</td>
+							<td>s?urban word/term</td>
+						</tr>
+						<tr>
+							<th scope="row" id="Utility">yugioh</th>
+							<td>Search for a yugioh card</td>
+							<td>s?yugioh cardname/id</td>
+						</tr>
+
+
+						<tr>
+							<th scope="row"></th>
+							<td></td>
+							<td></td>
+						</tr>
+
+
+						<tr>
+							<th scope="row">avatar</th>
+							<td>Retrieves the avatar of a user.</td>
+							<td>s?avatar</td>
+						</tr>
+						<tr>
+							<th scope="row">base64</th>
+							<td>.</td>
+							<td>base64 &#60;encode|decode> message</td>
+						</tr>
+						<tr>
+							<th scope="row">color</th>
+							<td>Provides information for a color.</td>
+							<td>s?color [#RRGGBB|rgb(red, blue, green)]</td>
+						</tr>
+						<tr>
+							<th scope="row">emoji</th>
+							<td>Manages emojis.</td>
+							<td>s?emoji &#60;clone|add|remove> [emoji]</td>
+						</tr>
+						<tr>
+							<th scope="row">mcstats</th>
+							<td>Gets info on Minecraft servers.</td>
+							<td>s?mcstats <ip>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">ping</th>
+							<td>view Sami's latency</td>
+							<td>s?ping</td>
+						</tr>
+						<tr>
+							<th scope="row">poll</th>
+							<td>start a poll</td>
+							<td>s?poll channel option, title : option
+								s?poll channel title -YN (For a yes or no poll)</td>
+						</tr>
+						<tr>
+							<th scope="row">server</th>
+							<td>view your server information</td>
+							<td>s?server</td>
+						</tr>
+						<tr>
+							<th scope="row">statistics</th>
+							<td>view Sami's statistics</td>
+							<td>s?statistics</td>
+						</tr>
+						<tr>
+							<th scope="row">user</th>
+							<td>view a user's info</td>
+							<td>s?user (@user)</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function toggleMobileNav() {
+			let toggle = document.getElementById("mobile-navbuttons"),
+				toggled = toggle.getAttribute("expanded")
+			toggle.setAttribute("expanded", toggled === "true" ? "false" : "true")
+			document.getElementById("mobile-expand-toggle").firstElementChild.setAttribute("expanded", toggled === "true" ? "false" : "true")
+			document.getElementById("main-navbuttons").setAttribute("expanded", toggled === "true" ? "false" : "true")
+		}
+
+		let splashes = [
+			"H",
+			"Discord Bots Go Brrr",
+			"Modern Aesthetic",
+		], splash = splashes[Math.floor(Math.random() * splashes.length)]
+		document.getElementById("splash").innerHTML = splash;
+		if (splash === "H") {
+			document.getElementById("splash").parentElement.addEventListener("click", () => {
+				window.location = "https://samidb.xyz/h"
+			})
+		}
+	</script>
+	<br><br><br><br>
+	<div id="footer">
+		<a style="margin-bottom:5;"></a>
+		<a style="font-weight:399;">&#169;2020 Jay Rizuri</a>
+	</div>
+</body>
+
 </html>
