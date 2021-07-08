@@ -1,0 +1,231 @@
+@import "../colors", "../fonts.css";
+
+$breakpoint-mobile: 728px;
+
+// Navbar
+
+.navbar {
+	width: var(--js-screen-width);
+	margin: 0 0 0 0;
+
+	// Themes
+
+	&-dark {
+		background-color: #{$sami-header};
+	}
+
+	&-brand {
+		font-family: "Noto Sans KR";
+	}
+
+	&-header {
+		margin: 0 0 2rem 0;
+		border-bottom: #{$sami-accent-2} solid 5px;
+		background: url("../images/header.PNG");
+		justify-content: center !important;
+
+		#tagline {
+			padding: 0 25px 0 10px;
+		}
+
+		img {
+			width: 12rem;
+			position: relative;
+			margin-left: 20px;
+			right: 2rem;
+			border: #{$sami-accent} solid 0.5rem;
+			border-radius: 50%;
+		}
+
+		span {
+			font-family: "Titillium Web";
+			font-size: 3rem;
+			text-shadow: 0.2rem 0.2rem 0px #{$sami-accent}, 0.3rem 0.3rem 0px #{$sami-accent},
+				-1px -1px 0px #{$sami-accent}, 1px -1px 0px #{$sami-accent};
+		}
+	}
+}
+
+// Navbar buttons
+
+#main-navbuttons,
+#mobile-navbuttons {
+	padding: 0;
+	.container-fluid {
+		padding: 0;
+	}
+}
+
+#main-navbuttons[expanded="true"] {
+	border-bottom: none;
+}
+
+#mobile-navbuttons[expanded="false"] {
+	display: none;
+}
+
+.navbuttons {
+	border-bottom: #{$sami-accent-2} solid 5px;
+	margin: 0;
+	background: #{$sami-header-2};
+
+	&-btns {
+		text-decoration: none;
+		display: flex;
+		li {
+			list-style-type: none;
+			font-family: "Francois One";
+		}
+	}
+}
+
+.navbutton {
+	color: #{$white};
+	text-decoration: none;
+
+	background: #{$sami-header-2};
+
+	display: flex;
+	position: relative;
+
+	margin: 0;
+	padding: {
+		top: 9px;
+		right: 15px;
+		bottom: 10px;
+		left: 30px;
+	}
+
+	align-items: center;
+
+	&:hover {
+		color: #{$white};
+		background-color: #{$sami-header-2-hover};
+
+		span {
+			color: #{$white};
+			background-color: #{$sami-header-2-hover};
+		}
+	}
+
+	&:hover::after {
+		border-color: #{$sami-header-2-hover} transparent;
+	}
+
+	&-avatar {
+		text-decoration: none;
+		background-image: url(http://cdn.samidb.xyz/avatar.jpg);
+		background-position: center;
+		background-size: 150px;
+	}
+
+	&::after {
+		content: " ";
+
+		// Sizing
+		width: 0;
+		height: 0;
+
+		border-color: #{$sami-header-2} transparent;
+		border-style: solid;
+		border-width: 2.5rem 1.1rem 0 0;
+
+		padding-left: 1px;
+		position: absolute;
+		z-index: 1;
+
+		right: -15px;
+		top: 0;
+	}
+
+	span {
+		font-size: 1.2rem;
+		padding: {
+			right: 0.2rem;
+		}
+	}
+
+	// Brands
+
+	&-twitter {
+		background-color: #{$twitter-header};
+
+		span {
+			background-color: #{$twitter-header};
+		}
+
+		&:hover {
+			background-color: #{$twitter-header-hover};
+		}
+
+		&::after {
+			border-color: #{$twitter-header} transparent;
+		}
+
+		&:hover::after {
+			border-color: #{$twitter-header-hover} transparent;
+		}
+	}
+
+	&-discord {
+		background-color: #{$discord-header};
+
+		span {
+			background-color: #{$discord-header};
+		}
+
+		&:hover {
+			background-color: #{$discord-header-hover};
+		}
+
+		&::after {
+			border-color: #{$discord-header} transparent;
+		}
+		
+		&:hover::after {
+			border-color: #{$discord-header-hover} transparent;
+		}
+	}
+
+}
+
+.navbutton[expanded="true"] {
+	background-color: #{$sami-header-2-hover};
+
+	i {
+		background-color: #{$sami-header-2-hover};
+	}
+
+	&::before {
+		border-color: transparent transparent #{$sami-header-2-hover} !important;
+		background-color: #{$sami-header-2-hover};
+	}
+}
+
+@media (min-width: 728px) {
+	.desktop-buttons {
+		display: block;
+	}
+
+	#mobile-expand-toggle {
+		display: none;
+	}
+
+	#mobile-navbuttons {
+		display: none;
+	}
+}
+
+@media (max-width: 727px) {
+	.desktop-buttons {
+		display: none;
+	}
+
+	#mobile-expand-toggle {
+		display: block;
+	}
+
+	#mobile-navbuttons {
+		display: block;
+	}
+}

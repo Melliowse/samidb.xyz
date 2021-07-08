@@ -1,0 +1,76 @@
+@import "./colors", "fonts.css", "components", "../bootstrap/css/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+:root {
+	--sami-bg: #{$sami-bg};
+	--sami-box-bg: #{$sami-box-bg};
+
+	--sami-header: #{$sami-header};
+	--sami-header-2: #{$sami-header-2};
+	--sami-header-2-hover: #{$sami-header-2-hover}; 
+
+	--sami-accent: #{$sami-accent};
+	--sami-accent-hover: #{$sami-accent-hover};
+	--sami-accent-2: #{$sami-accent-2};
+
+	--discord-header: #{$discord-header};
+	--discord-header-hover: #{$discord-header-hover};
+
+	--twitter-header: #{$twitter-header};
+	--twitter-header-hover: #{$twitter-header-hover};
+}
+
+body {
+	background-color: #{$sami-bg};
+	color: #{$white};
+	text-align: -webkit-center;
+}
+
+#footer {
+	background-color: #{$sami-header};
+	color: #{$white};
+	text-align: left;
+}
+
+.icon {
+	color: #{$white};
+}
+
+img,
+nav {
+	user-select: none;
+}
+
+.row {
+	justify-content: center;
+	padding: -3rem 0 0 0;
+}
+
+.col {
+	justify-content: center;
+	display: grid;
+
+	p.stat {
+		margin-bottom: 0px;
+		display: grid;
+	}
+
+
+	&-3 {
+		padding: 0 0 0 6rem;
+
+		a {
+			background: var(--sami-accent);
+		}
+
+		.navmenu {
+			border: var(--sami-accent-2) solid;
+		}
+	}
+
+	&-8 {
+		background: var(--sami-accent);
+		border: var(--sami-accent-2) solid;
+		margin: 0 0 0 1rem;
+	}
+}

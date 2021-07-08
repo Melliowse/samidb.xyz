@@ -1,0 +1,78 @@
+@import "../colors";
+
+// Button Groups
+.btn-group {
+	display: contents;
+
+	// Main buttons
+	.main-button {
+		margin: 0 1rem;
+	}
+}
+
+.invite-button {
+	color: #{$white};
+	background-color: #{$sami-accent};
+
+	user-select: none;
+	text-decoration: none;
+
+	// Font stuff
+	font-family: "Titillium Web";
+	font-size: 1.8rem;
+	font-weight: 900;
+
+	// Border / shadow
+	border: #{$sami-accent-2} solid 5px;
+	text-shadow: 3px 3px #{$sami-accent-2};
+
+	// Position / Size
+	position: relative;
+	display: flex;
+	margin: 0.5rem 1.5rem 0 0;
+	padding: 9px 30px 10px 30px;
+	align-items: center;
+	max-width: min-content;
+
+	&:hover {
+		color: #{$sami-accent-2};
+		background-color: #{$sami-accent-hover};
+		text-shadow: 3px 3px #{$white};
+	}
+
+	&:hover::after, &:hover::before {
+		border-color: #{$sami-accent-hover} transparent;
+	}
+
+	&::after,
+	&::before {
+		content: " ";
+
+		// Sizing
+		width: 0;
+		height: 0;
+
+		display: block;
+		color: transparent;
+
+		// Border
+		border-color: #{$sami-accent} transparent;
+		border-style: solid;
+
+		padding-left: 1px;
+
+		position: absolute;
+		z-index: 1;
+	}
+
+	&::after {
+		border-width: 3.8rem 1.1rem 0 0;
+		right: -1.1rem;
+	}
+
+	&::before {
+		border-width: 0 0 3.8rem 1.1rem;
+		left: -1.1rem;
+		top: 0.05rem;
+	}
+}

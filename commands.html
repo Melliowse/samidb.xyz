@@ -70,7 +70,53 @@
 	<meta property="twitter:card" content="summary" />
 
 	<meta name="twitter:site" content="@SamiRizuriDB" />
-	<meta name="twitter:creator" content="@JayRizuri" />
+	<meta name="twitter:creator" content="@LillyRizuri" />
+	<script>
+		// Fetched stats event
+		const fetchedStats = new CustomEvent("fetchedStats");
+
+		// Fetch data function.
+		function fetchData() {
+			fetch("https://fateslist.xyz/api/v2/bots/754724667323056138",
+				{ method: "GET" },
+				{ headers: { "Accept": "text/plain" } })
+				.then(r => r.json())
+				.then(r => {
+				console.log("h")
+					localStorage.setItem("fatesdata", JSON.stringify({
+						...r,
+						fetchedOn: Date.now()
+					}))
+				})
+		}
+
+		// Check localStorage for fatesdata
+		let fatesdata;
+		if ("fatesdata" in localStorage) {
+			fatesdata = JSON.parse(localStorage["fatesdata"]);
+			if ((Date.now() - (fatesdata?.fetchedOn || 0)) > 3600000) {
+				fetchData();
+			}
+		} else {
+			fetchData();
+		}
+		/*fetch("https://fateslist.xyz/api/v2/bots/754724667323056138",
+			{
+				mode: "cors",
+				method: "GET",
+				Origin: "https://samidb.xyz"
+			},
+			{
+				headers: {
+					"Accept": "text/plain"
+				}
+			})
+			.then(r => r.json())
+			.then(r => {
+				document.dispatchEvent(fetchedStats);
+				document.fatesdata = r;
+			});*/
+	</script>
 </head>
 
 <body>
@@ -78,9 +124,9 @@
 	<nav id="main-navbuttons" class="navbar navbuttons">
 		<div class="container-fluid navbuttons-buttons">
 			<div class="navbuttons-btns">
-				<div class="navbutton-avatar">
+				<a class="navbutton-avatar" href="https://samidb.xyz">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</div>
+				</a>
 				<a class="navbutton navbutton-discord" href="https://discord.gg/MAchG4q">
 					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAeCAYAAAHGGAd1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvFJREFUeNpi/P//PwM2wAKl0WUZmZA5UAwCCgxAoxz+o4INQPwAIIAYsdnBgsVsBiYkc+E0E5pLwDRAAIEsg+EP/7EDkLgASA3MAdh9isV/DkgCC4H4IpT9EYgLkeQOwJwgALUyAclZyOKgcGEACCAGNEkHHGycYc+ALy7wApDCBUSo+w8Kqv9oMfwfif0BiPnBHAIK/6PHKQg0onkKxH4INwFqIMwKRnS3wdQBBBC29NQAxPVAPBGIN0BjEDkWL0DFE4A4HogPoskzIEdMw3/KwAeYWejJgFIwAdlQbKAAKrcBTfwCVDwAhz68WYQRSySgi8PTBXJss2AEMnaDiBGHAQeY9xdg8cYGqBwoGA4gYVCEGkDFsUYWQAChZ030PKyAQ84Alz4WNGcLAPEDKNsAiAOgQSOApGYDuERBhKUjlI8zfV4gIek8QE+byLnoPwNlQBDkalhGD2CgHBxALhD+M1AHEF9cEgkUmKCxyYAj1whiEVeEyn3EIjeBAZrJ0QFy+kNOxAvQ0h0GALkwn6qexpPGYDkFHTjgKbEwahyKAbZYnogjwBlwqEWNSTzp0BGaXwPQiroN4NiE1Dv6aHoM8dU1DAQwcp4/ABMHCNCMFR0hCMPQwgK6gSvUDRhBN8ANGMER3ECcQJ3AsoFuABvABKiYeiEXQ6rnwbvLF00b2ublpUbhaFAJyJFqujKy5ZMliEi8bybQY8+k7FsBPbZoO0vYPgNbuIfvQ3Z52AL8CjgKC3P5MTmhXlYG4AJQt+NhS2PiBFCJ/nosbLDKpMedTyBAA9fI0tT2d/BopoOqa6rITu4CJmggAUJww4pcgeeJZjhx0hApy1gpaGqOZtIA/fMO0imdJB5UZSoy7ZqJpO9bQfRSyioFH063ZiGUFHWRvsh2qihiZZL8E0Pzz2OQuwdh0AyVsyUQ7fnL4BtYaw3qpWI6Nzo+5e5KreiCbYAwoXZS3EOHWSEaEJL+TcBC8XfwbvArLOJlB6XYoX6vhzs4RR0VStNqNgAAAABJRU5ErkJggg=="
 						alt="discordLogo">
@@ -821,6 +867,14 @@
 			</div>
 		</div>
 	</div>
+	<br><br><br><br>
+	<div class="fixed-bottom" id="footer">
+		<a style="margin-bottom:5;"></a>
+		<a style="font-weight:399;">
+			&#169;<p id="year">2021</p>
+			<p id="ownertag">Lilly Rizuri</p>
+		</a>
+	</div>
 
 	<script>
 		function toggleMobileNav() {
@@ -830,24 +884,27 @@
 			document.getElementById("mobile-expand-toggle").firstElementChild.setAttribute("expanded", toggled === "true" ? "false" : "true")
 			document.getElementById("main-navbuttons").setAttribute("expanded", toggled === "true" ? "false" : "true")
 		}
+		
+		const splashes = ["H", "Discord Bots Go Brrr", "Modern Aesthetic"],
+			splash = splashes[Math.floor(Math.random() * splashes.length)];
 
-		let splashes = [
-			"H",
-			"Discord Bots Go Brrr",
-			"Modern Aesthetic",
-		], splash = splashes[Math.floor(Math.random() * splashes.length)]
 		document.getElementById("splash").innerHTML = splash;
+
 		if (splash === "H") {
 			document.getElementById("splash").parentElement.addEventListener("click", () => {
-				window.location = "https://samidb.xyz/h"
-			})
+				window.location = "https://samidb.xyz/h";
+			});
 		}
+
+		setTimeout(() => {
+			fatesdata = JSON.parse(localStorage.getItem("fatesdata")) || {};
+			document.getElementById("ownertag").innerHTML = `${fatesdata?.owners?.[0]?.user?.username || "Lilly Rizuri"}${"#" + fatesdata?.owners?.[0]?.user?.disc || ""}`.replace("#undefined", "");
+			[...document.getElementsByClassName("stat")].forEach(stat => {
+				stat.innerHTML = `${fatesdata?.[stat?.getAttribute("stat") || 0] || "Unknown"}`
+			})
+		}, 500);
+			document.getElementById("year").innerHTML = `${(new Date(Date.now())).getFullYear()}`;
 	</script>
-	<br><br><br><br>
-	<div id="footer">
-		<a style="margin-bottom:5;"></a>
-		<a style="font-weight:399;">&#169;2020 Jay Rizuri</a>
-	</div>
 </body>
 
 </html>
