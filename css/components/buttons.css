@@ -1,0 +1,58 @@
+.btn-group {
+  display: contents;
+}
+.btn-group .main-button {
+  margin: 0 1rem;
+}
+
+.invite-button {
+  color: #FFFFFF;
+  background-color: #80CEE1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: none;
+  font-family: "Titillium Web";
+  font-size: 1.8rem;
+  font-weight: 900;
+  border: #59828B solid 5px;
+  text-shadow: 3px 3px #59828B;
+  position: relative;
+  display: flex;
+  margin: 0.5rem 1.5rem 0 0;
+  padding: 9px 30px 10px 30px;
+  align-items: center;
+  max-width: -webkit-min-content;
+  max-width: -moz-min-content;
+  max-width: min-content;
+}
+.invite-button:hover {
+  color: #59828B;
+  background-color: #A3E1F0;
+  text-shadow: 3px 3px #FFFFFF;
+}
+.invite-button:hover::after, .invite-button:hover::before {
+  border-color: #A3E1F0 transparent;
+}
+.invite-button::after, .invite-button::before {
+  content: " ";
+  width: 0;
+  height: 0;
+  display: block;
+  color: transparent;
+  border-color: #80CEE1 transparent;
+  border-style: solid;
+  padding-left: 1px;
+  position: absolute;
+  z-index: 1;
+}
+.invite-button::after {
+  border-width: 3.8rem 1.1rem 0 0;
+  right: -1.1rem;
+}
+.invite-button::before {
+  border-width: 0 0 3.8rem 1.1rem;
+  left: -1.1rem;
+  top: 0.05rem;
+}/*# sourceMappingURL=buttons.css.map */

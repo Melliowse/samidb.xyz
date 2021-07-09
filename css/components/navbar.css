@@ -1,0 +1,180 @@
+@import "../fonts.css";
+.navbar {
+  width: var(--js-screen-width);
+  margin: 0 0 0 0;
+}
+.navbar-dark {
+  background-color: #172427;
+}
+.navbar-brand {
+  font-family: "Noto Sans KR";
+}
+.navbar-header {
+  margin: 0 0 2rem 0;
+  border-bottom: #59828B solid 5px;
+  background: url("../images/header.PNG");
+  justify-content: center !important;
+}
+.navbar-header #tagline {
+  padding: 0 25px 0 10px;
+}
+.navbar-header img {
+  width: 12rem;
+  position: relative;
+  margin-left: 20px;
+  right: 2rem;
+  border: #80CEE1 solid 0.5rem;
+  border-radius: 50%;
+}
+.navbar-header span {
+  font-family: "Titillium Web";
+  font-size: 3rem;
+  text-shadow: 0.2rem 0.2rem 0px #80CEE1, 0.3rem 0.3rem 0px #80CEE1, -1px -1px 0px #80CEE1, 1px -1px 0px #80CEE1;
+}
+
+#main-navbuttons,
+#mobile-navbuttons {
+  padding: 0;
+}
+#main-navbuttons .container-fluid,
+#mobile-navbuttons .container-fluid {
+  padding: 0;
+}
+
+#main-navbuttons[expanded=true] {
+  border-bottom: none;
+}
+
+#mobile-navbuttons[expanded=false] {
+  display: none;
+}
+
+.navbuttons {
+  border-bottom: #59828B solid 5px;
+  margin: 0;
+  background: #172427;
+}
+.navbuttons-btns {
+  text-decoration: none;
+  display: flex;
+}
+.navbuttons-btns li {
+  list-style-type: none;
+  font-family: "Francois One";
+}
+
+.navbutton {
+  color: #FFFFFF;
+  text-decoration: none;
+  background: #172427;
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding-top: 9px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  align-items: center;
+}
+.navbutton:hover {
+  color: #FFFFFF;
+  background-color: #59828B;
+}
+.navbutton:hover span {
+  color: #FFFFFF;
+  background-color: #59828B;
+}
+.navbutton:hover::after {
+  border-color: #59828B transparent;
+}
+.navbutton-avatar {
+  text-decoration: none;
+  background-image: url(http://cdn.samidb.xyz/avatar.jpg);
+  background-position: center;
+  background-size: 150px;
+}
+.navbutton::after {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-color: #172427 transparent;
+  border-style: solid;
+  border-width: 2.5rem 1.1rem 0 0;
+  padding-left: 1px;
+  position: absolute;
+  z-index: 1;
+  right: -15px;
+  top: 0;
+}
+.navbutton span {
+  font-size: 1.2rem;
+  padding-right: 0.2rem;
+}
+.navbutton-twitter {
+  background-color: #1DA1F2;
+}
+.navbutton-twitter span {
+  background-color: #1DA1F2;
+}
+.navbutton-twitter:hover {
+  background-color: #29B4FF;
+}
+.navbutton-twitter::after {
+  border-color: #1DA1F2 transparent;
+}
+.navbutton-twitter:hover::after {
+  border-color: #29B4FF transparent;
+}
+.navbutton-discord {
+  background-color: #5865F2;
+}
+.navbutton-discord span {
+  background-color: #5865F2;
+}
+.navbutton-discord:hover {
+  background-color: #7289dA;
+}
+.navbutton-discord::after {
+  border-color: #5865F2 transparent;
+}
+.navbutton-discord:hover::after {
+  border-color: #7289dA transparent;
+}
+
+.navbutton[expanded=true] {
+  background-color: #59828B;
+}
+.navbutton[expanded=true] i {
+  background-color: #59828B;
+}
+.navbutton[expanded=true]::before {
+  border-color: transparent transparent #59828B !important;
+  background-color: #59828B;
+}
+
+@media (min-width: 728px) {
+  .desktop-buttons {
+    display: block;
+  }
+
+  #mobile-expand-toggle {
+    display: none;
+  }
+
+  #mobile-navbuttons {
+    display: none;
+  }
+}
+@media (max-width: 727px) {
+  .desktop-buttons {
+    display: none;
+  }
+
+  #mobile-expand-toggle {
+    display: block;
+  }
+
+  #mobile-navbuttons {
+    display: block;
+  }
+}/*# sourceMappingURL=navbar.css.map */

@@ -1,0 +1,121 @@
+@charset "UTF-8";
+.infobox {
+  background-color: var(--sami-accent);
+  padding: 1rem 2rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border: solid var(--sami-accent-2) 5px;
+  border-radius: 25px;
+  position: relative;
+  left: 6rem;
+  bottom: 6rem;
+}
+
+#splash {
+  font-family: "Open Sans Condensed";
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.description {
+  text-align: left;
+  font-family: "Open Sans";
+  font-size: 130%;
+}
+.description [class^=descheader-] {
+  position: relative;
+  right: 1rem;
+  top: 0.1rem;
+}
+
+#longdesc {
+  background: var(--sami-box-bg);
+  max-width: 84vw;
+  border-radius: 12.5px;
+  border: solid var(--sami-accent-2) 3px;
+  padding: 1rem;
+}
+
+[class^=descheader-] p {
+  border-bottom: solid var(--sami-accent-2) 3px;
+  display: inline;
+}
+
+.descheader-1 p {
+  font-size: 150%;
+  font-weight: 800;
+}
+.descheader-2 p {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.descheader-3 p {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+.descheader-4 p {
+  font-size: 1.55rem;
+  font-weight: 800;
+  position: relative;
+  right: 0.76rem;
+}
+.descheader-4 p::before {
+  content: "–";
+  font-family: revert;
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+.descheader-5 p {
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.stat-box {
+  height: auto;
+  width: auto;
+  max-width: -webkit-min-content;
+  max-width: -moz-min-content;
+  max-width: min-content;
+}
+.stat-box a img {
+  width: 9rem;
+}
+
+#footer {
+  background-color: var(--sami-header);
+  text-align: left;
+}
+#footer p {
+  display: inline;
+}
+
+@media (max-width: 727px) {
+  .description {
+    text-align: -webkit-center;
+  }
+
+  #longdesc {
+    max-width: 36rem;
+  }
+
+  .infobox {
+    left: 0;
+    bottom: 3.3rem;
+  }
+
+  .description [class^=descheader-] {
+    position: unset;
+  }
+}
+@media (min-width: 728px) {
+  .infobox {
+    display: inline-block;
+    left: 6rem;
+    bottom: 5rem;
+  }
+
+  .description {
+    margin: -5rem 0 0rem 10%;
+  }
+}/*# sourceMappingURL=misctext.css.map */
