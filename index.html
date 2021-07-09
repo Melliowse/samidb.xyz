@@ -267,6 +267,9 @@
 		setTimeout(() => {
 			fatesdata = JSON.parse(localStorage.getItem("fatesdata")) || {};
 			document.getElementById("ownertag").innerHTML = `${fatesdata?.owners?.[0]?.user?.username || "Lilly Rizuri"}${"#" + fatesdata?.owners?.[0]?.user?.disc || ""}`.replace("#undefined", "");
+			[...document.getElementsByClassName("stat")].forEach(stat => {
+				stat.innerHTML = `${fatesdata?.[stat?.getAttribute("stat") || 0] || "Unknown"}`
+			})
 		}, 500);
 		document.getElementById("year").innerHTML = `${(new Date(Date.now())).getFullYear()}`;
 	</script>
