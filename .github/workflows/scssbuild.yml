@@ -17,13 +17,27 @@ jobs:
             submodules: true
 
       - name: Make destination directory for compiled CSS
-        run: mkdir -vp /tmp/repo-name/assets/css
+        run: mkdir -vp /tmp/samidb.xyz/assets/css
 
-      - name: Compile CSS from SCSS files
+      - name: Compile main.css from main.scss
         uses: gha-utilities/sass-build@v0.4.3
         with:
-          source: _scss/main.scss
-          destination: /tmp/repo-name/assets/css/main.css
+          source: |
+            _scss/colors.scss
+            _scss/fonts.scss
+            _scss/main.scss
+            _scss/components/_index.scss
+            _scss/components/buttons.scss
+            _scss/components/misctext.scss
+            _scss/components/navbar.scss
+          destination: |
+            tmp/samidb.xyz/assets/css/colors.css
+            tmp/samidb.xyz/assets/css/fonts.css
+            tmp/samidb.xyz/assets/css/main.css
+            tmp/samidb.xyz/assets/css/components/_index.css
+            tmp/samidb.xyz/assets/css/components/buttons.css
+            tmp/samidb.xyz/assets/css/components/misctext.css
+            tmp/samidb.xyz/assets/css/components/navbar.css
 
       - name: Checkout destination Git branch
         uses: actions/checkout@v2
@@ -32,7 +46,7 @@ jobs:
             fetch-depth: 1
 
       - name: Move compiled CSS to path within pr-pages branch
-        run: mv /tmp/repo-name/assets/css assets/
+        run: mv /tmp/samidb.xyz/assets/css assets/
 
       - name: Add and Commit changes to pr-pages branch
         run: |
