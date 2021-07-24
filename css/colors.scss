@@ -1,25 +1,67 @@
-
 // Basic colors
-$white: #FFFFFF;
+$white: #ffffff;
+$black: #000000;
+
+// Primary
+$primary-50:  #DFF3F8;
+$primary-100: #B1E1EE;
+$primary-200: #80CEE1;
+$primary-300: #50BAD4;
+$primary-400: #2EAECA;
+$primary-500: #17A1C0;
+$primary-600: #1492AE;
+$primary-700: #0E7E95;
+$primary-800: #076B7D;
+$primary-900: #004A53;
+
+// Secondary
+$secondary-50: #f3e3e2;
+$secondary-100: #edbeb1;
+$secondary-200: #e19380;
+$secondary-300: #d66a4f;
+$secondary-400: #d0492c;
+$secondary-500: #c92105;
+$secondary-600: #c01b02;
+$secondary-700: #b31400;
+$secondary-800: #a60900;
+$secondary-900: #8e0000;
+
+$background-base: #121212;
+
+$background: #1B2122;
+$background-opacity-6: transparentize($background, 0.6);
+
+$surface-0DP: #1E2425;
+$surface-1DP: #272C2D;
+$surface-2DP: #181C1C;
+$surface-3DP: #2D3233;
+
+$on-primary:    #000000;
+$on-secondary:  #000000;
+$on-background: #FFFFFF;
+$on-surface:    #FFFFFF;
+
+$success: #3DEB97;
 
 // Background colors
-$sami-bg: #1A1E20;
+$sami-bg: #1a1e20;
+$sami-bg-stripe: #80cee103;
 $sami-box-bg: #010405;
 
 // Header colors
 $sami-header: #172427;
 $sami-header-2: #172427;
-$sami-header-2-hover: #59828B;
+$sami-header-2-hover: #59828b;
 
 // Accent colors
-$sami-accent: #80CEE1;
-$sami-accent-hover: #A3E1F0;
-$sami-accent-2: #59828B;
+$sami-accent: #80cee1;
+$sami-accent-hover: #a3e1f0;
+$sami-accent-2: #59828b;
 
 // Discord colors
-$discord-header: #5865F2;
-$discord-header-hover: #7289dA;
+$discord-header: #5865f2;
+$discord-header-hover: #7289da;
 
 // Twitter colors
-$twitter-header: #1DA1F2;
-$twitter-header-hover: #29B4FF;
+$twitter-header: #1da1f2;
+$twitter-header-hover: #29b4ff;

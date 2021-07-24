@@ -11,8 +11,8 @@
 }
 
 .invite-button {
-	color: #{$white};
-	background-color: #{$sami-accent};
+	color: var(--on-primary);
+	background-color: var(--primary-200);
 
 	user-select: none;
 	text-decoration: none;
@@ -23,8 +23,9 @@
 	font-weight: 900;
 
 	// Border / shadow
-	border: #{$sami-accent-2} solid 5px;
-	text-shadow: 3px 3px #{$sami-accent-2};
+	border: var(--primary-400) solid 5px;
+	border-radius: 1.25rem;
+	text-shadow: 3px 3px var(--primary-400);
 
 	// Position / Size
 	position: relative;
@@ -33,37 +34,38 @@
 	padding: 9px 30px 10px 30px;
 	align-items: center;
 	max-width: min-content;
+	top: -5rem;
 
 	&:hover {
-		color: #{$sami-accent-2};
-		background-color: #{$sami-accent-hover};
-		text-shadow: 3px 3px #{$white};
+		color: var(--on-primary);
+		background-color: var(--primary-100);
+		text-shadow: 3px 3px var(--primary-300);
 	}
 
 	&:hover::after, &:hover::before {
-		border-color: #{$sami-accent-hover} transparent;
+		border-color: var(--primary-100) transparent;
 	}
 
-	&::after,
-	&::before {
-		content: " ";
+	// &::after,
+	// &::before {
+	// 	content: " ";
 
-		// Sizing
-		width: 0;
-		height: 0;
+	// 	// Sizing
+	// 	width: 0;
+	// 	height: 0;
 
-		display: block;
-		color: transparent;
+	// 	display: block;
+	// 	color: transparent;
 
-		// Border
-		border-color: #{$sami-accent} transparent;
-		border-style: solid;
+	// 	// Border
+	// 	border-color: var(--primary-200) transparent;
+	// 	border-style: solid;
 
-		padding-left: 1px;
+	// 	padding-left: 1px;
 
-		position: absolute;
-		z-index: 1;
-	}
+	// 	position: absolute;
+	// 	z-index: 1;
+	// }
 
 	&::after {
 		border-width: 3.8rem 1.1rem 0 0;
@@ -75,4 +77,8 @@
 		left: -1.1rem;
 		top: 0.05rem;
 	}
+}
+
+.list-group-item {
+	background-color: var(--primary-100) !important;
 }

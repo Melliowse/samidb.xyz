@@ -6,8 +6,8 @@
 }
 
 .invite-button {
-  color: #FFFFFF;
-  background-color: #80CEE1;
+  color: var(--on-primary);
+  background-color: var(--primary-200);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -16,8 +16,9 @@
   font-family: "Titillium Web";
   font-size: 1.8rem;
   font-weight: 900;
-  border: #59828B solid 5px;
-  text-shadow: 3px 3px #59828B;
+  border: var(--primary-400) solid 5px;
+  border-radius: 1.25rem;
+  text-shadow: 3px 3px var(--primary-400);
   position: relative;
   display: flex;
   margin: 0.5rem 1.5rem 0 0;
@@ -26,26 +27,15 @@
   max-width: -webkit-min-content;
   max-width: -moz-min-content;
   max-width: min-content;
+  top: -5rem;
 }
 .invite-button:hover {
-  color: #59828B;
-  background-color: #A3E1F0;
-  text-shadow: 3px 3px #FFFFFF;
+  color: var(--on-primary);
+  background-color: var(--primary-100);
+  text-shadow: 3px 3px var(--primary-300);
 }
 .invite-button:hover::after, .invite-button:hover::before {
-  border-color: #A3E1F0 transparent;
-}
-.invite-button::after, .invite-button::before {
-  content: " ";
-  width: 0;
-  height: 0;
-  display: block;
-  color: transparent;
-  border-color: #80CEE1 transparent;
-  border-style: solid;
-  padding-left: 1px;
-  position: absolute;
-  z-index: 1;
+  border-color: var(--primary-100) transparent;
 }
 .invite-button::after {
   border-width: 3.8rem 1.1rem 0 0;
@@ -55,4 +45,8 @@
   border-width: 0 0 3.8rem 1.1rem;
   left: -1.1rem;
   top: 0.05rem;
+}
+
+.list-group-item {
+  background-color: var(--primary-100) !important;
 }/*# sourceMappingURL=buttons.css.map */

@@ -1,4 +1,4 @@
-@import "../colors", "../fonts.css";
+@import "../fonts.css";
 
 $breakpoint-mobile: 728px;
 
@@ -11,7 +11,7 @@ $breakpoint-mobile: 728px;
 	// Themes
 
 	&-dark {
-		background-color: #{$sami-header};
+		background-color: var(--sami-header);
 	}
 
 	&-brand {
@@ -20,9 +20,31 @@ $breakpoint-mobile: 728px;
 
 	&-header {
 		margin: 0 0 2rem 0;
-		border-bottom: #{$sami-accent-2} solid 5px;
-		background: url("../images/header.PNG");
+		border-bottom: var(--primary-600) solid 5px;
+		background-image: linear-gradient(
+			135deg,
+			var(--secondary-200) 4.76%,
+			var(--primary-200) 4.76%,
+			var(--primary-200) 25%,
+			#ffffff 25%,
+			#ffffff 29.76%,
+			var(--primary-200) 29.76%,
+			var(--primary-200) 50%,
+			var(--secondary-200) 50%,
+			var(--secondary-200) 54.76%,
+			var(--primary-200) 54.76%,
+			var(--primary-200) 75%,
+			#ffffff 75%,
+			#ffffff 79.76%,
+			var(--primary-200) 79.76%,
+			var(--primary-200) 100%
+		);
+		background-size: 296.98px 296.98px;
 		justify-content: center !important;
+		padding: {
+			bottom: 2.5rem !important;
+			top: 2.5rem !important;
+		}
 
 		#tagline {
 			padding: 0 25px 0 10px;
@@ -33,15 +55,23 @@ $breakpoint-mobile: 728px;
 			position: relative;
 			margin-left: 20px;
 			right: 2rem;
-			border: #{$sami-accent} solid 0.5rem;
+			border: var(--primary-600) solid 0.3rem;
 			border-radius: 50%;
+			&:hover {
+				animation: spin 0.75s ease-in-out;
+			}
 		}
 
 		span {
+			line-height: 4.2rem;
 			font-family: "Titillium Web";
 			font-size: 3rem;
-			text-shadow: 0.2rem 0.2rem 0px #{$sami-accent}, 0.3rem 0.3rem 0px #{$sami-accent},
-				-1px -1px 0px #{$sami-accent}, 1px -1px 0px #{$sami-accent};
+			text-shadow: 0.2rem 0.2rem 0px var(--primary-600), 0.3rem 0.3rem 0px var(--primary-600),
+				-1px -1px 0px var(--primary-600), 1px -1px 0px var(--primary-600);
+
+			#name {
+				font-size: 4.78rem;
+			}
 		}
 	}
 }
@@ -65,9 +95,9 @@ $breakpoint-mobile: 728px;
 }
 
 .navbuttons {
-	border-bottom: #{$sami-accent-2} solid 5px;
+	border-bottom: var(--primary-600) solid 5px;
 	margin: 0;
-	background: #{$sami-header-2};
+	background: var(--surface-0DP);
 
 	&-btns {
 		text-decoration: none;
@@ -80,10 +110,10 @@ $breakpoint-mobile: 728px;
 }
 
 .navbutton {
-	color: #{$white};
+	color: var(--on-surface);
 	text-decoration: none;
 
-	background: #{$sami-header-2};
+	background: var(--surface-0DP);
 
 	display: flex;
 	position: relative;
@@ -99,17 +129,17 @@ $breakpoint-mobile: 728px;
 	align-items: center;
 
 	&:hover {
-		color: #{$white};
-		background-color: #{$sami-header-2-hover};
+		color: #ffffff;
+		background-color: var(--surface-1DP);
 
 		span {
-			color: #{$white};
-			background-color: #{$sami-header-2-hover};
+			color: #ffffff;
+			background-color: var(--surface-1DP);
 		}
 	}
 
 	&:hover::after {
-		border-color: #{$sami-header-2-hover} transparent;
+		border-color: var(--surface-1DP) transparent;
 	}
 
 	&-avatar {
@@ -126,7 +156,7 @@ $breakpoint-mobile: 728px;
 		width: 0;
 		height: 0;
 
-		border-color: #{$sami-header-2} transparent;
+		border-color: var(--surface-0DP) transparent;
 		border-style: solid;
 		border-width: 2.5rem 1.1rem 0 0;
 
@@ -141,6 +171,7 @@ $breakpoint-mobile: 728px;
 	span {
 		font-size: 1.2rem;
 		padding: {
+			left: 0.2rem;
 			right: 0.2rem;
 		}
 	}
@@ -148,57 +179,56 @@ $breakpoint-mobile: 728px;
 	// Brands
 
 	&-twitter {
-		background-color: #{$twitter-header};
+		background-color: var(--twitter-header);
 
 		span {
-			background-color: #{$twitter-header};
+			background-color: var(--twitter-header);
 		}
 
 		&:hover {
-			background-color: #{$twitter-header-hover};
+			background-color: var(--twitter-header-hover);
 		}
 
 		&::after {
-			border-color: #{$twitter-header} transparent;
+			border-color: var(--twitter-header) transparent;
 		}
 
 		&:hover::after {
-			border-color: #{$twitter-header-hover} transparent;
+			border-color: var(--twitter-header-hover) transparent;
 		}
 	}
 
 	&-discord {
-		background-color: #{$discord-header};
+		background-color: var(--discord-header);
 
 		span {
-			background-color: #{$discord-header};
+			background-color: var(--discord-header);
 		}
 
 		&:hover {
-			background-color: #{$discord-header-hover};
+			background-color: var(--discord-header-hover);
 		}
 
 		&::after {
-			border-color: #{$discord-header} transparent;
+			border-color: var(--discord-header) transparent;
 		}
-		
+
 		&:hover::after {
-			border-color: #{$discord-header-hover} transparent;
+			border-color: var(--discord-header-hover) transparent;
 		}
 	}
-
 }
 
 .navbutton[expanded="true"] {
-	background-color: #{$sami-header-2-hover};
+	background-color: var(--surface-1DP);
 
 	i {
-		background-color: #{$sami-header-2-hover};
+		background-color: var(--surface-1DP);
 	}
 
 	&::before {
-		border-color: transparent transparent #{$sami-header-2-hover} !important;
-		background-color: #{$sami-header-2-hover};
+		border-color: transparent transparent var(--surface-1DP) !important;
+		background-color: var(--surface-1DP);
 	}
 }
 

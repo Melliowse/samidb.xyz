@@ -1,13 +1,56 @@
-@import "./colors", "fonts.css", "components", "../bootstrap/css/bootstrap";
+.col-9, .table {
+	color: var(--on-surface) !important;
+}
+@import "./colors", "fonts", "components", "../bootstrap/css/bootstrap";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
 :root {
+	--bs-table-color: #{$on-surface};
+	--primary-50: #{$primary-50};
+	--primary-100: #{$primary-100};
+	--primary-200: #{$primary-200};
+	--primary-300: #{$primary-300};
+	--primary-400: #{$primary-400};
+	--primary-500: #{$primary-500};
+	--primary-600: #{$primary-600};
+	--primary-700: #{$primary-700};
+	--primary-800: #{$primary-800};
+	--primary-900: #{$primary-900};
+
+	--secondary-50: #{$secondary-50};
+	--secondary-100: #{$secondary-100};
+	--secondary-200: #{$secondary-200};
+	--secondary-300: #{$secondary-300};
+	--secondary-400: #{$secondary-400};
+	--secondary-500: #{$secondary-500};
+	--secondary-600: #{$secondary-600};
+	--secondary-700: #{$secondary-700};
+	--secondary-800: #{$secondary-800};
+	--secondary-900: #{$secondary-900};
+
+	--background-base: #{$background-base};
+
+	--background: #{$background};
+	--background-opacity-6: #{$background-opacity-6};
+
+	--surface-0DP: #{$surface-0DP};
+	--surface-1DP: #{$surface-1DP};
+	--surface-2DP: #{$surface-2DP};
+	--surface-3DP: #{$surface-3DP};
+
+	--on-primary: #{$on-primary};
+	--on-secondary: #{$on-secondary};
+	--on-background: #{$on-background};
+	--on-surface: #{$on-surface};
+
+	--success: #{$success};
+
 	--sami-bg: #{$sami-bg};
 	--sami-box-bg: #{$sami-box-bg};
 
 	--sami-header: #{$sami-header};
 	--sami-header-2: #{$sami-header-2};
-	--sami-header-2-hover: #{$sami-header-2-hover}; 
+	--sami-header-2-hover: #{$sami-header-2-hover};
 
 	--sami-accent: #{$sami-accent};
 	--sami-accent-hover: #{$sami-accent-hover};
@@ -20,20 +63,103 @@
 	--twitter-header-hover: #{$twitter-header-hover};
 }
 
+#loader {
+	display: none;
+	z-index: 100;
+	width: 100vw;
+	height: 100vh;
+
+	position: fixedshat ;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+	background-color: #{$background};
+	background-image: linear-gradient(
+		45deg,
+		#{$sami-bg} 25%,
+		#{$sami-bg-stripe} 25%,
+		#{$sami-bg-stripe} 50%,
+		#{$sami-bg} 50%,
+		#{$sami-bg} 75%,
+		#{$sami-bg-stripe} 75%,
+		#{$sami-bg-stripe} 100%
+	);
+	background-size: 56.57px 56.57px;
+
+	span {
+		display: table-cell;
+		vertical-align: middle;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+		img {
+			animation: spin 0.71s linear infinite;
+			width: 12rem;
+			display: inline;
+			vertical-align: middle;
+			justify-self: center;
+			border: var(--primary-600) solid 0.3rem;
+			border-radius: 50%;
+		}
+	}
+}
+
 body {
-	background-color: #{$sami-bg};
-	color: #{$white};
+	background-color: #{$background};
+	color: #{$on-background};
 	text-align: -webkit-center;
+	background-image: linear-gradient(
+		45deg,
+		#{$sami-bg} 25%,
+		#{$sami-bg-stripe} 25%,
+		#{$sami-bg-stripe} 50%,
+		#{$sami-bg} 50%,
+		#{$sami-bg} 75%,
+		#{$sami-bg-stripe} 75%,
+		#{$sami-bg-stripe} 100%
+	);
+	background-size: 56.57px 56.57px;
+
+	&[loading^="true"] {
+		overflow-y: hidden;
+		& #loader {
+			display: block;
+		}
+	}
+
+	#CORN {
+		display: none;
+	}
+
+	&[corn^="corn"] {
+		#CORN {
+			display: block;
+		}
+	}
 }
 
 #footer {
-	background-color: #{$sami-header};
+	z-index: 1;
+	vertical-align: bottom;
+	background-color: var(--surface-0DP);
 	color: #{$white};
 	text-align: left;
 }
 
 .icon {
 	color: #{$white};
+}
+
+img,
+body,
+.description,
+.longdesc,
+nav {
+	overflow-x: hidden;
 }
 
 img,
@@ -55,22 +181,29 @@ nav {
 		display: grid;
 	}
 
-
 	&-3 {
 		padding: 0 0 0 6rem;
 
 		a {
-			background: var(--sami-accent);
+			background: var(--primary-200);
 		}
 
 		.navmenu {
-			border: var(--sami-accent-2) solid;
+			border: var(--primary-400) solid;
 		}
 	}
 
-	&-8 {
-		background: var(--sami-accent);
-		border: var(--sami-accent-2) solid;
+	&-9 {
+		border-radius: 1.25rem 0 0 1.25rem;
+		border: solid var(--primary-400) 3px;
+		border-right: none;
+		background: var(--surface-1DP);
+		color: var(--on-surface) !important;
+		border: var(--primary-400) solid;
 		margin: 0 0 0 1rem;
+	}
+	
+	.table > :not(caption) > * > * {
+		color: var(--on-surface) !important;
 	}
 }

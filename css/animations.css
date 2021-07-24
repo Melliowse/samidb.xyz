@@ -54,11 +54,8 @@
 }
 
 @keyframes unspin {
-    0%{
-        transform: rotate(0);
-    }
     100% {
-        transform: rotate(360deg);
+		transition: transform .7s ease-in-out;
     }
 }
 @keyframes spin {
@@ -172,6 +169,17 @@
   }
 }
 @keyframes fade-out-fwd {
+  0% {
+	background-color: rgba(0,0,0,1);
+    opacity: 1;
+  }
+  100% {
+	display: none;
+	background-color: rgba(0,0,0,0);
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
   0% {
 	background-color: rgba(0,0,0,1);
     opacity: 1;
