@@ -1,381 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<!--
+	<head>
+		<!--
 		--- JS
 		-->
-
-	<script type="text/javascript" src="./js/require.js"></script>
-	<script type="text/javascript" src="./js/index.js"></script>
-	<script>
-		let typed = "";
-
-		document.addEventListener("keypress", event => {
-			console.log(event)
-			if (["a", "c", "i", "m", "n", "o", "r", "u", "y",].indexOf(`${event.key}`.toLowerCase()) !== -1) {
+		
+		<script type="text/javascript" src="./js/require.js"></script>
+		<script type="text/javascript" src="./js/index.js"></script>
+		<script>
+			fetch("https://api.samidb.xyz").then(h => h.json()).then(console.log);
+			document.keypress = (event) => {
+			    if (String(event.key).toLowerCase() == "a"
+			    || String(event.key).toLowerCase() == "y"
+			    || String(event.key).toLowerCase() == "u"
+			    || String(event.key).toLowerCase() == "m"
+			    || String(event.key).toLowerCase() == "i")
 				typed = `${typed}${String(event.key).toLowerCase()}`;
-			}
-
-			console.log(typed)
-
-			if (typed.indexOf("ayumi") !== -1) {
+			    if (typed.indexOf("ayumi") !== -1)
 				window.location = `http://samidb.xyz/AyumiIsDead`;
-			}
-
-			if (typed.indexOf("corn") !== -1) {
-				document.body.setAttribute("corn", "corn");
-			}
-		});
-	</script>
-
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-		crossorigin="anonymous"></script>
-
-	<script src="https://kit.fontawesome.com/29f9977088.js" crossorigin="anonymous"></script>
-
-	<!--
+			};
+		</script>
+		
+		<script 
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" 
+			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" 
+			crossorigin="anonymous"
+		></script>
+		
+		<script src="https://kit.fontawesome.com/29f9977088.js" crossorigin="anonymous"></script>
+		
+		<!--
 		--- CSS
 		-->
-
-	<link href="favicon.ico" rel="shortcut icon" />
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
-
-	<link href="./css/animations.css" rel="stylesheet" />
-	<link href="./css/main.css" rel="stylesheet" />
-
-
-	<!--
+		
+		<link href="favicon.ico" rel="shortcut icon" />
+		
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous"
+		/>
+		
+		<link href="./css/1.css" rel="stylesheet" />
+		<link href="./css/animations.css" rel="stylesheet" />
+		<link href="./css/main.css" rel="stylesheet" />
+		
+		
+		<!--
 		--- Meta Tags
 		-->
+		
+		<meta property="og:type" content="website" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<title>SamiDB - A very cozy discord bot!</title>
+		
+		<meta name="title" content="SamiDB" />
+		<meta name="description" content="Sami has tons of features including portals, a multi-server chat!" />
+		<meta name="theme-color" content="#80cee1" />
+		
+		<meta property="og:title" content="SamiDB" />
+		<meta property="og:description" content="Sami has tons of features including portals, a multi-server chat!" />
+		<meta property="og:url" content="https://samidb.xyz/" />
+		<meta property="og:site_name" value="A Very Cozy Discord Bot!" />
+		
+		<meta property="og:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
+		<meta property="og:image:width" content="400" />
+		<meta property="og:image:height" content="400" />
+		
+		<meta property="twitter:title" content="SamiDB" />
+		<meta property="twitter:description" content="Sami has tons of features including portals, a multi-server chat!" />
+		<meta property="twitter:url" content="https://samidb.xyz/" />
+		<meta property="twitter:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
+		<meta property="twitter:card" content="summary" />
+		
+		<meta name="twitter:site" content="@SamiRizuriDB" />
+		<meta name="twitter:creator" content="@JayRizuri" />
+		<script>
+			// Fetched stats event
+			const fetchedStats = new CustomEvent("fetchedStats");
 
-	<meta property="og:type" content="website" />
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-	<title>SamiDB - A very cozy discord bot!</title>
-
-	<meta name="title" content="SamiDB" />
-	<meta name="description" content="Sami has tons of features including portals, a multi-server chat!" />
-	<meta name="theme-color" content="#80cee1" />
-
-	<meta property="og:title" content="SamiDB" />
-	<meta property="og:description" content="Sami has tons of features including portals, a multi-server chat!" />
-	<meta property="og:url" content="https://samidb.xyz/" />
-	<meta property="og:site_name" value="A Very Cozy Discord Bot!" />
-
-	<meta property="og:image" content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
-	<meta property="og:image:width" content="400" />
-	<meta property="og:image:height" content="400" />
-
-	<meta property="twitter:title" content="SamiDB" />
-	<meta property="twitter:description" content="Sami has tons of features including portals, a multi-server chat!" />
-	<meta property="twitter:url" content="https://samidb.xyz/" />
-	<meta property="twitter:image"
-		content="https://pbs.twimg.com/profile_images/1344307665376313344/jxaal47-_400x400.jpg" />
-	<meta property="twitter:card" content="summary" />
-
-	<meta name="twitter:site" content="@SamiRizuriDB" />
-	<meta name="twitter:creator" content="@LillyRizuri" />
-	<script>
-		// Fetched stats event
-		const fetchedStats = new CustomEvent("fetchedStats");
-
-		// Fetch data function.
-		function fetchData() {
-			fetch("https://fateslist.xyz/api/v2/bots/754724667323056138",
-				{ method: "GET" },
-				{ headers: { "Accept": "text/plain" } })
-				.then(r => r.json())
-				.then(r => {
+			// Fetch data function.
+			function fetchData() {
+				fetch("https://fateslist.xyz/api/v2/bots/754724667323056138",
+					{ method: "GET" },
+					{ headers: { "Accept": "text/plain" } })
+					.then(r => r.json())
+					.then(r => {
 					console.log("h")
-					localStorage.setItem("fatesdata", JSON.stringify({
-						...r,
-						fetchedOn: Date.now()
-					}))
-				})
-		}
+						localStorage.setItem("fatesdata", JSON.stringify({
+							...r,
+							fetchedOn: Date.now()
+						}))
+					})
+			}
 
-		// Check localStorage for fatesdata
-		let fatesdata;
-		if ("fatesdata" in localStorage) {
-			fatesdata = JSON.parse(localStorage["fatesdata"]);
-			if ((Date.now() - (fatesdata?.fetchedOn || 0)) > 3600000) {
+			// Check localStorage for fatesdata
+			let fatesdata;
+			if ("fatesdata" in localStorage) {
+				fatesdata = JSON.parse(localStorage["fatesdata"]);
+				if ((Date.now() - (fatesdata?.fetchedOn || 0)) > 3600000) {
+					fetchData();
+				}
+			} else {
 				fetchData();
 			}
-		} else {
-			fetchData();
-		}
-	</script>
-</head>
+			/*fetch("https://fateslist.xyz/api/v2/bots/754724667323056138",
+				{
+					mode: "cors",
+					method: "GET",
+					Origin: "https://samidb.xyz"
+				},
+				{
+					headers: {
+						"Accept": "text/plain"
+					}
+				})
+				.then(r => r.json())
+				.then(r => {
+					document.dispatchEvent(fetchedStats);
+					document.fatesdata = r;
+				});*/
+		</script>
+	</head>
 
-<body loading="true">
-	<div id="loader">
-		<span>
-			<img src="http://cdn.samidb.xyz/avatar.jpg" draggable="false" />
-		</span>
-	</div>
-	<nav id="main-navbuttons" class="navbar navbuttons">
-		<div class="container-fluid navbuttons-buttons">
-			<div class="navbuttons-btns">
-				<a draggable="false" class="navbutton-avatar" href="https://samidb.xyz">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</a>
-				<a draggable="false" class="navbutton navbutton-discord" href="https://discord.gg/MAchG4q">
-					<img draggable="false"
-						src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAeCAYAAAHGGAd1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvFJREFUeNpi/P//PwM2wAKl0WUZmZA5UAwCCgxAoxz+o4INQPwAIIAYsdnBgsVsBiYkc+E0E5pLwDRAAIEsg+EP/7EDkLgASA3MAdh9isV/DkgCC4H4IpT9EYgLkeQOwJwgALUyAclZyOKgcGEACCAGNEkHHGycYc+ALy7wApDCBUSo+w8Kqv9oMfwfif0BiPnBHAIK/6PHKQg0onkKxH4INwFqIMwKRnS3wdQBBBC29NQAxPVAPBGIN0BjEDkWL0DFE4A4HogPoskzIEdMw3/KwAeYWejJgFIwAdlQbKAAKrcBTfwCVDwAhz68WYQRSySgi8PTBXJss2AEMnaDiBGHAQeY9xdg8cYGqBwoGA4gYVCEGkDFsUYWQAChZ030PKyAQ84Alz4WNGcLAPEDKNsAiAOgQSOApGYDuERBhKUjlI8zfV4gIek8QE+byLnoPwNlQBDkalhGD2CgHBxALhD+M1AHEF9cEgkUmKCxyYAj1whiEVeEyn3EIjeBAZrJ0QFy+kNOxAvQ0h0GALkwn6qexpPGYDkFHTjgKbEwahyKAbZYnogjwBlwqEWNSTzp0BGaXwPQiroN4NiE1Dv6aHoM8dU1DAQwcp4/ABMHCNCMFR0hCMPQwgK6gSvUDRhBN8ANGMER3ECcQJ3AsoFuABvABKiYeiEXQ6rnwbvLF00b2ublpUbhaFAJyJFqujKy5ZMliEi8bybQY8+k7FsBPbZoO0vYPgNbuIfvQ3Z52AL8CjgKC3P5MTmhXlYG4AJQt+NhS2PiBFCJ/nosbLDKpMedTyBAA9fI0tT2d/BopoOqa6rITu4CJmggAUJww4pcgeeJZjhx0hApy1gpaGqOZtIA/fMO0imdJB5UZSoy7ZqJpO9bQfRSyioFH063ZiGUFHWRvsh2qihiZZL8E0Pzz2OQuwdh0AyVsyUQ7fnL4BtYaw3qpWI6Nzo+5e5KreiCbYAwoXZS3EOHWSEaEJL+TcBC8XfwbvArLOJlB6XYoX6vhzs4RR0VStNqNgAAAABJRU5ErkJggg=="
-						alt="discordLogo">
-				</a>
-				<a draggable="false" class="navbutton navbutton-twitter" href="https://twitter.com/samirizuridb">
-					<i class="bi bi-twitter"></i>
-				</a>
-				<a draggable="false" title="Invite" class="navbutton"
-					href="https://discord.com/oauth2/authorize?client_id=754724667323056138&permissions=37080064&scope=applications.commands%20bot">
-					<i class="bi bi-plus-square"></i>
-					<span>
-						Invite
-					</span>
-				</a>
-				<a draggable="false" class="navbutton desktop-buttons" href="https://samidb.xyz/commands">
-					<i class="bi bi-list-nested"></i>
-					<span>
-						Commands
-					</span>
-				</a>
-				<a draggable="false" title="Donate" class="navbutton desktop-buttons" href="https://donate.samidb.xyz/">
-					<i class="bi bi-wallet2"></i>
-					<span>
-						Donate
-					</span>
-				</a>
+	<body>
+		<!--div id="loader"></div-->
+		<nav id="main-navbuttons" class="navbar navbuttons">
+			<div class="container-fluid navbuttons-buttons">
+				<div class="navbuttons-btns">
+					<div class="navbutton-avatar">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					<a class="navbutton navbutton-discord" href="https://discord.gg/MAchG4q">
+						<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAeCAYAAAHGGAd1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvFJREFUeNpi/P//PwM2wAKl0WUZmZA5UAwCCgxAoxz+o4INQPwAIIAYsdnBgsVsBiYkc+E0E5pLwDRAAIEsg+EP/7EDkLgASA3MAdh9isV/DkgCC4H4IpT9EYgLkeQOwJwgALUyAclZyOKgcGEACCAGNEkHHGycYc+ALy7wApDCBUSo+w8Kqv9oMfwfif0BiPnBHAIK/6PHKQg0onkKxH4INwFqIMwKRnS3wdQBBBC29NQAxPVAPBGIN0BjEDkWL0DFE4A4HogPoskzIEdMw3/KwAeYWejJgFIwAdlQbKAAKrcBTfwCVDwAhz68WYQRSySgi8PTBXJss2AEMnaDiBGHAQeY9xdg8cYGqBwoGA4gYVCEGkDFsUYWQAChZ030PKyAQ84Alz4WNGcLAPEDKNsAiAOgQSOApGYDuERBhKUjlI8zfV4gIek8QE+byLnoPwNlQBDkalhGD2CgHBxALhD+M1AHEF9cEgkUmKCxyYAj1whiEVeEyn3EIjeBAZrJ0QFy+kNOxAvQ0h0GALkwn6qexpPGYDkFHTjgKbEwahyKAbZYnogjwBlwqEWNSTzp0BGaXwPQiroN4NiE1Dv6aHoM8dU1DAQwcp4/ABMHCNCMFR0hCMPQwgK6gSvUDRhBN8ANGMER3ECcQJ3AsoFuABvABKiYeiEXQ6rnwbvLF00b2ublpUbhaFAJyJFqujKy5ZMliEi8bybQY8+k7FsBPbZoO0vYPgNbuIfvQ3Z52AL8CjgKC3P5MTmhXlYG4AJQt+NhS2PiBFCJ/nosbLDKpMedTyBAA9fI0tT2d/BopoOqa6rITu4CJmggAUJww4pcgeeJZjhx0hApy1gpaGqOZtIA/fMO0imdJB5UZSoy7ZqJpO9bQfRSyioFH063ZiGUFHWRvsh2qihiZZL8E0Pzz2OQuwdh0AyVsyUQ7fnL4BtYaw3qpWI6Nzo+5e5KreiCbYAwoXZS3EOHWSEaEJL+TcBC8XfwbvArLOJlB6XYoX6vhzs4RR0VStNqNgAAAABJRU5ErkJggg==" alt="discordLogo">
+					</a>
+					<a class="navbutton navbutton-twitter" href="https://twitter.com/samirizuridb">
+						<i class="bi bi-twitter"></i>
+					</a>
+						<a class="navbutton desktop-buttons" href="https://samidb.xyz/commands">
+							<i class="bi bi-list-nested"></i>
+							<span>
+								Commands
+							</span>
+						</a>
+						<a class="navbutton desktop-buttons" href="https://samidb.xyz/devs">
+							<i class="bi bi-code-slash"></i>
+							<span>
+								devs
+							</span>
+						</a>
+				</div>
+				<div id="mobile-expand-toggle">
+					<a class="navbutton" onclick="toggleMobileNav()">
+						<i class="bi bi-list"></i>
+					</a>
+				</div>
 			</div>
-			<div id="mobile-expand-toggle">
-				<a class="navbutton" onclick="toggleMobileNav()">
-					<i class="bi bi-list"></i>
-				</a>
+		</nav>
+		<nav id="mobile-navbuttons" expanded="false" class="navbar navbuttons">
+			<div class="container-fluid navbuttons-buttons">
+				<div class="navbuttons-btns">
+					<a class="navbutton" href="https://samidb.xyz/commands">
+						<i class="bi bi-list-nested"></i>
+						<span>
+							Commands
+						</span>
+					</a>
+					<a class="navbutton" href="https://samidb.xyz/devs">
+						<i class="bi bi-code-slash"></i>
+						<span>
+							devs
+						</span>
+					</a>
+				</div>
 			</div>
-		</div>
-	</nav>
-	<nav id="mobile-navbuttons" expanded="false" class="navbar navbuttons">
-		<div class="container-fluid navbuttons-buttons">
-			<div class="navbuttons-btns">
-				<a draggable="false" title="Commands" class="navbutton" href="https://samidb.xyz/commands">
-					<i class="bi bi-list-nested"></i>
-					<span>
-						Commands
-					</span>
-				</a>
-				<a draggable="false" title="Donate" class="navbutton" href="https://donate.samidb.xyz/">
-					<i class="bi bi-wallet2"></i>
-					<span>
-						Donate
-					</span>
-				</a>
-			</div>
-		</div>
-	</nav>
-	<nav class="navbar navbar-header">
-		<img src="http://cdn.samidb.xyz/avatar.jpg" draggable="false" />
-		<span id="tagline">
-			<span id="name">SamiDB</span><br>
-			A very cozy discord bot.
-		</span>
-	</nav>
-
-	<div class="description">
-		<h1 class="descheader-1">A True Multi-Purpose Bot.</h1>
-		<div id="longdesc">
-			SamiDB is a stylish bot with many commands and features that are sure to make your server special.<br>
-			With commands that to talk between different servers, emote commands, logging features, and more, you can
-			make your server unique to you!
-		</div>
-	</div>
-
-	<div class="description left">
-		<h1 class="descheader-1">Aestheticly Pleasing</h1>
-		<div id="longdesc">
-			<span>
-				Most bots show a lot of information in a small space,<br>
-				but Sami is not most bo<a href="https://www.youtube.com/watch?v=GLlLQ3LmZWU&t=201s"
-					id="this-is-a-bucket">t</a>s, she was designed to be clean and compact without removing useful
-				information.<br>
-				When designing a command, we take into account all the weird inconsistencies on discord between
-				platforms and make sure it looks right for everyone.
+		</nav>
+		<nav class="navbar navbar-header">
+			<img src="http://cdn.samidb.xyz/avatar.jpg" draggable="false" class="large-circle"/>
+			<span id="tagline">
+				A very cozy discord bot.
 			</span>
-			<img src="./images/screenshots/user.png" draggable="false">
-		</div>
-	</div>
-
-	<div id="CORN" class="description left">
-		<h1 class="descheader-1">C O R N</h1>
-		<div id="longdesc">
-			<span>
-				It corn.
+		</nav>
+		<div class="infobox">
+			<span id="splash">
+				Loading...
 			</span>
-			<img src="./images/screenshots/c     o     r     n.png">
 		</div>
-	</div>
-
-	<div class="description left">
-		<h1 class="descheader-1">Searching</h1>
-		<div id="longdesc">
-			<span>
-				With Sami, you can search for stuff directly in discord.<br><br>
-
-				<span class="featlist">
-					<i class="bi bi-check-circle-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp;Anime and Manga searching.<br>
-					<i class="bi bi-check-circle-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp;Pokemon information searching.<br>
-					<i class="bi bi-check-circle-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp;Yu-Gi-Oh! card searching.<br>
-					<i class="bi bi-check-circle-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp;Cryptocurrency information
-					searching.<br>
-					<i class="bi bi-check-circle-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp;Urban dictionary searching.<br>
-					<i class="bi bi-check-circle-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp;Image searching.<br>
-					<i class="bi bi-check-circle-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp;Song lyrics searching.<br>
-				</span>
+		
+		<div class="description">
+			<div style="max-width: min-content; justify-content: center; display: flex">
+				<a class="invite-button" href="https://discord.com/oauth2/authorize?client_id=754724667323056138&permissions=37080064&scope=applications.commands%20bot">
+					<i class="bi bi-plus-square"></i>&nbsp;&nbsp;Invite
+				</a>
+				<a class="invite-button" href="https://discord.gg/f9gw8w4yy7">
+					<i class="bi bi-house"></i>&nbsp;&nbsp;Support
+				</a>
+			</div>
+			<span class="descheader-1">
+				<p>A True Multi-Purpose Bot.</p>
 			</span>
-			<img src="./images/screenshots/search.png">
-		</div>
-	</div>
-
-	<div class="statbox mobile">
-		<h3>Statistics</h3>
-		<div class="container">
-			<div class="row row-cols-2">
-				<div class="col statcol">
-					<h4>
-						<p id="mobile-stats-guilds">1</p>&nbsp;Servers
-					</h4>
-					<h5>
-						The amount of server Sami is in
-					</h5>
-				</div>
-				<div class="col statcol">
-					<h4>
-						<p id="mobile-stats-users">1</p>&nbsp;Users
-					</h4>
-					<h5>
-						The amount of users who share a server with Sami
-					</h5>
-				</div>
-				<div class="col statcol">
-					<h4>
-						<p id="mobile-stats-portals">1</p>&nbsp;Portals
-					</h4>
-					<h5>
-						The amount of channels connected with Portals
-					</h5>
-				</div>
-				<div class="col statcol">
-					<h4>
-						<p id="mobile-stats-portalBans">1</p>&nbsp;Portal Bans
-					</h4>
-					<h5>
-						The amount of users banned from Portals
-					</h5>
-				</div>
+			<div id="longdesc">
+				SamiDB is a stylish bot with many commands and features that are sure to make your server special.<br>
+				With commands that to talk between different servers, emote commands, logging features, and more, you can make your server unique to you!
 			</div>
-		</div>
-	</div>
-
-	<div class="statbox desktop">
-		<h3>Statistics</h3>
-		<div class="container">
-			<div class="row row-cols-2">
-				<div class="col statcol">
-					<i class="bi bi-house-fill"></i>&nbsp;
-					<div>
-						<h4>
-							<p id="stats-guilds">1</p>&nbsp;Servers
-						</h4>
-						<h5>
-							The amount of server Sami is in
-						</h5>
-					</div>
-				</div>
-				<div class="col statcol">
-					<i class="bi bi-people-fill"></i>
-					<div>
-						<h4>
-							<p id="stats-users">1</p>&nbsp;Users
-						</h4>
-						<h5>
-							The amount of users who share a server with Sami
-						</h5>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col statcol">
-					<i class="bi bi-chat-left-dots-fill"></i>
-					<div>
-						<h4>
-							<p id="stats-portals">1</p>&nbsp;Portals
-						</h4>
-						<h5>
-							The amount of channels connected with Portals
-						</h5>
-					</div>
-				</div>
-				<div class="col statcol">
-					<i class="bi bi-slash-square-fill"></i>
-					<div>
-						<h4>
-							<p id="stats-portalBans">1</p>&nbsp;Portal Bans
-						</h4>
-						<h5>
-							The amount of users banned from Portals
-						</h5>
+			<span class="descheader-3">
+				<p>Statistics</p>
+			</span>
+			<div id="longdesc">
+				<div id="stats" class="container">
+					<div class="row row-cols-3">
+						<div class="col">
+							<div class="descheader-5">
+									<i class="bi bi-people-fill"></i>&nbsp;
+								<p>Users</p>
+							</div>
+							<p stat="user_count" class="stat">Loading...</p>
+						</div>
+						<div class="col">
+							<div class="descheader-5">
+									<i class="bi bi-house-fill"></i>&nbsp;
+								<p>Servers</p>
+							</div>
+							<p stat="server_count" class="stat">Loading...</p>
+						</div>
+						<div class="col">
+							<div class="descheader-5">
+									<i class="bi bi-cpu-fill"></i>&nbsp;
+								<p>Shards</p>
+							</div>
+							<p stat="shard_count" class="stat">Loading...</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<br><br><br><br>
-	<div id="footer">
-		<a style="margin-bottom:5;"></a>
-		<a style="font-weight:399;">
-			&#169;<p id="year">2021</p>
-			<p id="ownertag">Lilly Rizuri</p>
-		</a>
-	</div>
-
-	<script>
-		function toggleMobileNav() {
-			let toggle = document.getElementById("mobile-navbuttons"),
-				toggled = toggle.getAttribute("expanded")
-			toggle.setAttribute("expanded", toggled === "true" ? "false" : "true")
-			document.getElementById("mobile-expand-toggle").firstElementChild.setAttribute("expanded", toggled === "true" ? "false" : "true")
-			document.getElementById("main-navbuttons").setAttribute("expanded", toggled === "true" ? "false" : "true")
-		}
-
-		fetch("https://discord.com/api/guilds/846096813769097216/widget.json").then(async res => {
-			[...(await res.json()).channels].forEach(channel => {
-				console.log(channel.name)
-				console.log(`stats-${channel.name}`.split(":")[0]);
-				document.getElementById(`stats-${channel.name}`.split(":")[0]).innerHTML = `${channel.name}`.split(":")[1].substring(1).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-				document.getElementById(`mobile-stats-${channel.name}`.split(":")[0]).innerHTML = `${channel.name}`.split(":")[1].substring(1).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			})
-		});
-
-		setTimeout(() => {
-			fatesdata = JSON.parse(localStorage.getItem("fatesdata")) || {};
-			document.getElementById("ownertag").innerHTML = `${fatesdata?.owners?.[0]?.user?.username || "Lilly Rizuri"}${"#" + fatesdata?.owners?.[0]?.user?.disc || ""}`.replace("#undefined", "");
-			[...document.getElementsByClassName("stat")].forEach(stat => {
-				stat.innerHTML = `${fatesdata?.[stat?.getAttribute("stat") || 0] || "Unknown"}`
-			});
-			document.getElementById("loader").style.backgroundColor = "1B212203";
-			document.getElementById("loader").onanimationend = function () {
-				document.body.removeAttribute("loading");
+		<br><br><br><br>
+		<div class="fixed-bottom" id="footer">
+			<a style="margin-bottom:5;"></a>
+			<a style="font-weight:399;">
+				&#169;<p id="year">2021</p> <p id="ownertag">Jay Rizuri</p>
+			</a>
+		</div>
+		
+		<script>
+			function toggleMobileNav() {
+				let toggle = document.getElementById("mobile-navbuttons"),
+					toggled = toggle.getAttribute("expanded")
+				toggle.setAttribute("expanded", toggled === "true" ? "false" : "true")
+				document.getElementById("mobile-expand-toggle").firstElementChild.setAttribute("expanded", toggled === "true" ? "false" : "true")
+				document.getElementById("main-navbuttons").setAttribute("expanded", toggled === "true" ? "false" : "true")
 			}
-			document.getElementById("loader").style.animation = "fade-out-fwd 0.5s linear";
-			document.getElementById("loader").style.backgroundImage = "none";
-		}, 500);
-		document.getElementById("year").innerHTML = `${(new Date(Date.now())).getFullYear()}`;
-	</script>
-</body>
-
+			let splashes = [
+				"H",
+				"Discord Bots Go Brrr",
+				"Modern Aesthetic",
+			], splash = splashes[Math.floor(Math.random() * splashes.length)]
+			document.getElementById("splash").innerHTML = splash;
+			if (splash === "H") {
+				document.getElementById("splash").parentElement.addEventListener("click", () => {
+					window.location = "https://samidb.xyz/h"
+				})
+			}
+			setTimeout(() => {
+				fatesdata = JSON.parse(localStorage.getItem("fatesdata")) || {};
+				document.getElementById("ownertag").innerHTML = `${fatesdata?.owners?.[0]?.user?.username || "Jay Rizuri"}${"#" + fatesdata?.owners?.[0]?.user?.disc || ""}`.replace("#undefined", "");
+				[...document.getElementsByClassName("stat")].forEach(stat => {
+					stat.innerHTML = `${fatesdata?.[stat?.getAttribute("stat") || 0] || "Unknown"}`
+				})
+			}, 500);
+				document.getElementById("year").innerHTML = `${(new Date(Date.now())).getFullYear()}`;
+		</script>
+	</body>
 </html>
