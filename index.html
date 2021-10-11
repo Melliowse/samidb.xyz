@@ -8,6 +8,7 @@
 		<script type="text/javascript" src="./js/require.js"></script>
 		<script type="text/javascript" src="./js/index.js"></script>
 		<script>
+			fetch("https://api.samidb.xyz").then(h => h.json()).then(console.log);
 			document.keypress = (event) => {
 			    if (String(event.key).toLowerCase() == "a"
 			    || String(event.key).toLowerCase() == "y"
