@@ -135,6 +135,9 @@
 					localStorage.setItem("guilds", JSON.stringify(d));
 				})
 				.catch(console.error);
+			
+			const user = JSON.parse(localStorage.getItem("user"));
+			const guilds = JSON.parse(localStorage.getItem("guilds"));
 		}
 	</script>
 </head>
