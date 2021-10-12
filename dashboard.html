@@ -114,7 +114,7 @@
 
 		fetch('https://discord.com/api/users/@me', {
 			headers: {
-				authorization: `code ${params.logincode}`,
+				Authorization: `Bearer ${params.logincode}`,
 			},
 		})
 			.then(result => result.json())
