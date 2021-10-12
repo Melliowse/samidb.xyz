@@ -132,7 +132,7 @@
 			})
 				.then(result => result.json())
 				.then(d => {
-					localStorage.setItem("user", JSON.stringify(d));
+					localStorage.setItem("guilds", JSON.stringify(d));
 				})
 				.catch(console.error);
 		}
