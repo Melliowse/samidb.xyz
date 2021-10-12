@@ -110,12 +110,7 @@
 			fetchData();
 		}
 
-		const fragment = new URLSearchParams(window.location.hash.slice(1));
-    console.log(fragment);
-
 		const params = Object.fromEntries(new URLSearchParams(window.location.search).entries());
-
-		if (accessToken) {
 
 		fetch('https://discord.com/api/users/@me', {
 			headers: {
@@ -125,7 +120,6 @@
 			.then(result => result.json())
 			.then(console.log)
 			.catch(console.error);
-		}
 	</script>
 </head>
 
