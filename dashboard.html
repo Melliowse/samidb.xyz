@@ -114,15 +114,27 @@
 		const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
 
 		if (accessToken) {
-
-		fetch('https://discord.com/api/users/@me', {
-			headers: {
-				authorization: `${tokenType} ${accessToken}`,
-			},
-		})
-			.then(result => result.json())
-			.then(console.log)
-			.catch(console.error);
+			fetch('https://discord.com/api/users/@me', {
+				headers: {
+					authorization: `${tokenType} ${accessToken}`,
+				},
+			})
+				.then(result => result.json())
+				.then(d => {
+					localStorage.setItem("user", JSON.stringify(d));
+				})
+				.catch(console.error);
+			
+			fetch('https://discord.com/api/users/@me/guilds', {
+				headers: {
+					authorization: `${tokenType} ${accessToken}`,
+				},
+			})
+				.then(result => result.json())
+				.then(d => {
+					localStorage.setItem("user", JSON.stringify(d));
+				})
+				.catch(console.error);
 		}
 	</script>
 </head>
