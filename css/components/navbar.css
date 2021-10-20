@@ -1,0 +1,192 @@
+@import "../fonts.css";
+.navbar {
+  width: var(--js-screen-width);
+  margin: 0 0 0 0;
+}
+.navbar-dark {
+  background-color: var(--sami-header);
+}
+.navbar-brand {
+  font-family: "Noto Sans KR";
+}
+.navbar-header {
+  margin: 0 0 2rem 0;
+  border-bottom: var(--primary-600) solid 5px;
+  background-image: linear-gradient(135deg, var(--secondary-200) 4.76%, var(--primary-200) 4.76%, var(--primary-200) 25%, #ffffff 25%, #ffffff 29.76%, var(--primary-200) 29.76%, var(--primary-200) 50%, var(--secondary-200) 50%, var(--secondary-200) 54.76%, var(--primary-200) 54.76%, var(--primary-200) 75%, #ffffff 75%, #ffffff 79.76%, var(--primary-200) 79.76%, var(--primary-200) 100%);
+  background-size: 296.98px 296.98px;
+  justify-content: center !important;
+  padding-bottom: 2.5rem !important;
+  padding-top: 2.5rem !important;
+}
+.navbar-header #tagline {
+  padding: 0 25px 0 10px;
+}
+.navbar-header img {
+  width: 12rem;
+  position: relative;
+  margin-left: 20px;
+  right: 2rem;
+  border: var(--primary-600) solid 0.3rem;
+  border-radius: 50%;
+}
+.navbar-header img:hover {
+  -webkit-animation: spin 0.75s ease-in-out;
+          animation: spin 0.75s ease-in-out;
+}
+.navbar-header span {
+  line-height: 4.2rem;
+  font-family: "Titillium Web";
+  font-size: 3rem;
+  text-shadow: 0.2rem 0.2rem 0px var(--primary-600), 0.3rem 0.3rem 0px var(--primary-600), -1px -1px 0px var(--primary-600), 1px -1px 0px var(--primary-600);
+}
+.navbar-header span #name {
+  font-size: 4.78rem;
+}
+
+#main-navbuttons,
+#mobile-navbuttons {
+  padding: 0;
+}
+#main-navbuttons .container-fluid,
+#mobile-navbuttons .container-fluid {
+  padding: 0;
+}
+
+#main-navbuttons[expanded=true] {
+  border-bottom: none;
+}
+
+#mobile-navbuttons[expanded=false] {
+  display: none;
+}
+
+.navbuttons {
+  border-bottom: var(--primary-600) solid 5px;
+  margin: 0;
+  background: var(--surface-0DP);
+}
+.navbuttons-btns {
+  text-decoration: none;
+  display: flex;
+}
+.navbuttons-btns li {
+  list-style-type: none;
+  font-family: "Francois One";
+}
+
+.navbutton {
+  color: var(--on-surface);
+  text-decoration: none;
+  background: var(--surface-0DP);
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding-top: 9px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  align-items: center;
+}
+.navbutton:hover {
+  color: #ffffff;
+  background-color: var(--surface-1DP);
+}
+.navbutton:hover span {
+  color: #ffffff;
+  background-color: var(--surface-1DP);
+}
+.navbutton:hover::after {
+  border-color: var(--surface-1DP) transparent;
+}
+.navbutton-avatar {
+  text-decoration: none;
+  background-image: url(http://cdn.samidb.xyz/avatar.jpg);
+  background-position: center;
+  background-size: 150px;
+}
+.navbutton::after {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-color: var(--surface-0DP) transparent;
+  border-style: solid;
+  border-width: 2.5rem 1.1rem 0 0;
+  padding-left: 1px;
+  position: absolute;
+  z-index: 1;
+  right: -15px;
+  top: 0;
+}
+.navbutton span {
+  font-size: 1.2rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+.navbutton-twitter {
+  background-color: var(--twitter-header);
+}
+.navbutton-twitter span {
+  background-color: var(--twitter-header);
+}
+.navbutton-twitter:hover {
+  background-color: var(--twitter-header-hover);
+}
+.navbutton-twitter::after {
+  border-color: var(--twitter-header) transparent;
+}
+.navbutton-twitter:hover::after {
+  border-color: var(--twitter-header-hover) transparent;
+}
+.navbutton-discord {
+  background-color: var(--discord-header);
+}
+.navbutton-discord span {
+  background-color: var(--discord-header);
+}
+.navbutton-discord:hover {
+  background-color: var(--discord-header-hover);
+}
+.navbutton-discord::after {
+  border-color: var(--discord-header) transparent;
+}
+.navbutton-discord:hover::after {
+  border-color: var(--discord-header-hover) transparent;
+}
+
+.navbutton[expanded=true] {
+  background-color: var(--surface-1DP);
+}
+.navbutton[expanded=true] i {
+  background-color: var(--surface-1DP);
+}
+.navbutton[expanded=true]::before {
+  border-color: transparent transparent var(--surface-1DP) !important;
+  background-color: var(--surface-1DP);
+}
+
+@media (min-width: 728px) {
+  .desktop-buttons {
+    display: block;
+  }
+
+  #mobile-expand-toggle {
+    display: none;
+  }
+
+  #mobile-navbuttons {
+    display: none;
+  }
+}
+@media (max-width: 727px) {
+  .desktop-buttons {
+    display: none;
+  }
+
+  #mobile-expand-toggle {
+    display: block;
+  }
+
+  #mobile-navbuttons {
+    display: block;
+  }
+}/*# sourceMappingURL=navbar.css.map */
